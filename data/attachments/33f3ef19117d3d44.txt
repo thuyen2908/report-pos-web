@@ -1,0 +1,235 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create tickets >> Combine tickets
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:417:3
+
+# Error details
+
+```
+Error: Timed out 20000ms waiting for expect(locator).toHaveText(expected)
+
+Locator: locator('.xTicketItems__content').getByText('Manicure', { exact: true })
+Expected string: "Manicure"
+Received: <element(s) not found>
+Call log:
+  - expect.toHaveText with timeout 20000ms
+  - waiting for locator('.xTicketItems__content').getByText('Manicure', { exact: true })
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:446:32)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:439:5
+```
+
+# Test source
+
+```ts
+  346 | );
+  347 |
+  348 | When(
+  349 | 	'I fill the new customer name {string}',
+  350 | 	async ({ page }, name: string) => {
+  351 | 		const firstName = page.locator('input[name="firstName"]');
+  352 | 		await firstName.fill(name);
+  353 |
+  354 | 		await expect(firstName).toHaveValue(name);
+  355 | 	},
+  356 | );
+  357 |
+  358 | When('I fill the new customer phone', async ({ page }) => {
+  359 | 	const cellPhone = page.locator('input[name="cellPhone"]');
+  360 | 	const rawPhone = Math.floor(
+  361 | 		1000000000 + Math.random() * 9000000000,
+  362 | 	).toString();
+  363 | 	const formattedPhone = `(${rawPhone.substring(0, 3)}) ${rawPhone.substring(3, 6)}-${rawPhone.substring(6)}`;
+  364 |
+  365 | 	await cellPhone.fill(rawPhone);
+  366 |
+  367 | 	await expect(cellPhone).toHaveValue(formattedPhone);
+  368 | });
+  369 |
+  370 | Then(
+  371 | 	'I should see a new customer {string} on ticket',
+  372 | 	async ({ page }, name: string) => {
+  373 | 		const customerElement = page
+  374 | 			.locator('.TicketSearch__customer .mainTitle')
+  375 | 			.getByText(name);
+  376 | 		await expect(customerElement).toHaveText(name);
+  377 | 	},
+  378 | );
+  379 |
+  380 | When('I add the {string} customer', async ({ page }, customer: string) => {
+  381 | 	page.locator('.TicketSearch__customer ').click();
+  382 | 	page.locator('.TicketSearch__customer input').fill(customer);
+  383 | 	const selectCustomer = page
+  384 | 		.locator('.MuiListItemText-root.name')
+  385 | 		.getByText(customer, { exact: true });
+  386 | 	await selectCustomer.click();
+  387 | });
+  388 |
+  389 | When('I redeem my loyalty points', async ({ page }) => {
+  390 | 	await page.locator('.xLoyalty__item').click();
+  391 | 	await page.locator('.xLoyalty__btn').getByText('OK').click();
+  392 | });
+  393 |
+  394 | When(
+  395 | 	'I click on the {string} button in the split tip screen',
+  396 | 	async ({ page }, button: string) => {
+  397 | 		const buttonElement = page
+  398 | 			.locator('.xPayment__numpad.xSplitTip')
+  399 | 			.getByRole('button', { name: button });
+  400 |
+  401 | 		await expect(buttonElement).toBeVisible();
+  402 |
+  403 | 		await buttonElement.click();
+  404 | 	},
+  405 | );
+  406 |
+  407 | Then('I should see all split tips non-zero', async ({ page }) => {
+  408 | 	const tipValues = page
+  409 | 		.locator('.xSplitTip__employee')
+  410 | 		.locator('.tip.row')
+  411 | 		.locator('span.value');
+  412 | 	const allTips = await tipValues.allTextContents();
+  413 | 	expect(allTips).not.toContain('0.00');
+  414 | 	expect(allTips.every((tip) => !tip.includes('0.00'))).toBeTruthy();
+  415 | });
+  416 |
+  417 | When(
+  418 | 	'I click on the {string} label in the header',
+  419 | 	async ({ page }, label: string) => {
+  420 | 		const labelElement = page
+  421 | 			.locator('.xHeader__content')
+  422 | 			.getByText(label, { exact: true });
+  423 |
+  424 | 		await expect(labelElement).toBeVisible();
+  425 |
+  426 | 		await labelElement.click();
+  427 | 	},
+  428 | );
+  429 |
+  430 | When(
+  431 | 	'I click on the {string} button in the waiting page',
+  432 | 	async ({ page }, buttonText: string) => {
+  433 | 		const buttonElement = page
+  434 | 			.locator('.xWaitingList__btn')
+  435 | 			.getByRole('button', { name: buttonText });
+  436 | 		await buttonElement.click();
+  437 | 	},
+  438 | );
+  439 |
+  440 | Then(
+  441 | 	'I should see the service {string} in my cart',
+  442 | 	async ({ page }, service: string) => {
+  443 | 		const serviceElement = page
+  444 | 			.locator('.xTicketItems__content')
+  445 | 			.getByText(service, { exact: true });
+> 446 | 		await expect(serviceElement).toHaveText(service);
+      | 		                             ^ Error: Timed out 20000ms waiting for expect(locator).toHaveText(expected)
+  447 | 	},
+  448 | );
+  449 |
+  450 | Then(
+  451 | 	'I should see the duration {string} in my cart',
+  452 | 	async ({ page }, duration: string) => {
+  453 | 		const durationElement = page
+  454 | 			.locator('.appt-duration')
+  455 | 			.getByText(duration, { exact: true });
+  456 | 		await expect(durationElement).toHaveText(duration);
+  457 | 	},
+  458 | );
+  459 |
+  460 | Then(
+  461 | 	'I should see the employee {string} for all items in a package in my cart',
+  462 | 	async ({ page }, employee: string) => {
+  463 | 		const elements = await page
+  464 | 			.locator('.childService')
+  465 | 			.getByText(employee, { exact: true })
+  466 | 			.all();
+  467 |
+  468 | 		for (const element of elements) {
+  469 | 			await expect(element).toHaveText(employee);
+  470 | 		}
+  471 | 	},
+  472 | );
+  473 |
+  474 | Then(
+  475 | 	'I should see the customer {string} in the waiting list',
+  476 | 	async ({ page }, customer: string) => {
+  477 | 		const customerElement = page
+  478 | 			.locator('div[data-field="customerInfo"]')
+  479 | 			.getByText(customer, { exact: true });
+  480 | 		await expect(customerElement).toHaveText(customer);
+  481 | 	},
+  482 | );
+  483 |
+  484 | Then(
+  485 | 	'I should see the service {string} in the waiting list',
+  486 | 	async ({ page }, service: string) => {
+  487 | 		const serviceElement = page
+  488 | 			.locator('div[data-field="categoryNames"]')
+  489 | 			.getByText(service, { exact: true });
+  490 | 		await expect(serviceElement).toHaveText(service);
+  491 | 	},
+  492 | );
+  493 |
+  494 | Then(
+  495 | 	'I should see the technician {string} in the waiting list',
+  496 | 	async ({ page }, technician: string) => {
+  497 | 		const technicianElement = page
+  498 | 			.locator('div[data-field="technicianNickNames"]')
+  499 | 			.getByText(technician, { exact: true });
+  500 | 		await expect(technicianElement).toHaveText(technician);
+  501 | 	},
+  502 | );
+  503 |
+  504 | When('I enter the amount {string}', async ({ page }, amount: string) => {
+  505 | 	for (const digit of amount) {
+  506 | 		await page
+  507 | 			.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  508 | 			.click();
+  509 | 	}
+  510 | });
+  511 |
+  512 | Then(
+  513 | 	'I should see the employee {string} in the ticket',
+  514 | 	async ({ page }, employee: string) => {
+  515 | 		const headerContent = page.locator('.xHeader__content');
+  516 |
+  517 | 		await expect(headerContent).toContainText(employee);
+  518 | 	},
+  519 | );
+  520 |
+  521 | When('I select the title {string}', async ({ page }, name: string) => {
+  522 | 	const nameElement = page.locator('.xPayment__card--input').getByText(name);
+  523 | 	await expect(nameElement).toContainText(name);
+  524 | 	await nameElement.click();
+  525 | });
+  526 |
+  527 | Then(
+  528 | 	'I should see the payment history {string} visible',
+  529 | 	async ({ page }, paymentHistory: string) => {
+  530 | 		const paymentHistoryElement = page
+  531 | 			.locator('.xPayment__history--nameType')
+  532 | 			.getByText(paymentHistory);
+  533 | 		await expect(paymentHistoryElement).toHaveText(paymentHistory);
+  534 | 	},
+  535 | );
+  536 |
+  537 | Then(
+  538 | 	'I should see the payment price {string}',
+  539 | 	async ({ page }, price: string) => {
+  540 | 		const priceElement = page
+  541 | 			.locator('.xPayment__history--price')
+  542 | 			.getByText(price);
+  543 | 		await expect(priceElement).toHaveText(price);
+  544 | 	},
+  545 | );
+  546 |
+```

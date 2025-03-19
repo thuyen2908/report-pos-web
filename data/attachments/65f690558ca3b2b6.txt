@@ -1,0 +1,235 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Refund >> Create a refund ticket and pay with Cash
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/refund.feature.spec.js:6:3
+
+# Error details
+
+```
+Error: Timed out 20000ms waiting for expect(locator).toBeVisible()
+
+Locator: locator('.MuiDialogTitle-root')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 20000ms
+  - waiting for locator('.MuiDialogTitle-root')
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:112:36)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/refund.feature.spec.js:11:5
+```
+
+# Test source
+
+```ts
+   12 | 		const pageUrl = constants.PageUrl[pageId];
+   13 |
+   14 | 		await page.waitForURL(pageUrl);
+   15 | 		await expect(page).toHaveURL(pageUrl);
+   16 | 	},
+   17 | );
+   18 |
+   19 | Then(
+   20 | 	'I should see the employee {string} in the employee list',
+   21 | 	async ({ page }, employeeName: string) => {
+   22 | 		const employeeList = page.locator('div.xQueueList');
+   23 |
+   24 | 		await expect(
+   25 | 			employeeList.getByText(employeeName, { exact: true }),
+   26 | 		).toBeVisible();
+   27 | 	},
+   28 | );
+   29 |
+   30 | Then(
+   31 | 	'I should see the {string} screen',
+   32 | 	async ({ page }, screenName: string) => {
+   33 | 		const screenTitle = page
+   34 | 			.locator('p.MuiTypography-body1.pageName')
+   35 | 			.getByText(screenName, { exact: true });
+   36 |
+   37 | 		await expect(screenTitle).toBeVisible();
+   38 | 	},
+   39 | );
+   40 |
+   41 | Then(
+   42 | 	'I should see the {string} service',
+   43 | 	async ({ page }, serviceName: string) => {
+   44 | 		const service = page
+   45 | 			.locator('li.ItemService')
+   46 | 			.getByText(serviceName, { exact: true });
+   47 | 		await expect(service).toBeVisible();
+   48 | 	},
+   49 | );
+   50 |
+   51 | When(
+   52 | 	'I add the {string} service to my cart',
+   53 | 	async ({ page }, serviceName: string) => {
+   54 | 		const service = page
+   55 | 			.locator('li.ItemService')
+   56 | 			.getByText(serviceName, { exact: true });
+   57 |
+   58 | 		await service.click();
+   59 | 	},
+   60 | );
+   61 |
+   62 | Then(
+   63 | 	'I should see my cart showing {int} item added',
+   64 | 	async ({ page }, itemCount: number) => {
+   65 | 		const itemCountElement = page.locator(
+   66 | 			'svg[data-testid="LocalPrintshopIcon"] + span',
+   67 | 		);
+   68 |
+   69 | 		await expect(itemCountElement).toBeVisible();
+   70 |
+   71 | 		expect(itemCountElement).toHaveText(itemCount.toString());
+   72 | 	},
+   73 | );
+   74 |
+   75 | When('I click on the {string} button', async ({ page }, buttonText: string) => {
+   76 | 	const button = page.getByRole('button', { name: buttonText });
+   77 | 	await expect(button).toBeVisible();
+   78 |
+   79 | 	await button.click();
+   80 | });
+   81 |
+   82 | Then(
+   83 | 	'I should see the text {string} visible',
+   84 | 	async ({ page }, text: string) => {
+   85 | 		await expect(page.getByText(text, { exact: true })).toBeVisible();
+   86 | 	},
+   87 | );
+   88 |
+   89 | Then(
+   90 | 	'I should see the button with id {string} visible',
+   91 | 	async ({ page }, buttonId: string) => {
+   92 | 		await expect(page.locator(`button#${buttonId}`)).toBeVisible();
+   93 | 	},
+   94 | );
+   95 |
+   96 | When(
+   97 | 	'I click on the element with id {string}',
+   98 | 	async ({ page }, elementId: string) => {
+   99 | 		const element = page.locator(`#${elementId}`);
+  100 |
+  101 | 		await expect(element).toBeVisible();
+  102 |
+  103 | 		await element.click();
+  104 | 	},
+  105 | );
+  106 |
+  107 | Then(
+  108 | 	'I should see a popup dialog with title {string}',
+  109 | 	async ({ page }, dialogTitle: string) => {
+  110 | 		const dialogTitleElement = page.locator('.MuiDialogTitle-root');
+  111 |
+> 112 | 		await expect(dialogTitleElement).toBeVisible();
+      | 		                                 ^ Error: Timed out 20000ms waiting for expect(locator).toBeVisible()
+  113 | 		await expect(dialogTitleElement).toHaveText(dialogTitle);
+  114 | 	},
+  115 | );
+  116 |
+  117 | Then(
+  118 | 	'I should see a popup dialog with content {string}',
+  119 | 	async ({ page }, content: string) => {
+  120 | 		const dialogContentElement = page.locator('.MuiDialogContent-root');
+  121 |
+  122 | 		await expect(dialogContentElement).toBeVisible();
+  123 | 		await expect(dialogContentElement).toHaveText(content);
+  124 | 	},
+  125 | );
+  126 |
+  127 | When('I wait for {int} seconds', async ({ page }, seconds: number) => {
+  128 | 	await page.waitForTimeout(seconds * 1000);
+  129 | });
+  130 |
+  131 | Then('The test should pause here for debugging', async ({ page }) => {
+  132 | 	await page.pause();
+  133 | });
+  134 |
+  135 | When(
+  136 | 	'I click on the {string} button in the popup dialog',
+  137 | 	async ({ page }, buttonText: string) => {
+  138 | 		const dialog = page.locator('div[role="dialog"]');
+  139 |
+  140 | 		const button = dialog.getByRole('button', {
+  141 | 			name: buttonText,
+  142 | 			exact: true,
+  143 | 		});
+  144 | 		await expect(button).toBeVisible();
+  145 |
+  146 | 		await button.click();
+  147 | 	},
+  148 | );
+  149 |
+  150 | Then('I should see the tax amount non-zero', async ({ page }) => {
+  151 | 	const chargeTax = page.locator('.xCharge__taxes');
+  152 |
+  153 | 	await expect(chargeTax).not.toContainText('0.00');
+  154 | 	await expect(chargeTax).not.toHaveText('$0.00');
+  155 | });
+  156 |
+  157 | When(
+  158 | 	'I select the {string} payment type',
+  159 | 	async ({ page }, paymentType: string) => {
+  160 | 		const paymentTypeButton = page
+  161 | 			.locator('.xPayment__type')
+  162 | 			.getByText(paymentType);
+  163 | 		await expect(paymentTypeButton).toBeVisible();
+  164 |
+  165 | 		await paymentTypeButton.click();
+  166 | 	},
+  167 | );
+  168 |
+  169 | When('I click on the item {string} button', async ({ page }, item: string) => {
+  170 | 	const itemButton = page.locator('.xMultiple').getByText(item);
+  171 | 	await expect(itemButton).toBeVisible();
+  172 |
+  173 | 	await itemButton.click();
+  174 | });
+  175 |
+  176 | When(
+  177 | 	'I select the {string} service in the dialog',
+  178 | 	async ({ page }, service: string) => {
+  179 | 		const serviceButton = page
+  180 | 			.locator('div.xMultiple__wrap')
+  181 | 			.locator('li.xTicketItems')
+  182 | 			.getByText(service, { exact: true });
+  183 | 		await expect(serviceButton).toBeVisible();
+  184 |
+  185 | 		await serviceButton.click();
+  186 | 	},
+  187 | );
+  188 |
+  189 | When(
+  190 | 	'I select the {string} employee in the dialog',
+  191 | 	async ({ page }, employee: string) => {
+  192 | 		const employeeButton = page
+  193 | 			.locator('.xEmployeeItem')
+  194 | 			.getByText(employee, { exact: true });
+  195 | 		await expect(employeeButton).toBeVisible();
+  196 |
+  197 | 		await employeeButton.click();
+  198 | 	},
+  199 | );
+  200 |
+  201 | When(
+  202 | 	'I click on the {string} button in the dialog',
+  203 | 	async ({ page }, button: string) => {
+  204 | 		const buttonElement = page
+  205 | 			.locator('.xMultiple__wrap')
+  206 | 			.getByRole('button', { name: button });
+  207 |
+  208 | 		await expect(buttonElement).toBeVisible();
+  209 |
+  210 | 		await buttonElement.click();
+  211 | 	},
+  212 | );
+```
