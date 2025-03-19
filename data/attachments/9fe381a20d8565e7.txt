@@ -1,0 +1,329 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Quick sale tickets >> Create a quick sale ticket
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/quick-sale.feature.spec.js:6:3
+
+# Error details
+
+```
+Error: expect(locator).toHaveText(expected)
+
+Locator: locator('.TicketSearch__customer .mainTitle').getByText('Bill')
+Expected string: "Bill"
+Received: <element(s) not found>
+Call log:
+  - expect.toHaveText with timeout 20000ms
+  - waiting for locator('.TicketSearch__customer .mainTitle').getByText('Bill')
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:376:33)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/quick-sale.feature.spec.js:15:5
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - img
+  - paragraph: Ticket View
+  - paragraph: "Christ (Nails) - #189"
+  - button "VOID TICKET"
+  - text: Mar 19
+  - list:
+    - listitem: BLANC NAILS
+    - listitem:
+      - paragraph: ", , | (707) 707-1122"
+      - text: "Thuyen Nguyen | Station: 1"
+- list
+- main:
+  - button "search"
+  - tablist:
+    - tab "MANI & PEDI" [selected]
+    - tab "FULL SET & FILL IN"
+    - tab "GIFT CARD"
+  - tabpanel:
+    - list:
+      - listitem: M Manicure $6.00
+      - listitem: P Pedicure $8.00
+      - listitem: C Cut cuticle $10.00
+      - listitem: G Gel removal $40.00
+      - listitem: A Acrylic removal $30.00
+      - listitem: G Gel X $27.00
+      - listitem: R Request price $0.00
+      - listitem: C Combo 1 $45.00
+      - listitem: C Combo 2 $60.00
+      - listitem: S Supper combo $0.00
+  - button "0" [disabled]
+  - text: Search Customer
+  - combobox "Search Customer" [expanded]
+  - progressbar:
+    - img
+  - listbox "Search Customer":
+    - option "Bill (888) 888-8888" [selected]:
+      - text: Bill
+      - paragraph: (888) 888-8888
+    - option "Guest (278) 624-8134":
+      - text: Guest
+      - paragraph: (278) 624-8134
+    - option "Guest (763) 801-3036":
+      - text: Guest
+      - paragraph: (763) 801-3036
+    - option "Guest (287) 880-1412":
+      - text: Guest
+      - paragraph: (287) 880-1412
+    - option "Guest (468) 858-5914":
+      - text: Guest
+      - paragraph: (468) 858-5914
+    - option "Guest (445) 773-4458":
+      - text: Guest
+      - paragraph: (445) 773-4458
+    - option "Guest (407) 722-0493":
+      - text: Guest
+      - paragraph: (407) 722-0493
+    - option "Guest (536) 527-1579":
+      - text: Guest
+      - paragraph: (536) 527-1579
+    - option "Tin (999) 999-9999":
+      - text: Tin
+      - paragraph: (999) 999-9999
+    - option "Guest (655) 484-1562":
+      - text: Guest
+      - paragraph: (655) 484-1562
+    - option "Guest (277) 847-1127":
+      - text: Guest
+      - paragraph: (277) 847-1127
+    - option "Guest (613) 690-1963":
+      - text: Guest
+      - paragraph: (613) 690-1963
+  - button "Click Here To Add Customers"
+  - button
+  - list
+  - list:
+    - listitem: TECHNICIAN
+    - listitem: DISCOUNT ITEM
+    - listitem: COMBINE TICKET
+    - listitem: VOID ITEM
+  - list:
+    - listitem: Tip $0.00
+    - listitem: Discount $0.00
+    - listitem: Tax $0.00
+    - listitem: Sub Total $0.00
+    - listitem: TOTAL $0.00
+  - button "CANCEL"
+  - button "PAY" [disabled]
+- alert: Home - xPOS Salon
+```
+
+# Test source
+
+```ts
+  276 | });
+  277 |
+  278 | Then('I should see {string} tip in my cart', async ({ page }, tip: string) => {
+  279 | 	const tipElement = page.locator('ul.xCharge').getByText(tip);
+  280 |
+  281 | 	await expect(tipElement).toContainText(tip);
+  282 | });
+  283 |
+  284 | When(
+  285 | 	'I fill the last 4 digits of card number {string}',
+  286 | 	async ({ page }, number: string) => {
+  287 | 		for (const digit of number) {
+  288 | 			await page
+  289 | 				.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  290 | 				.click();
+  291 | 		}
+  292 |
+  293 | 		await expect(page.locator('.xPayment__card--number-digits')).toContainText(
+  294 | 			number,
+  295 | 		);
+  296 | 	},
+  297 | );
+  298 |
+  299 | When('I click on the Select customer', async ({ page }) => {
+  300 | 	page.locator('.TicketSearch__customer').click();
+  301 | });
+  302 |
+  303 | Then(
+  304 | 	'I should see the loyalty program {string} visible',
+  305 | 	async ({ page }, program: string) => {
+  306 | 		const loyaltyProgram = page.locator(
+  307 | 			'#mui-component-select-loyaltyProgramId',
+  308 | 		);
+  309 | 		await loyaltyProgram.waitFor({ state: 'attached' });
+  310 | 		await expect(loyaltyProgram).toHaveText(program);
+  311 | 	},
+  312 | );
+  313 |
+  314 | Then(
+  315 | 	'I should see the employee {string} visible in the split tip screen',
+  316 | 	async ({ page }, employee: string) => {
+  317 | 		const employeeElement = page
+  318 | 			.locator('.xSplitTip__employee')
+  319 | 			.getByText(employee, { exact: true });
+  320 |
+  321 | 		await expect(employeeElement).toHaveText(employee);
+  322 | 	},
+  323 | );
+  324 |
+  325 | Then(
+  326 | 	'I should see the text {string} visible in the split tip screen',
+  327 | 	async ({ page }, text: string) => {
+  328 | 		const textElement = page
+  329 | 			.locator('.xPayment__numpad.xSplitTip')
+  330 | 			.getByText(text, { exact: true });
+  331 |
+  332 | 		await expect(textElement).toContainText(text);
+  333 | 	},
+  334 | );
+  335 |
+  336 | Then(
+  337 | 	'I should see the total tip {string} visible in the split tip screen',
+  338 | 	async ({ page }, totalTip: string) => {
+  339 | 		const totalTipElement = page
+  340 | 			.locator('.xPayment__numpad.xSplitTip')
+  341 | 			.locator('.xSplitTip__numpad--tip')
+  342 | 			.getByText(totalTip);
+  343 |
+  344 | 		await expect(totalTipElement).toContainText(totalTip);
+  345 | 	},
+  346 | );
+  347 |
+  348 | When(
+  349 | 	'I fill the new customer name {string}',
+  350 | 	async ({ page }, name: string) => {
+  351 | 		const firstName = page.locator('input[name="firstName"]');
+  352 | 		await firstName.fill(name);
+  353 |
+  354 | 		await expect(firstName).toHaveValue(name);
+  355 | 	},
+  356 | );
+  357 |
+  358 | When('I fill the new customer phone', async ({ page }) => {
+  359 | 	const cellPhone = page.locator('input[name="cellPhone"]');
+  360 | 	const rawPhone = Math.floor(
+  361 | 		1000000000 + Math.random() * 9000000000,
+  362 | 	).toString();
+  363 | 	const formattedPhone = `(${rawPhone.substring(0, 3)}) ${rawPhone.substring(3, 6)}-${rawPhone.substring(6)}`;
+  364 |
+  365 | 	await cellPhone.fill(rawPhone);
+  366 |
+  367 | 	await expect(cellPhone).toHaveValue(formattedPhone);
+  368 | });
+  369 |
+  370 | Then(
+  371 | 	'I should see a new customer {string} on ticket',
+  372 | 	async ({ page }, name: string) => {
+  373 | 		const customerElement = page
+  374 | 			.locator('.TicketSearch__customer .mainTitle')
+  375 | 			.getByText(name);
+> 376 | 		await expect(customerElement).toHaveText(name);
+      | 		                              ^ Error: expect(locator).toHaveText(expected)
+  377 | 	},
+  378 | );
+  379 |
+  380 | When('I add the {string} customer', async ({ page }, customer: string) => {
+  381 | 	page.locator('.TicketSearch__customer ').click();
+  382 | 	page.locator('.TicketSearch__customer input').fill(customer);
+  383 | 	const selectCustomer = page
+  384 | 		.locator('.MuiListItemText-root.name')
+  385 | 		.getByText(customer, { exact: true });
+  386 | 	await selectCustomer.click();
+  387 | });
+  388 |
+  389 | When('I redeem my loyalty points', async ({ page }) => {
+  390 | 	await page.locator('.xLoyalty__item').click();
+  391 | 	await page.locator('.xLoyalty__btn').getByText('OK').click();
+  392 | });
+  393 |
+  394 | When(
+  395 | 	'I click on the {string} button in the split tip screen',
+  396 | 	async ({ page }, button: string) => {
+  397 | 		const buttonElement = page
+  398 | 			.locator('.xPayment__numpad.xSplitTip')
+  399 | 			.getByRole('button', { name: button });
+  400 |
+  401 | 		await expect(buttonElement).toBeVisible();
+  402 |
+  403 | 		await buttonElement.click();
+  404 | 	},
+  405 | );
+  406 |
+  407 | Then('I should see all split tips non-zero', async ({ page }) => {
+  408 | 	const tipValues = page
+  409 | 		.locator('.xSplitTip__employee')
+  410 | 		.locator('.tip.row')
+  411 | 		.locator('span.value');
+  412 | 	const allTips = await tipValues.allTextContents();
+  413 | 	expect(allTips).not.toContain('0.00');
+  414 | 	expect(allTips.every((tip) => !tip.includes('0.00'))).toBeTruthy();
+  415 | });
+  416 |
+  417 | When(
+  418 | 	'I click on the {string} label in the header',
+  419 | 	async ({ page }, label: string) => {
+  420 | 		const labelElement = page
+  421 | 			.locator('.xHeader__content')
+  422 | 			.getByText(label, { exact: true });
+  423 |
+  424 | 		await expect(labelElement).toBeVisible();
+  425 |
+  426 | 		await labelElement.click();
+  427 | 	},
+  428 | );
+  429 |
+  430 | When(
+  431 | 	'I click on the {string} button in the waiting page',
+  432 | 	async ({ page }, buttonText: string) => {
+  433 | 		const buttonElement = page
+  434 | 			.locator('.xWaitingList__btn')
+  435 | 			.getByRole('button', { name: buttonText });
+  436 | 		await buttonElement.click();
+  437 | 	},
+  438 | );
+  439 |
+  440 | Then(
+  441 | 	'I should see the service {string} in my cart',
+  442 | 	async ({ page }, service: string) => {
+  443 | 		const serviceElement = page
+  444 | 			.locator('.xTicketItems__content')
+  445 | 			.getByText(service, { exact: true });
+  446 | 		await expect(serviceElement).toHaveText(service);
+  447 | 	},
+  448 | );
+  449 |
+  450 | Then(
+  451 | 	'I should see the duration {string} in my cart',
+  452 | 	async ({ page }, duration: string) => {
+  453 | 		const durationElement = page
+  454 | 			.locator('.appt-duration')
+  455 | 			.getByText(duration, { exact: true });
+  456 | 		await expect(durationElement).toHaveText(duration);
+  457 | 	},
+  458 | );
+  459 |
+  460 | Then(
+  461 | 	'I should see the employee {string} for all items in a package in my cart',
+  462 | 	async ({ page }, employee: string) => {
+  463 | 		const elements = await page
+  464 | 			.locator('.childService')
+  465 | 			.getByText(employee, { exact: true })
+  466 | 			.all();
+  467 |
+  468 | 		for (const element of elements) {
+  469 | 			await expect(element).toHaveText(employee);
+  470 | 		}
+  471 | 	},
+  472 | );
+  473 |
+  474 | Then(
+  475 | 	'I should see the customer {string} in the waiting list',
+  476 | 	async ({ page }, customer: string) => {
+```
