@@ -1,0 +1,177 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create tickets >> Sell a Gift Card add-on amount
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:319:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 90000ms exceeded.
+Call log:
+  - waiting for locator('div.xQueueList').getByText('Tom', { exact: true })
+
+    at HomePage.selectEmployee (/home/circleci/project/e2e/pos-web/src/steps/home.page.ts:55:18)
+    at Object.fn (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/steps/decorators/steps.ts:64:17)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:321:5
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - img
+  - list:
+    - listitem: Timesheet
+    - listitem: Check In
+    - listitem: Tickets
+    - listitem: Turn
+    - listitem: Appointment
+    - listitem: Quick Sale
+    - listitem: Balance
+  - text: Mar 20
+  - list:
+    - listitem: BLANC NAILS
+    - listitem:
+      - paragraph: ", , | (707) 707-1122"
+      - text: "Thuyen Nguyen | Station: 1"
+- list
+- main:
+  - text: CHECK-INS No Customer
+  - tablist:
+    - tab "NAILS" [selected]
+    - tab "HAIR"
+  - tabpanel:
+    - list:
+      - listitem:
+        - img "item service Emily"
+        - text: "#1 Emily 07:00 AM Turn: 0.0"
+      - listitem: "E #2 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "H #3 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "B #4 Brian 07:00 AM Turn: 0.0"
+      - listitem: "L #5 Laura 07:00 AM Turn: 0.0"
+      - listitem: "S #6 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "M #7 Maya 07:00 AM Turn: 0.0"
+      - listitem: "R #8 Ruby 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Owner"
+        - text: "#9 Owner 06:47 AM Turn: 0.0"
+      - listitem: "S #10 Sam 07:00 AM Turn: 0.0"
+      - listitem: "D #11 Dylan 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#12 Emma 07:00 AM Turn: 0.0"
+      - listitem: "J #13 Jack 07:00 AM Turn: 0.0"
+      - listitem: "B #14 Bella 07:00 AM Turn: 0.0"
+      - listitem: "C #15 Christ 07:00 AM Turn: 1.0"
+      - listitem: "T #16 Tim 07:00 AM Turn: 1.0"
+      - listitem: "K #17 Kelley 07:00 AM Turn: 1.0"
+      - listitem: "T #18 Tina 07:00 AM Turn: 1.0"
+      - listitem: "S #19 Sophia 07:00 AM Turn: 2.0"
+      - listitem: "L #20 Lisa 07:00 AM Turn: 3.0"
+      - listitem: "A #21 Anna 07:00 AM Turn: 4.0"
+      - listitem: "H #22 Harry 07:00 AM Turn: 6.0"
+      - listitem: "K #23 Kim 07:00 AM Turn: 10.0"
+      - listitem: "M #24 Mia 07:00 AM Turn: 10.0"
+  - button "search"
+  - list:
+    - listitem:
+      - button "Ready"
+    - listitem:
+      - button "In Service"
+    - listitem:
+      - button "Paid"
+    - listitem:
+      - button "All" [disabled]
+  - list:
+    - listitem: "T Paid #190 Tina 08:06 AM - 08:06 AM 0' Waiting $14.84"
+    - listitem: "M Paid #192 Mia 08:06 AM - 08:06 AM 0' Waiting $47.70"
+    - listitem: "D Paid #195 Dylan Guest 08:06 AM - 08:06 AM 0' Waiting $6.36"
+    - listitem: "T #197 Tom 08:06 AM - Now 0' Waiting $0.00"
+    - listitem: "S #198 Sandy 08:06 AM - Now 0' Waiting $0.00"
+- alert
+```
+
+# Test source
+
+```ts
+   1 | import { expect } from '@playwright/test';
+   2 | import { Fixture, When } from 'playwright-bdd/decorators';
+   3 |
+   4 | import { constants } from '#const';
+   5 | import { PageId, type TestOptions } from '#types';
+   6 |
+   7 | import { TicketViewPage } from './ticket-view.page';
+   8 | import { xPage } from './x.page';
+   9 |
+  10 | export
+  11 | @Fixture('homePage')
+  12 | class HomePage extends xPage {
+  13 | 	override open() {
+  14 | 		return this.page.goto(constants.PageUrl[PageId.HOME]);
+  15 | 	}
+  16 |
+  17 | 	/**
+  18 | 	 * A list of this page specific locators
+  19 | 	 */
+  20 | 	public override get locators() {
+  21 | 		const { page } = this;
+  22 |
+  23 | 		const employeeList = page.locator('div.xQueueList');
+  24 | 		const ticketList = page.locator('div.ListTicket');
+  25 |
+  26 | 		return {
+  27 | 			...super.locators,
+  28 |
+  29 | 			employeeList,
+  30 | 			employee: (employeeName: string) =>
+  31 | 				employeeList.getByText(employeeName, { exact: true }),
+  32 |
+  33 | 			ticketList,
+  34 | 			ticketById: (ticketId: string) =>
+  35 | 				ticketList.getByText(`#${ticketId}`, { exact: true }),
+  36 | 		};
+  37 | 	}
+  38 |
+  39 | 	/**
+  40 | 	 * Select an on-going ticket (by its number) on the home screen
+  41 | 	 */
+  42 | 	public selectTicketById(id: string, { timeout }: TestOptions = {}) {
+  43 | 		const { locators } = this;
+  44 |
+  45 | 		return locators.ticketById(id).click({ timeout });
+  46 | 	}
+  47 |
+  48 | 	/* -------------------------------- BDD steps ------------------------------- */
+  49 |
+  50 | 	@When('I select the {string} employee')
+  51 | 	public async selectEmployee(employeeName: string) {
+  52 | 		const { locators } = this;
+  53 |
+  54 | 		const employee = locators.employee(employeeName);
+> 55 | 		await employee.click();
+     | 		               ^ Error: locator.click: Test timeout of 90000ms exceeded.
+  56 |
+  57 | 		await this.waitForResponseOfAPI('Save lock number');
+  58 | 		await expect(locators.pageName).toHaveText(TicketViewPage.TITLE);
+  59 |
+  60 | 		const ticketViewPage = new TicketViewPage(
+  61 | 			this.testConfig,
+  62 | 			this.testStorage,
+  63 | 			this.page,
+  64 | 		);
+  65 | 		const ticketNumber = await ticketViewPage.getTicketNumber();
+  66 |
+  67 | 		// keep track ongoing tickets, used for cleanup in case of test failure
+  68 | 		ticketNumber && this.testStorage.ongoingTickets.add(ticketNumber);
+  69 | 	}
+  70 | }
+  71 |
+```
