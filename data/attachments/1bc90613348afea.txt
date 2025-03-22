@@ -1,3 +1,0 @@
-On-going tickets: [ '131' ]
-Cleaning up ticket #131...
-Ticket #131 cleaned up successfully
