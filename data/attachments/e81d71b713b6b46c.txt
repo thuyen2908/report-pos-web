@@ -1,0 +1,230 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create tickets >> Remove payment history and choose another one
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:527:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 90000ms exceeded.
+Call log:
+  - waiting for getByText('Clock In', { exact: true })
+
+    at HomePage.clockInTimesheet (/home/circleci/project/e2e/pos-web/src/steps/x.page.ts:161:26)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:22
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:529:5
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - img
+  - list:
+    - listitem: Timesheet
+    - listitem: Check In
+    - listitem: Tickets
+    - listitem: Turn
+    - listitem: Appointment
+    - listitem: Quick Sale
+    - listitem: Balance
+  - text: Mar 23
+  - list:
+    - listitem: BLANC NAILS
+    - listitem:
+      - paragraph: ", , | (707) 707-1122"
+      - text: "Thuyen Nguyen | Station: 1"
+- list
+- main:
+  - text: CHECK-INS No Customer
+  - tablist:
+    - tab "NAILS" [selected]
+    - tab "HAIR"
+  - tabpanel:
+    - list:
+      - listitem: "T #1 Tom 07:00 AM Turn: 0.0"
+      - listitem: "C #2 Christ 07:00 AM Turn: 0.0"
+      - listitem: "E #3 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "S #4 Sam 07:00 AM Turn: 0.0"
+      - listitem: "S #5 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "S #6 Sandy 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#7 Emily 07:00 AM Turn: 0.0"
+      - listitem: "M #8 Maya 07:00 AM Turn: 0.0"
+      - listitem: "B #9 Bella 07:00 AM Turn: 0.0"
+      - listitem: "R #10 Ruby 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Owner"
+        - text: "#11 Owner 06:47 AM Turn: 0.0"
+      - listitem: "H #12 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "D #13 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "K #14 Kelley 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#15 Emma 07:00 AM Turn: 0.0"
+      - listitem: "J #16 Jack 07:00 AM Turn: 0.0"
+      - listitem: "L #17 Laura 07:00 AM Turn: 0.0"
+      - listitem: "T #18 Tim 07:00 AM Turn: 0.0"
+      - listitem: "B #19 Brian 07:00 AM Turn: 0.0"
+      - listitem: "T #20 Tina 07:00 AM Turn: 0.0"
+      - listitem: "H #21 Harry 07:00 AM Turn: 1.0"
+      - listitem: "S #22 Sophia 07:00 AM Turn: 1.0"
+      - listitem: "L #23 Lisa 07:00 AM Turn: 1.0"
+      - listitem: "K #24 Kim 07:00 AM Turn: 2.0"
+      - listitem: "A #25 Anna 07:00 AM Turn: 2.0"
+  - button "search"
+  - list:
+    - listitem:
+      - button "Ready"
+    - listitem:
+      - button "In Service"
+    - listitem:
+      - button "Paid"
+    - listitem:
+      - button "All" [disabled]
+  - text: No Ticket Found.
+- alert
+```
+
+# Test source
+
+```ts
+   61 | 					}),
+   62 | 				});
+   63 |
+   64 | 			return page.locator('div[role="dialog"]', {
+   65 | 				has: page.locator(`#${id}`),
+   66 | 			});
+   67 | 		};
+   68 | 		const draggableDialog = (dialogTitle: string) =>
+   69 | 			dialog(dialogTitle, 'draggable-dialog-title');
+   70 |
+   71 | 		const pageHeader = page.locator('div.xHeader__top');
+   72 |
+   73 | 		const companyProfile = pageHeader.locator('div.xCompanyProfile');
+   74 | 		const merchantInfo = companyProfile.locator('ul.xHeader__info');
+   75 |
+   76 | 		return {
+   77 | 			dialog,
+   78 | 			draggableDialog,
+   79 | 			dialogContent: (dialogLocator: Locator) =>
+   80 | 				dialogLocator.locator('div.MuiDialogContent-root'),
+   81 | 			dialogCloseButton: (dialogLocator: Locator, buttonTitle = 'Close') =>
+   82 | 				dialogLocator.locator(`button[title="${buttonTitle}"]`),
+   83 |
+   84 | 			toast: page.locator('div.MuiAlert-message'),
+   85 |
+   86 | 			pageHeader,
+   87 | 			pageName: pageHeader.locator('p.pageName'),
+   88 | 			pageDetail: pageHeader.locator('p.pageDetail'),
+   89 |
+   90 | 			companyProfile,
+   91 | 			merchantInfo,
+   92 | 			merchantName: merchantInfo.locator(
+   93 | 				'li.merchantInfo__dbaName > span.label',
+   94 | 			),
+   95 | 			merchantContact: merchantInfo.locator('li.merchantInfo__address'),
+   96 |
+   97 | 			timesheetButton: page.getByText('Timesheet', { exact: true }),
+   98 | 			clockInButton: page.getByText('Clock In', { exact: true }),
+   99 | 			clockOutButton: page.getByText('Clock Out', { exact: true }),
+  100 | 		};
+  101 | 	}
+  102 |
+  103 | 	/**
+  104 | 	 * Wait for a specific API call to be completed
+  105 | 	 */
+  106 | 	public waitForResponseOfAPI(api: keyof typeof constants.APIs) {
+  107 | 		return this.page.waitForResponse((response) => {
+  108 | 			const [method, url] = constants.APIs[api];
+  109 | 			const request = response.request();
+  110 |
+  111 | 			return request.url().includes(url) && request.method() === method;
+  112 | 		});
+  113 | 	}
+  114 |
+  115 | 	/**
+  116 | 	 * Enter a PIN using the on-screen numpad
+  117 | 	 */
+  118 | 	public async enterPIN(PIN: string, numpadLocator: Locator) {
+  119 | 		for (const pinDigit of PIN) {
+  120 | 			const pinDigitButton = numpadLocator.getByText(pinDigit, { exact: true });
+  121 | 			await pinDigitButton.click();
+  122 | 		}
+  123 | 	}
+  124 |
+  125 | 	/* -------------------------------- BDD steps ------------------------------- */
+  126 |
+  127 | 	@Given('I am on the {pageId} page')
+  128 | 	public async gotoPage(pageId: PageId) {
+  129 | 		await this.page.goto(constants.PageUrl[pageId]);
+  130 | 	}
+  131 |
+  132 | 	@When('I wait for the page fully loaded')
+  133 | 	public waitForNetworkIdle() {
+  134 | 		return this.page.waitForLoadState('networkidle');
+  135 | 	}
+  136 |
+  137 | 	@When(
+  138 | 		'I click on the {string} text inside the content section of the opening dialog',
+  139 | 	)
+  140 | 	public async clickOnTextElementInsideDialogContent(text: string) {
+  141 | 		const { locators } = this;
+  142 |
+  143 | 		const dialog = locators.dialog();
+  144 | 		const dialogContent = locators.dialogContent(dialog);
+  145 |
+  146 | 		await dialogContent.getByText(text, { exact: true }).click();
+  147 | 	}
+  148 |
+  149 | 	@When('I clock {timesheetAction} the timesheet with PIN {string}')
+  150 | 	public async clockInTimesheet(timesheetAction: TimesheetAction, PIN: string) {
+  151 | 		const { locators } = this;
+  152 |
+  153 | 		// click on the Timesheet button
+  154 | 		await locators.timesheetButton.click();
+  155 |
+  156 | 		// find and click on the Clock In / Out button
+  157 | 		const clockInOutButton =
+  158 | 			timesheetAction === 'in'
+  159 | 				? locators.clockInButton
+  160 | 				: locators.clockOutButton;
+> 161 | 		await clockInOutButton.click();
+      | 		                       ^ Error: locator.click: Test timeout of 90000ms exceeded.
+  162 |
+  163 | 		// expect the enter password dialog to be visible
+  164 | 		const enterPasswordDialog = locators.dialog('PASSWORD');
+  165 | 		await expect(enterPasswordDialog).toBeVisible();
+  166 |
+  167 | 		// enter the PIN
+  168 | 		await this.enterPIN(PIN, enterPasswordDialog);
+  169 |
+  170 | 		const successfullyClockedInToast = locators.toast.getByText(
+  171 | 			'clocked in successfully',
+  172 | 		); // in case of new session
+  173 | 		const alreadyClockedInToast = locators.toast.getByText('has clocked in'); // in case there's an existing session
+  174 |
+  175 | 		// expect a toast message indicating the result of the operation
+  176 | 		await expect(
+  177 | 			successfullyClockedInToast.or(alreadyClockedInToast),
+  178 | 		).toBeVisible();
+  179 |
+  180 | 		// if the dialog is still visible, close it
+  181 | 		if (await enterPasswordDialog.isVisible()) {
+  182 | 			await locators
+  183 | 				.dialogCloseButton(enterPasswordDialog, 'Close')
+  184 | 				.click()
+  185 | 				.catch();
+  186 | 		}
+  187 | 	}
+  188 | }
+  189 |
+```
