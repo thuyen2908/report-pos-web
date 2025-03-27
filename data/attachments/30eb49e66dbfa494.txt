@@ -1,0 +1,141 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create tickets >> Void a ticket with a service in Wait status
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:414:3
+
+# Error details
+
+```
+Error: Timed out 30000ms waiting for expect(locator).toBeVisible()
+
+Locator: locator('div.MuiAlert-message').getByText('Ticket 460 deleted successfully.')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 30000ms
+  - waiting for locator('div.MuiAlert-message').getByText('Ticket 460 deleted successfully.')
+
+    at TicketViewPage.voidTicket (/home/circleci/project/e2e/pos-web/src/steps/ticket-view.page.ts:95:6)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:22
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:422:5
+```
+
+# Test source
+
+```ts
+   1 | import { expect } from '@playwright/test';
+   2 | import { Fixture, When } from 'playwright-bdd/decorators';
+   3 |
+   4 | import { constants } from '#const';
+   5 | import { PageId } from '#types';
+   6 |
+   7 | import { xPage } from './x.page';
+   8 |
+   9 | export
+   10 | @Fixture('ticketViewPage')
+   11 | class TicketViewPage extends xPage {
+   12 | 	/**
+   13 | 	 * The page title
+   14 | 	 */
+   15 | 	public static get TITLE() {
+   16 | 		return 'Ticket View';
+   17 | 	}
+   18 |
+   19 | 	override open() {
+   20 | 		return this.page.goto(constants.PageUrl[PageId.TICKET_VIEW]);
+   21 | 	}
+   22 |
+   23 | 	/**
+   24 | 	 * A list of this page specific locators
+   25 | 	 */
+   26 | 	public override get locators() {
+   27 | 		const { page } = this;
+   28 |
+   29 | 		return {
+   30 | 			...super.locators,
+   31 |
+   32 | 			/**
+   33 | 			 * Locate the service list section, which is the middle column of the "Ticket View" page
+   34 | 			 */
+   35 | 			serviceList: page.locator('ul:has(> li.ItemService)'),
+   36 |
+   37 | 			/**
+   38 | 			 * Locate the "VOID TICKET" button on the header, which is on the left of the Calendar element
+   39 | 			 */
+   40 | 			voidButton: page.getByRole('button', { name: 'VOID TICKET' }),
+   41 | 			/**
+   42 | 			 * Locate a reason when voiding a ticket that has been changed status to "DONE"
+   43 | 			 */
+   44 | 			voidReasonDialog: super.locators.dialog('SELECT VOID REASON'),
+   45 | 		};
+   46 | 	}
+   47 |
+   48 | 	/**
+   49 | 	 * Get the current ticket number shown on the page header
+   50 | 	 */
+   51 | 	public async getTicketNumber() {
+   52 | 		const pageDetail = await this.locators.pageDetail.textContent();
+   53 |
+   54 | 		return pageDetail?.split('#')[1]?.trim();
+   55 | 	}
+   56 |
+   57 | 	/* -------------------------------- BDD steps ------------------------------- */
+   58 |
+   59 | 	/**
+   60 | 	 * Void the current ticket on screen
+   61 | 	 */
+   62 | 	@When('I void the current open ticket with no reason')
+   63 | 	public async voidTicket(reason = 'Mistake') {
+   64 | 		const { locators } = this;
+   65 |
+   66 | 		// store the ticket number for later assertion
+   67 | 		const ticketNumber = await this.getTicketNumber();
+   68 |
+   69 | 		// click the void button
+   70 | 		await locators.voidButton.click();
+   71 | 		const voidReasonDialog = locators.voidReasonDialog;
+   72 | 		const voidTicketConfirmDialog = locators.dialog('VOID TICKET');
+   73 |
+   74 | 		// wait for 1 of 2 dialog types to be visible
+   75 | 		await expect(voidReasonDialog.or(voidTicketConfirmDialog)).toBeVisible();
+   76 |
+   77 | 		if (await voidReasonDialog.isVisible()) {
+   78 | 			// in case the services associate with this ticket have changed status to DONE
+   79 | 			// select a reason for voiding the ticket
+   80 | 			await voidReasonDialog.getByText(reason).click();
+   81 |
+   82 | 			// waiting for the subsequent confirm dialog to be visible
+   83 | 			const confirmDialog = locators.draggableDialog('CONFIRM VOID');
+   84 | 			await expect(confirmDialog).toBeVisible();
+   85 |
+   86 | 			await confirmDialog.getByRole('button', { name: 'CONFIRM' }).click();
+   87 | 		} else {
+   88 | 			// in case there's no service status changed to DONE
+   89 | 			await voidTicketConfirmDialog.getByRole('button', { name: 'OK' }).click();
+   90 |
+   91 | 			await expect(
+   92 | 				locators.toast.getByText(
+   93 | 					`Ticket ${ticketNumber} deleted successfully.`,
+   94 | 				),
+>  95 | 			).toBeVisible();
+      | 			  ^ Error: Timed out 30000ms waiting for expect(locator).toBeVisible()
+   96 | 		}
+   97 | 	}
+   98 |
+   99 | 	/**
+  100 | 	 * Void the current ticket on screen with a specific reason
+  101 | 	 */
+  102 | 	@When('I void the current open ticket with reason {string}')
+  103 | 	public async voidTicketWithProvidedReason(reason: string) {
+  104 | 		return this.voidTicket(reason);
+  105 | 	}
+  106 | }
+  107 |
+```
