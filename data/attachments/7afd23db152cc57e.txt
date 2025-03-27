@@ -1,0 +1,165 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Reopen tickets >> Reopen ticket to change technician and split tip
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/reopen-ticket.feature.spec.js:86:3
+
+# Error details
+
+```
+Error: Timed out 30000ms waiting for expect(locator).toBeVisible()
+
+Locator: locator('div.MuiAlert-message').getByText('clocked in successfully').or(locator('div.MuiAlert-message').getByText('has clocked in'))
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 30000ms
+  - waiting for locator('div.MuiAlert-message').getByText('clocked in successfully').or(locator('div.MuiAlert-message').getByText('has clocked in'))
+
+    at HomePage.clockInTimesheet (/home/circleci/project/e2e/pos-web/src/steps/x.page.ts:291:5)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:22
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/reopen-ticket.feature.spec.js:88:5
+```
+
+# Page snapshot
+
+```yaml
+- dialog "PASSWORD close":
+  - heading "PASSWORD close" [level=2]:
+    - text: PASSWORD
+    - button "close"
+  - separator
+  - text: "* * * *"
+  - button "1"
+  - button "2"
+  - button "3"
+  - button "4"
+  - button "5"
+  - button "6"
+  - button "7"
+  - button "8"
+  - button "9"
+  - button
+  - button "0"
+  - button
+  - button "CONFIRM"
+```
+
+# Test source
+
+```ts
+  191 | 	/**
+  192 | 	 * Wait for the page fully loaded
+  193 | 	 */
+  194 | 	@When('I wait for the page fully loaded')
+  195 | 	public waitForNetworkIdle() {
+  196 | 		return this.page.waitForLoadState('networkidle');
+  197 | 	}
+  198 |
+  199 | 	/**
+  200 | 	 * Select an item in the Navigation Bar
+  201 | 	 *
+  202 | 	 * @param navPath - The path to the navigation item, could be a single item or a path to a nested item, separated by " > ".
+  203 | 	 *   For example: "Quick Sale", "Timesheet > Clock In", "Timesheet > Clock Out"
+  204 | 	 */
+  205 | 	@When('I navigate to {string} on the navigation bar')
+  206 | 	public async selectNavItem(navPath: string) {
+  207 | 		const { locators } = this;
+  208 |
+  209 | 		// wait for the menu bar ready
+  210 | 		await this.waitForNetworkIdle();
+  211 |
+  212 | 		const navItems = navPath.split(' > ');
+  213 | 		for (const navItem of navItems) {
+  214 | 			await locators.navItem(navItem).click();
+  215 | 		}
+  216 | 	}
+  217 |
+  218 | 	/**
+  219 | 	 * Click on an element inside the content section of the opening dialog
+  220 | 	 */
+  221 | 	@When(
+  222 | 		'I click on the {string} text inside the content section of the opening dialog',
+  223 | 	)
+  224 | 	public async clickOnContentElementInsideOpeningDialog(text: string) {
+  225 | 		const { locators } = this;
+  226 |
+  227 | 		const dialog = locators.dialog();
+  228 | 		const dialogContent = locators.dialogContent(dialog);
+  229 |
+  230 | 		await dialogContent.getByText(text, { exact: true }).click();
+  231 | 	}
+  232 |
+  233 | 	/**
+  234 | 	 * Click on Action Buttons of the opening dialog, ex: "CONFIRM", "CANCEL",...
+  235 | 	 */
+  236 | 	@When('I click on the action button {string} of the opening dialog')
+  237 | 	public async clickOnActionButtonOfOpeningDialog(buttonText: string) {
+  238 | 		const { locators } = this;
+  239 |
+  240 | 		const dialog = locators.dialog();
+  241 | 		const actionButton = locators.dialogActionButton(dialog, buttonText);
+  242 |
+  243 | 		await actionButton.click();
+  244 | 	}
+  245 |
+  246 | 	/**
+  247 | 	 * Close the opening dialog if it's visible
+  248 | 	 */
+  249 | 	@When('I close the opening dialog')
+  250 | 	public async closeOpeningDialog() {
+  251 | 		const { locators } = this;
+  252 |
+  253 | 		const dialog = locators.dialog();
+  254 | 		const closeButton = locators.dialogCloseButton(dialog);
+  255 |
+  256 | 		await closeButton.click();
+  257 | 	}
+  258 |
+  259 | 	/**
+  260 | 	 * Clock In/Out Timesheet with provided PIN
+  261 | 	 */
+  262 | 	@When('I clock {timesheetAction} the timesheet with PIN {string}')
+  263 | 	public async clockInTimesheet(timesheetAction: TimesheetAction, PIN: string) {
+  264 | 		const { locators } = this;
+  265 |
+  266 | 		// find and click on the Clock In / Out button
+  267 | 		const clockInOutNavigationPath =
+  268 | 			timesheetAction === 'in'
+  269 | 				? 'Timesheet > Clock In'
+  270 | 				: 'Timesheet > Clock Out';
+  271 | 		await this.selectNavItem(clockInOutNavigationPath);
+  272 |
+  273 | 		// expect the enter password dialog to be visible
+  274 | 		const enterPasswordDialog = locators.dialog('PASSWORD');
+  275 | 		await expect(enterPasswordDialog).toBeVisible();
+  276 |
+  277 | 		// enter the PIN
+  278 | 		await this.enterPIN(PIN, enterPasswordDialog);
+  279 |
+  280 | 		// click confirm action button
+  281 | 		await this.clickOnActionButtonOfOpeningDialog('CONFIRM');
+  282 |
+  283 | 		const successfullyClockedInToast = locators.toast.getByText(
+  284 | 			'clocked in successfully',
+  285 | 		); // in case of new session
+  286 | 		const alreadyClockedInToast = locators.toast.getByText('has clocked in'); // in case there's an existing session
+  287 |
+  288 | 		// expect a toast message indicating the result of the operation
+  289 | 		await expect(
+  290 | 			successfullyClockedInToast.or(alreadyClockedInToast),
+> 291 | 		).toBeVisible();
+      | 		  ^ Error: Timed out 30000ms waiting for expect(locator).toBeVisible()
+  292 |
+  293 | 		// if the dialog is still visible, close it
+  294 | 		if (await enterPasswordDialog.isVisible()) await this.closeOpeningDialog();
+  295 | 	}
+  296 | }
+  297 |
+```
