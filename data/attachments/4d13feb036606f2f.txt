@@ -1,0 +1,243 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Reopen tickets >> Reopen ticket to change technician and split tip
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/reopen-ticket.feature.spec.js:86:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 90000ms exceeded.
+Call log:
+  - waiting for locator('.xHeader__content').getByText('Tickets', { exact: true })
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:418:22)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:22
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/reopen-ticket.feature.spec.js:109:5
+```
+
+# Page snapshot
+
+```yaml
+- dialog "Void Ticket close":
+  - heading "Void Ticket close" [level=2]:
+    - text: Void Ticket
+    - button "close"
+  - separator
+  - alert: Are you sure you want to void this ticket?
+  - button "CANCEL"
+  - button "OK"
+```
+
+# Test source
+
+```ts
+  318 | 	'I should see the text {string} visible in the split tip screen',
+  319 | 	async ({ page }, text: string) => {
+  320 | 		const textElement = page
+  321 | 			.locator('.xPayment__numpad.xSplitTip')
+  322 | 			.getByText(text, { exact: true });
+  323 |
+  324 | 		await expect(textElement).toContainText(text);
+  325 | 	},
+  326 | );
+  327 |
+  328 | Then(
+  329 | 	'I should see the total tip {string} visible in the split tip screen',
+  330 | 	async ({ page }, totalTip: string) => {
+  331 | 		const totalTipElement = page
+  332 | 			.locator('.xPayment__numpad.xSplitTip')
+  333 | 			.locator('.xSplitTip__numpad--tip')
+  334 | 			.getByText(totalTip);
+  335 |
+  336 | 		await expect(totalTipElement).toContainText(totalTip);
+  337 | 	},
+  338 | );
+  339 |
+  340 | When(
+  341 | 	'I fill the new customer name {string}',
+  342 | 	async ({ page }, name: string) => {
+  343 | 		const firstName = page.locator('input[name="firstName"]');
+  344 | 		await firstName.fill(name);
+  345 |
+  346 | 		await expect(firstName).toHaveValue(name);
+  347 | 	},
+  348 | );
+  349 |
+  350 | When('I fill the new customer phone', async ({ page }) => {
+  351 | 	const cellPhone = page.locator('input[name="cellPhone"]');
+  352 | 	const rawPhone = Math.floor(
+  353 | 		1000000000 + Math.random() * 9000000000,
+  354 | 	).toString();
+  355 | 	const formattedPhone = `(${rawPhone.substring(0, 3)}) ${rawPhone.substring(3, 6)}-${rawPhone.substring(6)}`;
+  356 |
+  357 | 	await cellPhone.fill(rawPhone);
+  358 |
+  359 | 	await expect(cellPhone).toHaveValue(formattedPhone);
+  360 | });
+  361 |
+  362 | Then(
+  363 | 	'I should see a new customer {string} on ticket',
+  364 | 	async ({ page }, name: string) => {
+  365 | 		const customerElement = page
+  366 | 			.locator('.TicketSearch__customer .mainTitle')
+  367 | 			.getByText(name);
+  368 | 		await expect(customerElement).toHaveText(name);
+  369 | 	},
+  370 | );
+  371 |
+  372 | When('I add the {string} customer', async ({ page }, customer: string) => {
+  373 | 	page.locator('.TicketSearch__customer ').click();
+  374 | 	page.locator('.TicketSearch__customer input').fill(customer);
+  375 | 	const selectCustomer = page
+  376 | 		.locator('.MuiListItemText-root.name')
+  377 | 		.getByText(customer, { exact: true });
+  378 | 	await selectCustomer.click();
+  379 | });
+  380 |
+  381 | When('I redeem my loyalty points', async ({ page }) => {
+  382 | 	await page.locator('.xLoyalty__item').click();
+  383 | 	await page.locator('.xLoyalty__btn').getByText('OK').click();
+  384 | });
+  385 |
+  386 | When(
+  387 | 	'I click on the {string} button in the split tip screen',
+  388 | 	async ({ page }, button: string) => {
+  389 | 		const buttonElement = page
+  390 | 			.locator('.xPayment__numpad.xSplitTip')
+  391 | 			.getByRole('button', { name: button });
+  392 |
+  393 | 		await expect(buttonElement).toBeVisible();
+  394 |
+  395 | 		await buttonElement.click();
+  396 | 	},
+  397 | );
+  398 |
+  399 | Then('I should see all split tips non-zero', async ({ page }) => {
+  400 | 	const tipValues = page
+  401 | 		.locator('.xSplitTip__employee')
+  402 | 		.locator('.tip.row')
+  403 | 		.locator('span.value');
+  404 | 	const allTips = await tipValues.allTextContents();
+  405 | 	expect(allTips).not.toContain('0.00');
+  406 | 	expect(allTips.every((tip) => !tip.includes('0.00'))).toBeTruthy();
+  407 | });
+  408 |
+  409 | When(
+  410 | 	'I click on the {string} label in the header',
+  411 | 	async ({ page }, label: string) => {
+  412 | 		const labelElement = page
+  413 | 			.locator('.xHeader__content')
+  414 | 			.getByText(label, { exact: true });
+  415 |
+  416 | 		await expect(labelElement).toBeVisible();
+  417 |
+> 418 | 		await labelElement.click();
+      | 		                   ^ Error: locator.click: Test timeout of 90000ms exceeded.
+  419 | 	},
+  420 | );
+  421 |
+  422 | When(
+  423 | 	'I click on the {string} button in the waiting page',
+  424 | 	async ({ page }, buttonText: string) => {
+  425 | 		const buttonElement = page
+  426 | 			.locator('.xWaitingList__btn')
+  427 | 			.getByRole('button', { name: buttonText });
+  428 | 		await buttonElement.click();
+  429 | 	},
+  430 | );
+  431 |
+  432 | Then(
+  433 | 	'I should see the service {string} in my cart',
+  434 | 	async ({ page }, service: string) => {
+  435 | 		const serviceElement = page
+  436 | 			.locator('.xTicketItems__content')
+  437 | 			.getByText(service, { exact: true });
+  438 | 		await expect(serviceElement).toHaveText(service);
+  439 | 	},
+  440 | );
+  441 |
+  442 | Then(
+  443 | 	'I should see the duration {string} in my cart',
+  444 | 	async ({ page }, duration: string) => {
+  445 | 		const durationElement = page
+  446 | 			.locator('.appt-duration')
+  447 | 			.getByText(duration, { exact: true });
+  448 | 		await expect(durationElement).toHaveText(duration);
+  449 | 	},
+  450 | );
+  451 |
+  452 | Then(
+  453 | 	'I should see the employee {string} for all items in a package in my cart',
+  454 | 	async ({ page }, employee: string) => {
+  455 | 		const elements = await page
+  456 | 			.locator('.childService')
+  457 | 			.getByText(employee, { exact: true })
+  458 | 			.all();
+  459 |
+  460 | 		for (const element of elements) {
+  461 | 			await expect(element).toHaveText(employee);
+  462 | 		}
+  463 | 	},
+  464 | );
+  465 |
+  466 | Then(
+  467 | 	'I should see the customer {string} in the waiting list',
+  468 | 	async ({ page }, customer: string) => {
+  469 | 		const customerElement = page
+  470 | 			.locator('div[data-field="customerInfo"]')
+  471 | 			.getByText(customer, { exact: true });
+  472 | 		await expect(customerElement).toHaveText(customer);
+  473 | 	},
+  474 | );
+  475 |
+  476 | Then(
+  477 | 	'I should see the service {string} in the waiting list',
+  478 | 	async ({ page }, service: string) => {
+  479 | 		const serviceElement = page
+  480 | 			.locator('div[data-field="categoryNames"]')
+  481 | 			.getByText(service, { exact: true });
+  482 | 		await expect(serviceElement).toHaveText(service);
+  483 | 	},
+  484 | );
+  485 |
+  486 | Then(
+  487 | 	'I should see the technician {string} in the waiting list',
+  488 | 	async ({ page }, technician: string) => {
+  489 | 		const technicianElement = page
+  490 | 			.locator('div[data-field="technicianNickNames"]')
+  491 | 			.getByText(technician, { exact: true });
+  492 | 		await expect(technicianElement).toHaveText(technician);
+  493 | 	},
+  494 | );
+  495 |
+  496 | When('I enter the amount {string}', async ({ page }, amount: string) => {
+  497 | 	for (const digit of amount) {
+  498 | 		await page
+  499 | 			.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  500 | 			.click();
+  501 | 	}
+  502 | });
+  503 |
+  504 | Then(
+  505 | 	'I should see the employee {string} in the ticket',
+  506 | 	async ({ page }, employee: string) => {
+  507 | 		const headerContent = page.locator('.xHeader__content');
+  508 |
+  509 | 		await expect(headerContent).toContainText(employee);
+  510 | 	},
+  511 | );
+  512 |
+  513 | When('I select the {string} label', async ({ page }, label: string) => {
+  514 | 	const giftCardOption = page
+  515 | 		.locator('ul.xTimeSheet li')
+  516 | 		.filter({ has: page.locator('span.label', { hasText: label }) });
+  517 |
+  518 | 	await expect(giftCardOption).toBeVisible();
+```
