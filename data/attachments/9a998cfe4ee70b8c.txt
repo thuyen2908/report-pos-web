@@ -1,0 +1,45 @@
+page.waitForResponse: Timeout 10000ms exceeded while waiting for event "response"
+    at HomePage.waitForResponseOfAPI (/home/circleci/project/e2e/pos-web/src/steps/x.page.ts:160:20)
+    at /home/circleci/project/e2e/pos-web/src/redundant-tickets.cleanup.ts:39:19
+    at Object.cleanupRedundantTickets (/home/circleci/project/e2e/pos-web/src/redundant-tickets.cleanup.ts:65:3)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/hooks/scenario.ts:138:5
+    at runScenarioHook (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/hooks/scenario.ts:106:3)
+    at runScenarioHooks (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/hooks/scenario.ts:94:7)
+    at Object.exports.test.bddWorkerFixtures_1.test.extend.$afterEach (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddTestFixtures.ts:149:7) {
+  name: 'TimeoutError',
+  [Symbol(step)]: {
+    stepId: 'pw:api@48',
+    location: {
+      file: '/home/circleci/project/e2e/pos-web/src/steps/x.page.ts',
+      line: 160,
+      column: 20,
+      function: 'HomePage.waitForResponseOfAPI'
+    },
+    category: 'pw:api',
+    title: 'page.waitForResponse',
+    apiName: 'page.waitForResponse',
+    params: { info: [Object] },
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@48'
+    },
+    complete: [Function: complete],
+    endWallTime: 1743069226379,
+    error: {
+      message: 'TimeoutError: page.waitForResponse: Timeout 10000ms exceeded while waiting for event "response"',
+      stack: 'TimeoutError: page.waitForResponse: Timeout 10000ms exceeded while waiting for event "response"\n' +
+        '    at HomePage.waitForResponseOfAPI (/home/circleci/project/e2e/pos-web/src/steps/x.page.ts:160:20)\n' +
+        '    at /home/circleci/project/e2e/pos-web/src/redundant-tickets.cleanup.ts:39:19\n' +
+        '    at Object.cleanupRedundantTickets (/home/circleci/project/e2e/pos-web/src/redundant-tickets.cleanup.ts:65:3)\n' +
+        '    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/hooks/scenario.ts:138:5\n' +
+        '    at runScenarioHook (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/hooks/scenario.ts:106:3)\n' +
+        '    at runScenarioHooks (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/hooks/scenario.ts:94:7)\n' +
+        '    at Object.exports.test.bddWorkerFixtures_1.test.extend.$afterEach (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddTestFixtures.ts:149:7)',
+      cause: undefined
+    }
+  }
+}
