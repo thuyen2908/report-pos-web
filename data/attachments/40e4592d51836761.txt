@@ -1,0 +1,318 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Check In >> Create a waiting for new customer, assign Service Package to Any Technician and create ticket
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/check-in.feature.spec.js:6:3
+
+# Error details
+
+```
+Error: expect.toHaveText: Error: strict mode violation: locator('div[data-field="customerInfo"]').getByText('Check-in', { exact: true }) resolved to 3 elements:
+    1) <div class="MuiBox-root css-0">Check-in </div> aka getByText('Check-in').first()
+    2) <div class="MuiBox-root css-0">Check-in </div> aka getByText('Check-in').nth(1)
+    3) <div class="MuiBox-root css-0">Check-in </div> aka getByText('Check-in').nth(2)
+
+Call log:
+  - expect.toHaveText with timeout 30000ms
+  - waiting for locator('div[data-field="customerInfo"]').getByText('Check-in', { exact: true })
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:472:33)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/check-in.feature.spec.js:34:5
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - img
+  - list:
+    - listitem: Timesheet
+    - listitem: Check In
+    - listitem: Tickets
+    - listitem: Turn
+    - listitem: Appointment
+    - listitem: Quick Sale
+    - listitem: Balance
+  - text: Apr 01
+  - list:
+    - listitem: BLANC NAILS
+    - listitem:
+      - paragraph: ", , | (707) 707-1122"
+      - text: "Thuyen Nguyen | Station: 1"
+- list
+- main:
+  - searchbox "Search…"
+  - grid:
+    - row "__detail_panel_toggle__ Status Time Appt Start Time Ticket# Customer Service Technician":
+      - columnheader "__detail_panel_toggle__"
+      - columnheader "Status"
+      - columnheader "Time"
+      - columnheader "Appt Start Time"
+      - columnheader "Ticket#"
+      - columnheader "Customer"
+      - columnheader "Service"
+      - columnheader "Technician"
+      - columnheader
+    - rowgroup:
+      - 'row "Open #6 09:08 AM 0 Check-in Combo 1 Any Technician"':
+        - gridcell "Open":
+          - button "Open"
+        - gridcell "#6"
+        - gridcell "09:08 AM"
+        - gridcell
+        - gridcell "0"
+        - gridcell "Check-in"
+        - gridcell "Combo 1"
+        - gridcell "Any Technician"
+        - gridcell
+      - 'row "Open #5 09:06 AM 0 Check-in Combo 1 Any Technician"':
+        - gridcell "Open":
+          - button "Open"
+        - gridcell "#5"
+        - gridcell "09:06 AM"
+        - gridcell
+        - gridcell "0"
+        - gridcell "Check-in"
+        - gridcell "Combo 1"
+        - gridcell "Any Technician"
+        - gridcell
+      - 'row "Open #4 09:05 AM 179 Check-in Combo 1 Any Technician"':
+        - gridcell "Open":
+          - button "Open"
+        - gridcell "#4"
+        - gridcell "09:05 AM"
+        - gridcell
+        - gridcell "179"
+        - gridcell "Check-in"
+        - gridcell "Combo 1"
+        - gridcell "Any Technician"
+        - gridcell
+      - 'row "Open #3 09:05 AM 178 Alice Manicure Pedicure Laura Bella"':
+        - gridcell "Open":
+          - button "Open"
+        - gridcell "#3"
+        - gridcell "09:05 AM"
+        - gridcell
+        - gridcell "178"
+        - gridcell "Alice"
+        - gridcell "Manicure Pedicure"
+        - gridcell "Laura Bella"
+        - gridcell
+  - button "Add Customer"
+- alert: Create Waiting Ticketss - xPOS Salon
+- alert: Your information has been successfully added to the waiting list!
+```
+
+# Test source
+
+```ts
+  372 | When('I add the {string} customer', async ({ page }, customer: string) => {
+  373 | 	page.locator('.TicketSearch__customer ').click();
+  374 | 	page.locator('.TicketSearch__customer input').fill(customer);
+  375 | 	const selectCustomer = page
+  376 | 		.locator('.MuiListItemText-root.name')
+  377 | 		.getByText(customer, { exact: true });
+  378 | 	await selectCustomer.click();
+  379 | });
+  380 |
+  381 | When('I redeem my loyalty points', async ({ page }) => {
+  382 | 	await page.locator('.xLoyalty__item').click();
+  383 | 	await page.locator('.xLoyalty__btn').getByText('OK').click();
+  384 | });
+  385 |
+  386 | When(
+  387 | 	'I click on the {string} button in the split tip screen',
+  388 | 	async ({ page }, button: string) => {
+  389 | 		const buttonElement = page
+  390 | 			.locator('.xPayment__numpad.xSplitTip')
+  391 | 			.getByRole('button', { name: button });
+  392 |
+  393 | 		await expect(buttonElement).toBeVisible();
+  394 |
+  395 | 		await buttonElement.click();
+  396 | 	},
+  397 | );
+  398 |
+  399 | Then('I should see all split tips non-zero', async ({ page }) => {
+  400 | 	const tipValues = page
+  401 | 		.locator('.xSplitTip__employee')
+  402 | 		.locator('.tip.row')
+  403 | 		.locator('span.value');
+  404 | 	const allTips = await tipValues.allTextContents();
+  405 | 	expect(allTips).not.toContain('0.00');
+  406 | 	expect(allTips.every((tip) => !tip.includes('0.00'))).toBeTruthy();
+  407 | });
+  408 |
+  409 | When(
+  410 | 	'I click on the {string} label in the header',
+  411 | 	async ({ page }, label: string) => {
+  412 | 		const labelElement = page
+  413 | 			.locator('.xHeader__content')
+  414 | 			.getByText(label, { exact: true });
+  415 |
+  416 | 		await expect(labelElement).toBeVisible();
+  417 |
+  418 | 		await labelElement.click();
+  419 | 	},
+  420 | );
+  421 |
+  422 | When(
+  423 | 	'I click on the {string} button in the waiting page',
+  424 | 	async ({ page }, buttonText: string) => {
+  425 | 		const buttonElement = page
+  426 | 			.locator('.xWaitingList__btn')
+  427 | 			.getByRole('button', { name: buttonText });
+  428 | 		await buttonElement.click();
+  429 | 	},
+  430 | );
+  431 |
+  432 | Then(
+  433 | 	'I should see the service {string} in my cart',
+  434 | 	async ({ page }, service: string) => {
+  435 | 		const serviceElement = page
+  436 | 			.locator('.xTicketItems__content')
+  437 | 			.getByText(service, { exact: true });
+  438 | 		await expect(serviceElement).toHaveText(service);
+  439 | 	},
+  440 | );
+  441 |
+  442 | Then(
+  443 | 	'I should see the duration {string} in my cart',
+  444 | 	async ({ page }, duration: string) => {
+  445 | 		const durationElement = page
+  446 | 			.locator('.appt-duration')
+  447 | 			.getByText(duration, { exact: true });
+  448 | 		await expect(durationElement).toHaveText(duration);
+  449 | 	},
+  450 | );
+  451 |
+  452 | Then(
+  453 | 	'I should see the employee {string} for all items in a package in my cart',
+  454 | 	async ({ page }, employee: string) => {
+  455 | 		const elements = await page
+  456 | 			.locator('.childService')
+  457 | 			.getByText(employee, { exact: true })
+  458 | 			.all();
+  459 |
+  460 | 		for (const element of elements) {
+  461 | 			await expect(element).toHaveText(employee);
+  462 | 		}
+  463 | 	},
+  464 | );
+  465 |
+  466 | Then(
+  467 | 	'I should see the customer {string} in the waiting list',
+  468 | 	async ({ page }, customer: string) => {
+  469 | 		const customerElement = page
+  470 | 			.locator('div[data-field="customerInfo"]')
+  471 | 			.getByText(customer, { exact: true });
+> 472 | 		await expect(customerElement).toHaveText(customer);
+      | 		                              ^ Error: expect.toHaveText: Error: strict mode violation: locator('div[data-field="customerInfo"]').getByText('Check-in', { exact: true }) resolved to 3 elements:
+  473 | 	},
+  474 | );
+  475 |
+  476 | Then(
+  477 | 	'I should see the service {string} in the waiting list',
+  478 | 	async ({ page }, service: string) => {
+  479 | 		const serviceElement = page
+  480 | 			.locator('div[data-field="categoryNames"]')
+  481 | 			.getByText(service, { exact: true });
+  482 | 		await expect(serviceElement).toHaveText(service);
+  483 | 	},
+  484 | );
+  485 |
+  486 | Then(
+  487 | 	'I should see the technician {string} in the waiting list',
+  488 | 	async ({ page }, technician: string) => {
+  489 | 		const technicianElement = page
+  490 | 			.locator('div[data-field="technicianNickNames"]')
+  491 | 			.getByText(technician, { exact: true });
+  492 | 		await expect(technicianElement).toHaveText(technician);
+  493 | 	},
+  494 | );
+  495 |
+  496 | When('I enter the amount {string}', async ({ page }, amount: string) => {
+  497 | 	for (const digit of amount) {
+  498 | 		await page
+  499 | 			.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  500 | 			.click();
+  501 | 	}
+  502 | });
+  503 |
+  504 | Then(
+  505 | 	'I should see the employee {string} in the ticket',
+  506 | 	async ({ page }, employee: string) => {
+  507 | 		const headerContent = page.locator('.xHeader__content');
+  508 |
+  509 | 		await expect(headerContent).toContainText(employee);
+  510 | 	},
+  511 | );
+  512 |
+  513 | When('I select the {string} label', async ({ page }, label: string) => {
+  514 | 	const giftCardOption = page
+  515 | 		.locator('ul.xTimeSheet li')
+  516 | 		.filter({ has: page.locator('span.label', { hasText: label }) });
+  517 |
+  518 | 	await expect(giftCardOption).toBeVisible();
+  519 | 	await giftCardOption.click();
+  520 | });
+  521 |
+  522 | When('I enter password with PIN {string}', async ({ page }, pin: string) => {
+  523 | 	for (const digit of pin) {
+  524 | 		await page
+  525 | 			.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  526 | 			.click();
+  527 | 	}
+  528 | });
+  529 |
+  530 | Then(
+  531 | 	'I should see the gift number {string} visible',
+  532 | 	async ({ page }, number: string) => {
+  533 | 		const giftNumberElement = page
+  534 | 			.locator('.giftCard__content')
+  535 | 			.getByText(number, { exact: true });
+  536 |
+  537 | 		await expect(giftNumberElement).toBeVisible();
+  538 | 	},
+  539 | );
+  540 |
+  541 | When('I select the title {string}', async ({ page }, name: string) => {
+  542 | 	const nameElement = page.locator('.xPayment__card--input').getByText(name);
+  543 | 	await expect(nameElement).toContainText(name);
+  544 | 	await nameElement.click();
+  545 | });
+  546 |
+  547 | Then(
+  548 | 	'I should see the payment history {string} visible',
+  549 | 	async ({ page }, paymentHistory: string) => {
+  550 | 		const paymentHistoryElement = page
+  551 | 			.locator('.xPayment__history--nameType')
+  552 | 			.getByText(paymentHistory);
+  553 | 		await expect(paymentHistoryElement).toHaveText(paymentHistory);
+  554 | 	},
+  555 | );
+  556 |
+  557 | Then(
+  558 | 	'I should see the number {string} visible',
+  559 | 	async ({ page }, number: string) => {
+  560 | 		const numberElement = page
+  561 | 			.locator('.BalanceLayout__content--number')
+  562 | 			.getByText(number, { exact: true });
+  563 |
+  564 | 		await expect(numberElement).toBeVisible();
+  565 | 	},
+  566 | );
+  567 |
+  568 | Then(
+  569 | 	'I should see the payment price {string}',
+  570 | 	async ({ page }, price: string) => {
+  571 | 		const priceElement = page
+  572 | 			.locator('.xPayment__history--price')
+```
