@@ -1,0 +1,296 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Reopen tickets >> Reopen ticket to change split tip Percent to Equal
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/reopen-ticket.feature.spec.js:225:3
+
+# Error details
+
+```
+Error: Timed out 30000ms waiting for expect(locator).toContainText(expected)
+
+Locator: locator('.xHeader__content')
+Expected string: "Daniel"
+Received string: "Ticket View Samantha (Nails) - #213"
+Call log:
+  - expect.toContainText with timeout 30000ms
+  - waiting for locator('.xHeader__content')
+    5 × locator resolved to <div class="xHeader__content isLeftActionFunc MuiBox-root css-0">…</div>
+      - unexpected value "Ticket View ...  - #001"
+    29 × locator resolved to <div class="xHeader__content isLeftActionFunc MuiBox-root css-0">…</div>
+       - unexpected value "Ticket View Samantha (Nails) - #213"
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:509:31)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/reopen-ticket.feature.spec.js:271:5
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - img
+  - paragraph: Ticket View
+  - paragraph: "Samantha (Nails) - #213"
+  - button "VOID TICKET"
+  - text: Apr 03
+  - list:
+    - listitem: BLANC NAILS
+    - listitem:
+      - paragraph: ", , | (707) 707-1122"
+      - text: "Thuyen Nguyen | Station: 1"
+- list
+- main:
+  - button "search"
+  - tablist:
+    - tab "MANI & PEDI" [selected]
+    - tab "FULL SET & FILL IN"
+    - tab "GIFT CARD"
+  - tabpanel:
+    - list:
+      - listitem: M Manicure $6.00
+      - listitem: P Pedicure $8.00
+      - listitem: C Cut cuticle $10.00
+      - listitem: G Gel removal $40.00
+      - listitem: A Acrylic removal $30.00
+      - listitem: G Gel X $27.00
+      - listitem: R Request price $0.00
+      - listitem: C Combo 1 $45.00
+      - listitem: C Combo 2 $60.00
+      - listitem: S Supper combo $0.00
+  - button "1"
+  - text: Ron 1608pts = $16.08
+  - button
+  - list:
+    - listitem: 1 Manicure S x 1 D Samantha (Nails) 09:49 AM - 09:49 AM $6.00
+  - list:
+    - listitem: TECHNICIAN
+    - listitem: DISCOUNT ITEM
+    - listitem: COMBINE TICKET
+    - listitem: VOID ITEM
+  - list:
+    - listitem: Tip $0.00
+    - listitem: Discount $0.00
+    - listitem:
+      - text: Tax
+      - button
+      - text: $0.36
+    - listitem: Sub Total $6.00
+    - listitem: TOTAL $6.36
+  - button "CANCEL"
+  - button "PAY"
+- alert: Closed Tickets - xPOS Salon
+```
+
+# Test source
+
+```ts
+  409 | When(
+  410 | 	'I click on the {string} label in the header',
+  411 | 	async ({ page }, label: string) => {
+  412 | 		const labelElement = page
+  413 | 			.locator('.xHeader__content')
+  414 | 			.getByText(label, { exact: true });
+  415 |
+  416 | 		await expect(labelElement).toBeVisible();
+  417 |
+  418 | 		await labelElement.click();
+  419 | 	},
+  420 | );
+  421 |
+  422 | When(
+  423 | 	'I click on the {string} button in the waiting page',
+  424 | 	async ({ page }, buttonText: string) => {
+  425 | 		const buttonElement = page
+  426 | 			.locator('.xWaitingList__btn')
+  427 | 			.getByRole('button', { name: buttonText });
+  428 | 		await buttonElement.click();
+  429 | 	},
+  430 | );
+  431 |
+  432 | Then(
+  433 | 	'I should see the service {string} in my cart',
+  434 | 	async ({ page }, service: string) => {
+  435 | 		const serviceElement = page
+  436 | 			.locator('.xTicketItems__content')
+  437 | 			.getByText(service, { exact: true });
+  438 | 		await expect(serviceElement).toHaveText(service);
+  439 | 	},
+  440 | );
+  441 |
+  442 | Then(
+  443 | 	'I should see the duration {string} in my cart',
+  444 | 	async ({ page }, duration: string) => {
+  445 | 		const durationElement = page
+  446 | 			.locator('.appt-duration')
+  447 | 			.getByText(duration, { exact: true });
+  448 | 		await expect(durationElement).toHaveText(duration);
+  449 | 	},
+  450 | );
+  451 |
+  452 | Then(
+  453 | 	'I should see the employee {string} for all items in a package in my cart',
+  454 | 	async ({ page }, employee: string) => {
+  455 | 		const elements = await page
+  456 | 			.locator('.childService')
+  457 | 			.getByText(employee, { exact: true })
+  458 | 			.all();
+  459 |
+  460 | 		for (const element of elements) {
+  461 | 			await expect(element).toHaveText(employee);
+  462 | 		}
+  463 | 	},
+  464 | );
+  465 |
+  466 | Then(
+  467 | 	'I should see the customer {string} in the waiting list',
+  468 | 	async ({ page }, customer: string) => {
+  469 | 		const customerElement = page
+  470 | 			.locator('div[data-field="customerInfo"]')
+  471 | 			.getByText(customer, { exact: true });
+  472 | 		await expect(customerElement).toHaveText(customer);
+  473 | 	},
+  474 | );
+  475 |
+  476 | Then(
+  477 | 	'I should see the service {string} in the waiting list',
+  478 | 	async ({ page }, service: string) => {
+  479 | 		const serviceElement = page
+  480 | 			.locator('div[data-field="categoryNames"]')
+  481 | 			.getByText(service, { exact: true });
+  482 | 		await expect(serviceElement).toHaveText(service);
+  483 | 	},
+  484 | );
+  485 |
+  486 | Then(
+  487 | 	'I should see the technician {string} in the waiting list',
+  488 | 	async ({ page }, technician: string) => {
+  489 | 		const technicianElement = page
+  490 | 			.locator('div[data-field="technicianNickNames"]')
+  491 | 			.getByText(technician, { exact: true });
+  492 | 		await expect(technicianElement).toHaveText(technician);
+  493 | 	},
+  494 | );
+  495 |
+  496 | When('I enter the amount {string}', async ({ page }, amount: string) => {
+  497 | 	for (const digit of amount) {
+  498 | 		await page
+  499 | 			.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  500 | 			.click();
+  501 | 	}
+  502 | });
+  503 |
+  504 | Then(
+  505 | 	'I should see the employee {string} in the ticket',
+  506 | 	async ({ page }, employee: string) => {
+  507 | 		const headerContent = page.locator('.xHeader__content');
+  508 |
+> 509 | 		await expect(headerContent).toContainText(employee);
+      | 		                            ^ Error: Timed out 30000ms waiting for expect(locator).toContainText(expected)
+  510 | 	},
+  511 | );
+  512 |
+  513 | When('I select the {string} label', async ({ page }, label: string) => {
+  514 | 	const giftCardOption = page
+  515 | 		.locator('ul.xTimeSheet li')
+  516 | 		.filter({ has: page.locator('span.label', { hasText: label }) });
+  517 |
+  518 | 	await expect(giftCardOption).toBeVisible();
+  519 | 	await giftCardOption.click();
+  520 | });
+  521 |
+  522 | When('I enter password with PIN {string}', async ({ page }, pin: string) => {
+  523 | 	for (const digit of pin) {
+  524 | 		await page
+  525 | 			.locator(`button.key:has(span.text-num:has-text("${digit}"))`)
+  526 | 			.click();
+  527 | 	}
+  528 | });
+  529 |
+  530 | Then(
+  531 | 	'I should see the gift number {string} visible',
+  532 | 	async ({ page }, number: string) => {
+  533 | 		const giftNumberElement = page
+  534 | 			.locator('.giftCard__content')
+  535 | 			.getByText(number, { exact: true });
+  536 |
+  537 | 		await expect(giftNumberElement).toBeVisible();
+  538 | 	},
+  539 | );
+  540 |
+  541 | When('I select the title {string}', async ({ page }, name: string) => {
+  542 | 	const nameElement = page.locator('.xPayment__card--input').getByText(name);
+  543 | 	await expect(nameElement).toContainText(name);
+  544 | 	await nameElement.click();
+  545 | });
+  546 |
+  547 | Then(
+  548 | 	'I should see the payment history {string} visible',
+  549 | 	async ({ page }, paymentHistory: string) => {
+  550 | 		const paymentHistoryElement = page
+  551 | 			.locator('.xPayment__history--nameType')
+  552 | 			.getByText(paymentHistory);
+  553 | 		await expect(paymentHistoryElement).toHaveText(paymentHistory);
+  554 | 	},
+  555 | );
+  556 |
+  557 | Then(
+  558 | 	'I should see the number {string} visible',
+  559 | 	async ({ page }, number: string) => {
+  560 | 		const numberElement = page
+  561 | 			.locator('.BalanceLayout__content--number')
+  562 | 			.getByText(number, { exact: true });
+  563 |
+  564 | 		await expect(numberElement).toBeVisible();
+  565 | 	},
+  566 | );
+  567 |
+  568 | Then(
+  569 | 	'I should see the payment price {string}',
+  570 | 	async ({ page }, price: string) => {
+  571 | 		const priceElement = page
+  572 | 			.locator('.xPayment__history--price')
+  573 | 			.getByText(price);
+  574 | 		await expect(priceElement).toHaveText(price);
+  575 | 	},
+  576 | );
+  577 |
+  578 | When(
+  579 | 	'I click on the total price of {string}',
+  580 | 	async ({ page }, service: string) => {
+  581 | 		const serviceContainer = page
+  582 | 			.locator('.xTicketItems__info')
+  583 | 			.filter({ has: page.locator('.itemName', { hasText: service }) });
+  584 |
+  585 | 		await serviceContainer.locator('.xTicketItems__total').click();
+  586 | 	},
+  587 | );
+  588 |
+  589 | When('I change the price to {string}', async ({ page }, price: string) => {
+  590 | 	await page.locator('input#itemNumbers\\.amount').clear();
+  591 | 	await page.locator('input#itemNumbers\\.amount').fill(price);
+  592 | });
+  593 |
+  594 | When(
+  595 | 	'I change the quantity to {string}',
+  596 | 	async ({ page }, quantity: string) => {
+  597 | 		await page.locator('input#itemNumbers\\.qty').clear();
+  598 | 		await page.locator('input#itemNumbers\\.qty').fill(quantity);
+  599 | 	},
+  600 | );
+  601 |
+  602 | When('I enter a note {string}', async ({ page }, note: string) => {
+  603 | 	await page.locator("[placeholder='Enter your note']").fill(note);
+  604 | 	await page.getByRole('button', { name: 'Save' }).click();
+  605 | });
+  606 |
+  607 | Then(
+  608 | 	'I should see the total price {string} visible',
+  609 | 	async ({ page }, price: string) => {
+```
