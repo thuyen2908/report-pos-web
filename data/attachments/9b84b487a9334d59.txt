@@ -1,0 +1,392 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Create tickets >> Change Technician for Service package
+- Location: /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:498:3
+
+# Error details
+
+```
+Error: expect.toBeVisible: Error: strict mode violation: locator('div.xQueueList').getByText('Sophia', { exact: true }) resolved to 6 elements:
+    1) <span class="nickname">Sophia</span> aka getByRole('listitem').filter({ hasText: 'S#8 Sophia07:00 AMTurn:' }).locator('span').nth(1)
+    2) <span class="nickname">Sophia</span> aka getByRole('listitem').filter({ hasText: 'S#61 Sophia07:00 AMTurn:' }).locator('span').nth(1)
+    3) <span class="nickname">Sophia</span> aka getByRole('listitem').filter({ hasText: 'S#93 Sophia07:00 AMTurn:' }).locator('span').nth(1)
+    4) <span class="nickname">Sophia</span> aka getByRole('listitem').filter({ hasText: 'S#103 Sophia07:00 AMTurn:' }).locator('span').nth(1)
+    5) <span class="nickname">Sophia</span> aka getByRole('listitem').filter({ hasText: 'S#131 Sophia07:00 AMTurn:' }).locator('span').nth(1)
+    6) <span class="nickname">Sophia</span> aka getByRole('listitem').filter({ hasText: 'S#133 Sophia07:00 AMTurn:' }).locator('span').nth(1)
+
+Call log:
+  - expect.toBeVisible with timeout 30000ms
+  - waiting for locator('div.xQueueList').getByText('Sophia', { exact: true })
+
+    at Object.<anonymous> (/home/circleci/project/e2e/pos-web/src/features/steps.ts:26:5)
+    at /home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:57:60
+    at BddStepInvoker.invoke (/home/circleci/project/node_modules/.pnpm/playwright-bdd@8.2.1_@cucumber+message-streams@4.0.1_@cucumber+messages@27.0.2__@playwright+test@1.51.1/node_modules/playwright-bdd/src/runtime/bddStepInvoker.ts:51:5)
+    at /home/circleci/project/e2e/pos-web/dist/bdd/create-tickets.feature.spec.js:501:5
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - img
+  - list:
+    - listitem: Timesheet
+    - listitem: Check In
+    - listitem: Tickets
+    - listitem: Turn
+    - listitem: Appointment
+    - listitem: Quick Sale
+    - listitem: Balance
+  - text: Apr 07
+  - list:
+    - listitem: BLANC NAILS
+    - listitem:
+      - paragraph: ", , | (707) 707-1122"
+      - text: "Thuyen Nguyen | Station: 1"
+- list
+- main:
+  - text: CHECK-INS No Customer
+  - tablist:
+    - tab "NAILS" [selected]
+    - tab "HAIR"
+  - tabpanel:
+    - list:
+      - listitem: "S #1 Sam 07:00 AM Turn: 0.0"
+      - listitem: "M #2 Maya 07:00 AM Turn: 0.0"
+      - listitem: "K #3 Kelley 07:00 AM Turn: 0.0"
+      - listitem: "K #4 Kim 07:00 AM Turn: 0.0"
+      - listitem: "T #5 Tom 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#6 Emily 07:00 AM Turn: 0.0"
+      - listitem: "B #7 Bella 07:00 AM Turn: 0.0"
+      - listitem: "S #8 Sophia 07:00 AM Turn: 0.0"
+      - listitem: "H #9 Harry 07:00 AM Turn: 0.0"
+      - listitem: "R #10 Ruby 07:00 AM Turn: 0.0"
+      - listitem: "H #11 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "S #12 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "T #13 Tina 07:00 AM Turn: 0.0"
+      - listitem: "E #14 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "H #15 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "B #16 Brian 07:00 AM Turn: 0.0"
+      - listitem: "K #17 Kelley 07:00 AM Turn: 0.0"
+      - listitem: "T #18 Tina 07:00 AM Turn: 0.0"
+      - listitem: "B #19 Brian 07:00 AM Turn: 0.0"
+      - listitem: "S #20 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "K #21 Kelley 07:00 AM Turn: 0.0"
+      - listitem: "L #22 Lisa 07:00 AM Turn: 0.0"
+      - listitem: "J #23 Jack 07:00 AM Turn: 0.0"
+      - listitem: "M #24 Maya 07:00 AM Turn: 0.0"
+      - listitem: "S #25 Sandy 07:00 AM Turn: 0.0"
+      - listitem: "S #26 Sam 07:00 AM Turn: 0.0"
+      - listitem: "B #27 Brian 07:00 AM Turn: 0.0"
+      - listitem: "L #28 Lisa 07:00 AM Turn: 0.0"
+      - listitem: "R #29 Ruby 07:00 AM Turn: 0.0"
+      - listitem: "E #30 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "A #31 Anna 07:00 AM Turn: 0.0"
+      - listitem: "E #32 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "L #33 Lisa 07:00 AM Turn: 0.0"
+      - listitem: "K #34 Kim 07:00 AM Turn: 0.0"
+      - listitem: "T #35 Tom 07:00 AM Turn: 0.0"
+      - listitem: "B #36 Bella 07:00 AM Turn: 0.0"
+      - listitem: "R #37 Ruby 07:00 AM Turn: 0.0"
+      - listitem: "L #38 Laura 07:00 AM Turn: 0.0"
+      - listitem: "R #39 Ruby 07:00 AM Turn: 0.0"
+      - listitem: "K #40 Kelley 07:00 AM Turn: 0.0"
+      - listitem: "T #41 Tom 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#42 Emma 07:00 AM Turn: 0.0"
+      - listitem: "D #43 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "K #44 Kim 07:00 AM Turn: 0.0"
+      - listitem: "T #45 Tom 07:00 AM Turn: 0.0"
+      - listitem: "T #46 Tim 07:00 AM Turn: 0.0"
+      - listitem: "A #47 Anna 07:00 AM Turn: 0.0"
+      - listitem: "H #48 Harry 07:00 AM Turn: 0.0"
+      - listitem: "T #49 Tim 07:00 AM Turn: 0.0"
+      - listitem: "T #50 Tim 07:00 AM Turn: 0.0"
+      - listitem: "B #51 Brian 07:00 AM Turn: 0.0"
+      - listitem: "R #52 Ruby 07:00 AM Turn: 0.0"
+      - listitem: "S #53 Sandy 07:00 AM Turn: 0.0"
+      - listitem: "J #54 Jack 07:00 AM Turn: 0.0"
+      - listitem: "T #55 Tina 07:00 AM Turn: 0.0"
+      - listitem: "C #56 Claire 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#57 Emily 07:00 AM Turn: 0.0"
+      - listitem: "S #58 Sandy 07:00 AM Turn: 0.0"
+      - listitem: "S #59 Sandy 07:00 AM Turn: 0.0"
+      - listitem: "J #60 Jack 07:00 AM Turn: 0.0"
+      - listitem: "S #61 Sophia 07:00 AM Turn: 0.0"
+      - listitem: "S #62 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "L #63 Lisa 07:00 AM Turn: 0.0"
+      - listitem: "L #64 Laura 07:00 AM Turn: 0.0"
+      - listitem: "D #65 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "B #66 Bella 07:00 AM Turn: 0.0"
+      - listitem: "B #67 Brian 07:00 AM Turn: 0.0"
+      - listitem: "R #68 Ruby 07:00 AM Turn: 0.0"
+      - listitem: "A #69 Anna 07:00 AM Turn: 0.0"
+      - listitem: "H #70 Harry 07:00 AM Turn: 0.0"
+      - listitem: "T #71 Tina 07:00 AM Turn: 0.0"
+      - listitem: "L #72 Laura 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#73 Emma 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#74 Emma 07:00 AM Turn: 0.0"
+      - listitem: "S #75 Sandy 07:00 AM Turn: 0.0"
+      - listitem: "C #76 Christ 07:00 AM Turn: 0.0"
+      - listitem: "C #77 Christ 07:00 AM Turn: 0.0"
+      - listitem: "T #78 Tina 07:00 AM Turn: 0.0"
+      - listitem: "L #79 Laura 07:00 AM Turn: 0.0"
+      - listitem: "B #80 Bella 07:00 AM Turn: 0.0"
+      - listitem: "H #81 Harry 07:00 AM Turn: 0.0"
+      - listitem: "K #82 Kim 07:00 AM Turn: 0.0"
+      - listitem: "S #83 Sam 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#84 Emma 07:00 AM Turn: 0.0"
+      - listitem: "D #85 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "E #86 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "C #87 Claire 07:00 AM Turn: 0.0"
+      - listitem: "L #88 Lisa 07:00 AM Turn: 0.0"
+      - listitem: "A #89 Anna 07:00 AM Turn: 0.0"
+      - listitem: "B #90 Bella 07:00 AM Turn: 0.0"
+      - listitem: "L #91 Laura 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#92 Emily 07:00 AM Turn: 0.0"
+      - listitem: "S #93 Sophia 07:00 AM Turn: 0.0"
+      - listitem: "C #94 Christ 07:00 AM Turn: 0.0"
+      - listitem: "J #95 Jack 07:00 AM Turn: 0.0"
+      - listitem: "S #96 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "T #97 Tim 07:00 AM Turn: 0.0"
+      - listitem: "C #98 Claire 07:00 AM Turn: 0.0"
+      - listitem: "C #99 Christ 07:00 AM Turn: 0.0"
+      - listitem: "H #100 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "C #101 Christ 07:00 AM Turn: 0.0"
+      - listitem: "A #102 Anna 07:00 AM Turn: 0.0"
+      - listitem: "S #103 Sophia 07:00 AM Turn: 0.0"
+      - listitem: "T #104 Tina 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#105 Emily 07:00 AM Turn: 0.0"
+      - listitem: "L #106 Laura 07:00 AM Turn: 0.0"
+      - listitem: "E #107 Ethan 07:00 AM Turn: 0.0"
+      - listitem: "C #108 Claire 07:00 AM Turn: 0.0"
+      - listitem: "M #109 Maya 07:00 AM Turn: 0.0"
+      - listitem: "K #110 Kelley 07:00 AM Turn: 0.0"
+      - listitem: "D #111 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "M #112 Maya 07:00 AM Turn: 0.0"
+      - listitem: "S #113 Sam 07:00 AM Turn: 0.0"
+      - listitem: "M #114 Maya 07:00 AM Turn: 0.0"
+      - listitem: "T #115 Tim 07:00 AM Turn: 0.0"
+      - listitem: "J #116 Jack 07:00 AM Turn: 0.0"
+      - listitem: "H #117 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "K #118 Kim 07:00 AM Turn: 0.0"
+      - listitem: "H #119 Hanna 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#120 Emma 07:00 AM Turn: 0.0"
+      - listitem: "M #121 Maya 07:00 AM Turn: 0.0"
+      - listitem: "D #122 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "S #123 Sandy 07:00 AM Turn: 0.0"
+      - listitem: "H #124 Harry 07:00 AM Turn: 0.0"
+      - listitem: "B #125 Brian 07:00 AM Turn: 0.0"
+      - listitem: "T #126 Tom 07:00 AM Turn: 0.0"
+      - listitem: "S #127 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "A #128 Anna 07:00 AM Turn: 0.0"
+      - listitem: "H #129 Hanna 07:00 AM Turn: 0.0"
+      - listitem: "T #130 Tom 07:00 AM Turn: 0.0"
+      - listitem: "S #131 Sophia 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emma"
+        - text: "#132 Emma 07:00 AM Turn: 0.0"
+      - listitem: "S #133 Sophia 07:00 AM Turn: 0.0"
+      - listitem: "S #134 Sarah 07:00 AM Turn: 0.0"
+      - listitem: "S #135 Sam 07:00 AM Turn: 0.0"
+      - listitem: "T #136 Tim 07:00 AM Turn: 0.0"
+      - listitem: "H #137 Harry 07:00 AM Turn: 0.0"
+      - listitem: "C #138 Christ 07:00 AM Turn: 0.0"
+      - listitem: "B #139 Bella 07:00 AM Turn: 0.0"
+      - listitem: "J #140 Jack 07:00 AM Turn: 0.0"
+      - listitem: "D #141 Dylan 07:00 AM Turn: 0.0"
+      - listitem: "E #142 Ethan 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#143 Emily 07:00 AM Turn: 0.0"
+      - listitem: "C #144 Claire 07:00 AM Turn: 0.0"
+      - listitem: "S #145 Sam 07:00 AM Turn: 0.0"
+      - listitem: "L #146 Lisa 07:00 AM Turn: 0.0"
+      - listitem: "K #147 Kim 07:00 AM Turn: 0.0"
+      - listitem:
+        - img "item service Emily"
+        - text: "#148 Emily 07:00 AM Turn: 0.0"
+      - listitem: "K #149 Kelley 07:00 AM Turn: 0.0"
+      - listitem: "C #150 Claire 07:00 AM Turn: 0.0"
+      - listitem: "M #151 Mia 09:47 AM Turn: 0.0"
+      - listitem:
+        - img "item service Owner"
+        - text: "#152 Owner 09:49 AM Turn: 0.0"
+      - listitem: "C #153 Chloe 09:52 AM Turn: 0.0"
+      - listitem: "A #154 Angie 09:57 AM Turn: 0.0"
+      - listitem: "S #155 Samantha 09:58 AM Turn: 0.0"
+      - listitem: "D #156 Daniel 10:01 AM Turn: 0.0"
+      - listitem: "J #157 Julia 10:03 AM Turn: 0.0"
+      - listitem: "D #158 Daisy 10:06 AM Turn: 0.0"
+      - listitem: "E #159 Evelyn 10:07 AM Turn: 0.0"
+      - listitem: "N #160 Natalie 10:12 AM Turn: 0.0"
+  - button "search"
+  - list:
+    - listitem:
+      - button "Ready"
+    - listitem:
+      - button "In Service"
+    - listitem:
+      - button "Paid"
+    - listitem:
+      - button "All" [disabled]
+  - list:
+    - listitem: "M #141 Mia 11:32 AM - Now 0' Waiting $0.00"
+- alert
+- alert: This technician has clocked in
+```
+
+# Test source
+
+```ts
+   1 | import { expect } from '@playwright/test';
+   2 | import { createBdd } from 'playwright-bdd';
+   3 |
+   4 | import { constants } from '#const';
+   5 | import type { PageId } from '#types';
+   6 |
+   7 | const { When, Then } = createBdd();
+   8 |
+   9 | Then(
+   10 | 	'I should be redirected to {pageId} page',
+   11 | 	async ({ page }, pageId: PageId) => {
+   12 | 		const pageUrl = constants.PageUrl[pageId];
+   13 |
+   14 | 		await page.waitForURL(pageUrl);
+   15 | 		await expect(page).toHaveURL(pageUrl);
+   16 | 	},
+   17 | );
+   18 |
+   19 | Then(
+   20 | 	'I should see the employee {string} in the employee list',
+   21 | 	async ({ page }, employeeName: string) => {
+   22 | 		const employeeList = page.locator('div.xQueueList');
+   23 |
+   24 | 		await expect(
+   25 | 			employeeList.getByText(employeeName, { exact: true }),
+>  26 | 		).toBeVisible();
+      | 		  ^ Error: expect.toBeVisible: Error: strict mode violation: locator('div.xQueueList').getByText('Sophia', { exact: true }) resolved to 6 elements:
+   27 | 	},
+   28 | );
+   29 |
+   30 | Then(
+   31 | 	'I should see the {string} screen',
+   32 | 	async ({ page }, screenName: string) => {
+   33 | 		const screenTitle = page
+   34 | 			.locator('p.MuiTypography-body1.pageName')
+   35 | 			.getByText(screenName, { exact: true });
+   36 |
+   37 | 		await expect(screenTitle).toBeVisible();
+   38 | 	},
+   39 | );
+   40 |
+   41 | Then(
+   42 | 	'I should see the {string} service',
+   43 | 	async ({ page }, serviceName: string) => {
+   44 | 		const service = page
+   45 | 			.locator('li.ItemService')
+   46 | 			.getByText(serviceName, { exact: true });
+   47 | 		await expect(service).toBeVisible();
+   48 | 	},
+   49 | );
+   50 |
+   51 | When(
+   52 | 	'I add the {string} service to my cart',
+   53 | 	async ({ page }, serviceName: string) => {
+   54 | 		const service = page
+   55 | 			.locator('li.ItemService')
+   56 | 			.getByText(serviceName, { exact: true });
+   57 |
+   58 | 		await service.click();
+   59 | 	},
+   60 | );
+   61 |
+   62 | Then(
+   63 | 	'I should see my cart showing {int} item added',
+   64 | 	async ({ page }, itemCount: number) => {
+   65 | 		const itemCountElement = page.locator(
+   66 | 			'svg[data-testid="LocalPrintshopIcon"] + span',
+   67 | 		);
+   68 |
+   69 | 		await expect(itemCountElement).toBeVisible();
+   70 |
+   71 | 		expect(itemCountElement).toHaveText(itemCount.toString());
+   72 | 	},
+   73 | );
+   74 |
+   75 | When('I click on the {string} button', async ({ page }, buttonText: string) => {
+   76 | 	const button = page.getByRole('button', { name: buttonText, exact: true });
+   77 | 	await expect(button).toBeVisible();
+   78 |
+   79 | 	await button.click();
+   80 | });
+   81 |
+   82 | Then(
+   83 | 	'I should see the text {string} visible',
+   84 | 	async ({ page }, text: string) => {
+   85 | 		await expect(page.getByText(text, { exact: true })).toBeVisible();
+   86 | 	},
+   87 | );
+   88 |
+   89 | Then(
+   90 | 	'I should see the button with id {string} visible',
+   91 | 	async ({ page }, buttonId: string) => {
+   92 | 		await expect(page.locator(`button#${buttonId}`)).toBeVisible();
+   93 | 	},
+   94 | );
+   95 |
+   96 | When(
+   97 | 	'I click on the element with id {string}',
+   98 | 	async ({ page }, elementId: string) => {
+   99 | 		const element = page.locator(`#${elementId}`);
+  100 |
+  101 | 		await expect(element).toBeVisible();
+  102 |
+  103 | 		await element.click();
+  104 | 	},
+  105 | );
+  106 |
+  107 | Then(
+  108 | 	'I should see a popup dialog with title {string}',
+  109 | 	async ({ page }, dialogTitle: string) => {
+  110 | 		const dialogTitleElement = page.locator('.MuiDialogTitle-root');
+  111 |
+  112 | 		await expect(dialogTitleElement).toBeVisible();
+  113 | 		await expect(dialogTitleElement).toHaveText(dialogTitle);
+  114 | 	},
+  115 | );
+  116 |
+  117 | Then(
+  118 | 	'I should see a popup dialog with content {string}',
+  119 | 	async ({ page }, content: string) => {
+  120 | 		const dialogContentElement = page.locator('.MuiDialogContent-root');
+  121 |
+  122 | 		await expect(dialogContentElement).toBeVisible();
+  123 | 		await expect(dialogContentElement).toHaveText(content);
+  124 | 	},
+  125 | );
+  126 |
+```
