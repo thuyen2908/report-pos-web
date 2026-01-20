@@ -1,0 +1,131 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - paragraph [ref=e12]: Ticket View From Appointment
+            - paragraph [ref=e13]: "Christ (Nails) - #215"
+          - generic [ref=e14]:
+            - button "SAVE TICKET" [ref=e16] [cursor=pointer]
+            - generic [ref=e18]:
+              - button [ref=e19] [cursor=pointer]:
+                - img [ref=e20]
+              - paragraph [ref=e23]: FULL SET & FILL IN (Next Available)
+            - button "VOID TICKET" [ref=e25] [cursor=pointer]
+        - generic [ref=e26]:
+          - generic [ref=e28] [cursor=pointer]:
+            - paragraph [ref=e29]: 09:12 PM
+            - generic [ref=e33]:
+              - paragraph [ref=e34]: Jan
+              - paragraph [ref=e35]: "19"
+          - generic [ref=e38] [cursor=pointer]:
+            - list [ref=e39]:
+              - listitem [ref=e40]:
+                - generic [ref=e41]: BLUE SALON
+              - listitem [ref=e42]:
+                - generic [ref=e43]: 1032 YONKERS AVE
+                - paragraph [ref=e45]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e46]: "Pos Blue | Station: 1"
+            - img [ref=e48]
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - list
+      - paragraph [ref=e54]: © 2026 XSoftware
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - button "search" [ref=e59] [cursor=pointer]:
+            - img [ref=e60]
+          - generic [ref=e62]:
+            - tablist [ref=e67]:
+              - tab "MANI & PEDI" [ref=e68] [cursor=pointer]:
+                - generic [ref=e69]: MANI & PEDI
+              - tab "FULL SET & FILL IN" [selected] [ref=e70] [cursor=pointer]:
+                - generic [ref=e71]: FULL SET & FILL IN
+              - tab "ADDITIONAL SERVICE" [ref=e72] [cursor=pointer]:
+                - generic [ref=e73]: ADDITIONAL SERVICE
+              - tab "GIFT CARD" [ref=e74] [cursor=pointer]:
+                - generic [ref=e75]: GIFT CARD
+            - tabpanel [ref=e77]:
+              - list [ref=e79]:
+                - listitem [ref=e80] [cursor=pointer]:
+                  - generic [ref=e81]:
+                    - generic [ref=e83]: F
+                    - generic [ref=e84]:
+                      - generic [ref=e85]: Full set
+                      - generic [ref=e87]: $36.00
+                      - img [ref=e89]
+                - listitem [ref=e91] [cursor=pointer]:
+                  - generic [ref=e92]:
+                    - generic [ref=e94]: F
+                    - generic [ref=e95]:
+                      - generic [ref=e96]: Fill gel
+                      - generic [ref=e98]: $23.50
+                      - img [ref=e100]
+                - listitem [ref=e102] [cursor=pointer]:
+                  - generic [ref=e103]:
+                    - generic [ref=e105]: G
+                    - generic [ref=e106]:
+                      - generic [ref=e107]: Gel polish
+                      - generic [ref=e109]: $29.00
+                      - img [ref=e111]
+                - listitem [ref=e113] [cursor=pointer]:
+                  - generic [ref=e114]:
+                    - generic [ref=e116]: F
+                    - generic [ref=e117]:
+                      - generic [ref=e118]: French full set
+                      - generic [ref=e120]: $32.00
+                      - img [ref=e122]
+                - listitem [ref=e124] [cursor=pointer]:
+                  - generic [ref=e125]:
+                    - generic [ref=e127]: T
+                    - generic [ref=e128]:
+                      - generic [ref=e129]: Taxable
+                      - generic [ref=e131]: $16.00
+                      - img [ref=e133]
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - button "0" [disabled]:
+              - generic:
+                - img
+                - generic: "0"
+            - generic [ref=e138]:
+              - generic [ref=e141] [cursor=pointer]: Duration
+              - button [ref=e142] [cursor=pointer]:
+                - img [ref=e143]
+          - list [ref=e147]
+          - list [ref=e149]:
+            - listitem:
+              - generic: TECHNICIAN
+            - listitem:
+              - generic: DISCOUNT ITEM
+            - listitem [ref=e150] [cursor=pointer]:
+              - generic [ref=e151]: COMBINE TICKET
+            - listitem:
+              - generic: VOID ITEM
+          - list [ref=e153]:
+            - listitem:
+              - generic: Tip
+              - generic: $0.00
+            - listitem:
+              - generic: Discount
+              - generic: $0.00
+            - listitem:
+              - generic: Tax
+              - generic: $0.00
+            - listitem [ref=e154]:
+              - generic [ref=e155]: Sub Total
+              - generic [ref=e156]: $0.00
+            - listitem [ref=e157]:
+              - generic [ref=e158]: TOTAL
+              - generic [ref=e159]: $0.00
+          - generic [ref=e160]:
+            - button "CANCEL" [ref=e161] [cursor=pointer]
+            - button "PAY" [disabled]
+  - alert [ref=e162]: Waiting List - xPOS Salon
+```

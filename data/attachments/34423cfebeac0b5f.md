@@ -1,0 +1,144 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - paragraph [ref=e12]: Ticket View
+            - paragraph [ref=e13]: "Jack (Nails) - #262"
+          - generic [ref=e14]:
+            - button "SAVE TICKET" [ref=e16] [cursor=pointer]
+            - button "VOID TICKET" [ref=e18] [cursor=pointer]
+        - generic [ref=e19]:
+          - generic [ref=e21] [cursor=pointer]:
+            - paragraph [ref=e22]: 09:21 PM
+            - generic [ref=e26]:
+              - paragraph [ref=e27]: Jan
+              - paragraph [ref=e28]: "19"
+          - generic [ref=e31] [cursor=pointer]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - generic [ref=e34]: BLUE SALON
+              - listitem [ref=e35]:
+                - generic [ref=e36]: 1032 YONKERS AVE
+                - paragraph [ref=e38]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e39]: "Pos Blue | Station: 1"
+            - img [ref=e41]
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - list
+      - paragraph [ref=e47]: © 2026 XSoftware
+    - main [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - button "search" [ref=e52] [cursor=pointer]:
+            - img [ref=e53]
+          - generic [ref=e55]:
+            - tablist [ref=e60]:
+              - tab "MANI & PEDI" [ref=e61] [cursor=pointer]:
+                - generic [ref=e62]: MANI & PEDI
+              - tab "FULL SET & FILL IN" [selected] [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]: FULL SET & FILL IN
+              - tab "ADDITIONAL SERVICE" [ref=e65] [cursor=pointer]:
+                - generic [ref=e66]: ADDITIONAL SERVICE
+              - tab "GIFT CARD" [ref=e67] [cursor=pointer]:
+                - generic [ref=e68]: GIFT CARD
+            - tabpanel [ref=e70]:
+              - list [ref=e72]:
+                - listitem [ref=e73] [cursor=pointer]:
+                  - generic [ref=e74]:
+                    - generic [ref=e76]: F
+                    - generic [ref=e77]:
+                      - generic [ref=e78]: Full set
+                      - generic [ref=e80]: $36.00
+                      - img [ref=e82]
+                - listitem [ref=e84] [cursor=pointer]:
+                  - generic [ref=e85]:
+                    - generic [ref=e87]: F
+                    - generic [ref=e88]:
+                      - generic [ref=e89]: Fill gel
+                      - generic [ref=e91]: $23.50
+                      - img [ref=e93]
+                - listitem [ref=e95] [cursor=pointer]:
+                  - generic [ref=e96]:
+                    - generic [ref=e98]: G
+                    - generic [ref=e99]:
+                      - generic [ref=e100]: Gel polish
+                      - generic [ref=e102]: $29.00
+                      - img [ref=e104]
+                - listitem [ref=e106] [cursor=pointer]:
+                  - generic [ref=e107]:
+                    - generic [ref=e109]: F
+                    - generic [ref=e110]:
+                      - generic [ref=e111]: French full set
+                      - generic [ref=e113]: $32.00
+                      - img [ref=e115]
+                - listitem [ref=e117] [cursor=pointer]:
+                  - generic [ref=e118]:
+                    - generic [ref=e120]: T
+                    - generic [ref=e121]:
+                      - generic [ref=e122]: Taxable
+                      - generic [ref=e124]: $16.00
+                      - img [ref=e126]
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - button "1" [ref=e131] [cursor=pointer]:
+              - generic [ref=e132]:
+                - img [ref=e133]
+                - generic [ref=e135]: "1"
+            - generic [ref=e136]:
+              - generic [ref=e138]: Select customer
+              - button [ref=e139] [cursor=pointer]:
+                - img [ref=e140]
+          - list [ref=e144]:
+            - listitem [ref=e145] [cursor=pointer]:
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - generic [ref=e148]: "1"
+                  - generic [ref=e149]:
+                    - generic [ref=e150]:
+                      - generic [ref=e151]: Taxable
+                      - generic [ref=e152]:
+                        - text: S x 1
+                        - generic [ref=e153]: W
+                    - generic [ref=e154]:
+                      - generic [ref=e155]: Jack (Nails)
+                      - generic [ref=e156]: Waiting Time
+                - generic [ref=e158]: $16.00
+                - img [ref=e160]
+          - list [ref=e163]:
+            - listitem [ref=e164] [cursor=pointer]:
+              - generic [ref=e165]: TECHNICIAN
+            - listitem [ref=e166] [cursor=pointer]:
+              - generic [ref=e167]: DISCOUNT ITEM
+            - listitem [ref=e168] [cursor=pointer]:
+              - generic [ref=e169]: COMBINE TICKET
+            - listitem [ref=e170] [cursor=pointer]:
+              - generic [ref=e171]: VOID ITEM
+          - list [ref=e173]:
+            - listitem [ref=e174] [cursor=pointer]:
+              - generic [ref=e175]: Tip
+              - generic [ref=e176]: $0.00
+            - listitem [ref=e177] [cursor=pointer]:
+              - generic [ref=e178]: Discount
+              - generic [ref=e179]: $0.00
+            - listitem [ref=e180] [cursor=pointer]:
+              - generic [ref=e181]: Tax
+              - button [ref=e183]:
+                - img [ref=e184]
+              - generic [ref=e186]: $0.00
+            - listitem [ref=e187]:
+              - generic [ref=e188]: Sub Total
+              - generic [ref=e189]: $16.00
+            - listitem [ref=e190]:
+              - generic [ref=e191]: TOTAL
+              - generic [ref=e192]: $16.00
+          - generic [ref=e193]:
+            - button "CANCEL" [ref=e194] [cursor=pointer]
+            - button "PAY" [ref=e195] [cursor=pointer]
+  - alert [ref=e196]
+```

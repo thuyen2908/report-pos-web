@@ -1,0 +1,250 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - list [ref=e12]:
+          - listitem [ref=e13] [cursor=pointer]:
+            - img [ref=e15]
+            - generic [ref=e19]: Timesheet
+          - listitem [ref=e20] [cursor=pointer]:
+            - img [ref=e22]
+            - generic [ref=e25]: Check In
+          - listitem:
+            - generic:
+              - img
+            - generic: Tickets
+          - listitem [ref=e26] [cursor=pointer]:
+            - img [ref=e28]
+            - generic [ref=e35]: Turn
+          - listitem [ref=e36] [cursor=pointer]:
+            - img [ref=e38]
+            - generic [ref=e41]: Appointment
+          - listitem [ref=e42] [cursor=pointer]:
+            - img [ref=e44]
+            - generic [ref=e46]: Quick Sale
+          - listitem [ref=e47] [cursor=pointer]:
+            - img [ref=e49]
+            - generic [ref=e57]: Balance
+        - generic [ref=e58]:
+          - generic [ref=e60] [cursor=pointer]:
+            - paragraph [ref=e61]: 09:26 PM
+            - generic [ref=e65]:
+              - paragraph [ref=e66]: Jan
+              - paragraph [ref=e67]: "19"
+          - generic [ref=e70] [cursor=pointer]:
+            - list [ref=e71]:
+              - listitem [ref=e72]:
+                - generic [ref=e73]: BLUE SALON
+              - listitem [ref=e74]:
+                - generic [ref=e75]: 1032 YONKERS AVE
+                - paragraph [ref=e77]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e78]: "Pos Blue | Station: 1"
+            - img [ref=e80]
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - list
+      - paragraph [ref=e86]: © 2026 XSoftware
+    - main [ref=e87]:
+      - generic [ref=e90]:
+        - button "Hide Tab" [ref=e91] [cursor=pointer]:
+          - img [ref=e92]
+        - generic [ref=e95]:
+          - generic [ref=e97]:
+            - button "Refresh Data" [ref=e98] [cursor=pointer]:
+              - img [ref=e99]
+            - generic [ref=e101]:
+              - button "Customize Columns" [ref=e102] [cursor=pointer]:
+                - img [ref=e103]
+              - button "01/19/2026" [ref=e108] [cursor=pointer]
+              - generic [ref=e109]:
+                - generic [ref=e110]: Ticket Type
+                - generic [ref=e111]:
+                  - combobox [ref=e112] [cursor=pointer]:
+                    - generic [ref=e114]: All Types
+                  - textbox: all
+                  - img
+                  - group:
+                    - generic: Ticket Type
+          - generic [ref=e115]:
+            - generic "Search" [ref=e120]:
+              - generic [ref=e121]:
+                - img [ref=e122]
+                - searchbox "Search…" [ref=e124]
+            - grid [ref=e125]:
+              - generic [ref=e126]:
+                - row "Detail panel toggle Ticket# Customer Payment Type Payment Card Fee Total Sale" [ref=e127]:
+                  - columnheader "Detail panel toggle" [ref=e128]
+                  - columnheader [ref=e129] [cursor=pointer]
+                  - columnheader "Ticket#" [ref=e130] [cursor=pointer]:
+                    - generic [ref=e132]: Ticket#
+                  - columnheader "Customer" [ref=e133] [cursor=pointer]:
+                    - generic [ref=e135]: Customer
+                  - columnheader "Payment Type" [ref=e136] [cursor=pointer]:
+                    - generic [ref=e138]: Payment Type
+                  - columnheader "Payment" [ref=e139] [cursor=pointer]:
+                    - generic [ref=e142]: Payment
+                  - columnheader "Card Fee" [ref=e143] [cursor=pointer]:
+                    - generic [ref=e146]: Card Fee
+                  - columnheader "Total Sale" [ref=e147] [cursor=pointer]:
+                    - generic [ref=e150]: Total Sale
+                - rowgroup [ref=e151]:
+                  - row "Open E 287 Visa $26.25 $1.25 $25.00" [ref=e152]:
+                    - gridcell "Open" [ref=e153]:
+                      - button "Open" [ref=e155] [cursor=pointer]:
+                        - img [ref=e156]
+                    - gridcell "E" [ref=e158]:
+                      - generic [ref=e160]: E
+                    - gridcell "287" [ref=e161]
+                    - gridcell [ref=e162]
+                    - gridcell "Visa" [ref=e163]:
+                      - generic [ref=e164]: Visa
+                    - gridcell "$26.25" [ref=e165]
+                    - gridcell "$1.25" [ref=e166]
+                    - gridcell "$25.00" [ref=e167]
+                  - row "Open M 286 Cash $14.00 $0.00 $14.00" [ref=e168]:
+                    - gridcell "Open" [ref=e169]:
+                      - button "Open" [ref=e171] [cursor=pointer]:
+                        - img [ref=e172]
+                    - gridcell "M" [ref=e174]:
+                      - generic [ref=e176]: M
+                    - gridcell "286" [ref=e177]
+                    - gridcell [ref=e178]
+                    - gridcell "Cash" [ref=e179]:
+                      - generic [ref=e180]: Cash
+                    - gridcell "$14.00" [ref=e181]
+                    - gridcell "$0.00" [ref=e182]
+                    - gridcell "$14.00" [ref=e183]
+                  - row "Open D 285 Visa $16.80 $0.80 $16.00" [ref=e184]:
+                    - gridcell "Open" [ref=e185]:
+                      - button "Open" [ref=e187] [cursor=pointer]:
+                        - img [ref=e188]
+                    - gridcell "D" [ref=e190]:
+                      - generic [ref=e192]: D
+                    - gridcell "285" [ref=e193]
+                    - gridcell [ref=e194]
+                    - gridcell "Visa" [ref=e195]:
+                      - generic [ref=e196]: Visa
+                    - gridcell "$16.80" [ref=e197]
+                    - gridcell "$0.80" [ref=e198]
+                    - gridcell "$16.00" [ref=e199]
+                  - row "Open J 282 Cash $15.50 $0.00 $15.50" [ref=e200]:
+                    - gridcell "Open" [ref=e201]:
+                      - button "Open" [ref=e203] [cursor=pointer]:
+                        - img [ref=e204]
+                    - gridcell "J" [ref=e206]:
+                      - generic [ref=e208]: J
+                    - gridcell "282" [ref=e209]
+                    - gridcell [ref=e210]
+                    - gridcell "Cash" [ref=e211]:
+                      - generic [ref=e212]: Cash
+                    - gridcell "$15.50" [ref=e213]
+                    - gridcell "$0.00" [ref=e214]
+                    - gridcell "$15.50" [ref=e215]
+                  - row "Open D 281 Visa $16.80 $0.80 $16.00" [ref=e216]:
+                    - gridcell "Open" [ref=e217]:
+                      - button "Open" [ref=e219] [cursor=pointer]:
+                        - img [ref=e220]
+                    - gridcell "D" [ref=e222]:
+                      - generic [ref=e224]: D
+                    - gridcell "281" [ref=e225]
+                    - gridcell [ref=e226]
+                    - gridcell "Visa" [ref=e227]:
+                      - generic [ref=e228]: Visa
+                    - gridcell "$16.80" [ref=e229]
+                    - gridcell "$0.80" [ref=e230]
+                    - gridcell "$16.00" [ref=e231]
+                  - row "Open S 279 Cash $18.00 $0.00 $18.00" [ref=e232]:
+                    - gridcell "Open" [ref=e233]:
+                      - button "Open" [ref=e235] [cursor=pointer]:
+                        - img [ref=e236]
+                    - gridcell "S" [ref=e238]:
+                      - generic [ref=e240]: S
+                    - gridcell "279" [ref=e241]
+                    - gridcell [ref=e242]
+                    - gridcell "Cash" [ref=e243]:
+                      - generic [ref=e244]: Cash
+                    - gridcell "$18.00" [ref=e245]
+                    - gridcell "$0.00" [ref=e246]
+                    - gridcell "$18.00" [ref=e247]
+                  - row "Open K 278 $0.00 $0.00 $0.00" [ref=e248]:
+                    - gridcell "Open" [ref=e249]:
+                      - button "Open" [ref=e251] [cursor=pointer]:
+                        - img [ref=e252]
+                    - gridcell "K" [ref=e254]:
+                      - generic [ref=e256]: K
+                    - gridcell "278" [ref=e257]
+                    - gridcell [ref=e258]
+                    - gridcell [ref=e259]
+                    - gridcell "$0.00" [ref=e260]
+                    - gridcell "$0.00" [ref=e261]
+                    - gridcell "$0.00" [ref=e262]
+                  - row "Open J 277 Cash $15.50 $0.00 $15.50" [ref=e263]:
+                    - gridcell "Open" [ref=e264]:
+                      - button "Open" [ref=e266] [cursor=pointer]:
+                        - img [ref=e267]
+                    - gridcell "J" [ref=e269]:
+                      - generic [ref=e271]: J
+                    - gridcell "277" [ref=e272]
+                    - gridcell [ref=e273]
+                    - gridcell "Cash" [ref=e274]:
+                      - generic [ref=e275]: Cash
+                    - gridcell "$15.50" [ref=e276]
+                    - gridcell "$0.00" [ref=e277]
+                    - gridcell "$15.50" [ref=e278]
+                  - row "Open D 275 Visa $16.80 $0.80 $16.00" [ref=e279]:
+                    - gridcell "Open" [ref=e280]:
+                      - button "Open" [ref=e282] [cursor=pointer]:
+                        - img [ref=e283]
+                    - gridcell "D" [ref=e285]:
+                      - generic [ref=e287]: D
+                    - gridcell "275" [ref=e288]
+                    - gridcell [ref=e289]
+                    - gridcell "Visa" [ref=e290]:
+                      - generic [ref=e291]: Visa
+                    - gridcell "$16.80" [ref=e292]
+                    - gridcell "$0.80" [ref=e293]
+                    - gridcell "$16.00" [ref=e294]
+                  - row "Open K 274 $0.00 $0.00 $0.00" [ref=e295]:
+                    - gridcell "Open" [ref=e296]:
+                      - button "Open" [ref=e298] [cursor=pointer]:
+                        - img [ref=e299]
+                    - gridcell "K" [ref=e301]:
+                      - generic [ref=e303]: K
+                    - gridcell "274" [ref=e304]
+                    - gridcell [ref=e305]
+                    - gridcell [ref=e306]
+                    - gridcell "$0.00" [ref=e307]
+                    - gridcell "$0.00" [ref=e308]
+                    - gridcell "$0.00" [ref=e309]
+                  - row "Open K 273 $0.00 $0.00 $0.00" [ref=e310]:
+                    - gridcell "Open" [ref=e311]:
+                      - button "Open" [ref=e313] [cursor=pointer]:
+                        - img [ref=e314]
+                    - gridcell "K" [ref=e316]:
+                      - generic [ref=e318]: K
+                    - gridcell "273" [ref=e319]
+                    - gridcell [ref=e320]
+                    - gridcell [ref=e321]
+                    - gridcell "$0.00" [ref=e322]
+                    - gridcell "$0.00" [ref=e323]
+                    - gridcell "$0.00" [ref=e324]
+                - row "$3,635.85 $23.20 $3,437.65" [ref=e325]:
+                  - gridcell [ref=e326]
+                  - gridcell [ref=e327]
+                  - gridcell [ref=e328]
+                  - gridcell [ref=e329]
+                  - gridcell [ref=e330]
+                  - gridcell "$3,635.85" [ref=e331]:
+                    - generic [ref=e332]: $3,635.85
+                  - gridcell "$23.20" [ref=e333]:
+                    - generic [ref=e334]: $23.20
+                  - gridcell "$3,437.65" [ref=e335]:
+                    - generic [ref=e336]: $3,437.65
+  - alert [ref=e346]: xPOS Salon - Galaxy Access Inc.
+  - tooltip "Refresh Data" [ref=e347]:
+    - generic [ref=e348]: Refresh Data
+```

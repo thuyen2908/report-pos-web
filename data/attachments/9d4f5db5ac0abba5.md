@@ -1,0 +1,149 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - paragraph [ref=e12]: Ticket Adjustment
+            - paragraph [ref=e13]: Monday Jan 19, 2026
+          - generic [ref=e14]:
+            - button "RECALCULATION" [ref=e16] [cursor=pointer]
+            - button "LINK PAYMENT" [ref=e18] [cursor=pointer]
+            - button "CREATE TICKET" [ref=e20] [cursor=pointer]
+        - generic [ref=e21]:
+          - generic [ref=e23] [cursor=pointer]:
+            - paragraph [ref=e24]: 09:13 PM
+            - generic [ref=e28]:
+              - paragraph [ref=e29]: Jan
+              - paragraph [ref=e30]: "19"
+          - generic [ref=e33] [cursor=pointer]:
+            - list [ref=e34]:
+              - listitem [ref=e35]:
+                - generic [ref=e36]: BLUE SALON
+              - listitem [ref=e37]:
+                - generic [ref=e38]: 1032 YONKERS AVE
+                - paragraph [ref=e40]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e41]: "Pos Blue | Station: 1"
+            - img [ref=e43]
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - list
+      - paragraph [ref=e49]: © 2026 XSoftware
+    - main [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e54]:
+          - button [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+          - generic [ref=e60]:
+            - generic "Search" [ref=e62]:
+              - generic [ref=e63]:
+                - img [ref=e64]
+                - searchbox "Search…" [active] [ref=e66]: "21"
+                - button "Clear" [ref=e67] [cursor=pointer]:
+                  - img [ref=e68]
+            - grid [ref=e70]:
+              - generic [ref=e71]:
+                - row "Ticket Total Paid Closed" [ref=e72]:
+                  - columnheader "Ticket" [ref=e73] [cursor=pointer]:
+                    - generic [ref=e75]: Ticket
+                  - columnheader "Total" [ref=e76] [cursor=pointer]:
+                    - generic [ref=e78]: Total
+                  - columnheader "Paid" [ref=e79] [cursor=pointer]:
+                    - generic [ref=e81]: Paid
+                  - columnheader "Closed" [ref=e82] [cursor=pointer]:
+                    - generic [ref=e84]: Closed
+                - rowgroup [ref=e85]:
+                  - row "221 $42.00" [ref=e86]:
+                    - gridcell "221" [ref=e87]
+                    - gridcell "$42.00" [ref=e88]
+                    - gridcell [ref=e89]:
+                      - img [ref=e91]
+                    - gridcell [ref=e93]:
+                      - img [ref=e95]
+                  - row "218 $33.10" [ref=e97]:
+                    - gridcell "218" [ref=e98]
+                    - gridcell "$33.10" [ref=e99]
+                    - gridcell [ref=e100]:
+                      - img [ref=e102]
+                    - gridcell [ref=e104]:
+                      - img [ref=e106]
+                  - row "218 $30.00" [ref=e108]:
+                    - gridcell "218" [ref=e109]
+                    - gridcell "$30.00" [ref=e110]
+                    - gridcell [ref=e111]:
+                      - img [ref=e113]
+                    - gridcell [ref=e115]:
+                      - img [ref=e117]
+                  - row "217 $8.00" [ref=e119]:
+                    - gridcell "217" [ref=e120]
+                    - gridcell "$8.00" [ref=e121]
+                    - gridcell [ref=e122]:
+                      - img [ref=e124]
+                    - gridcell [ref=e126]:
+                      - img [ref=e128]
+                  - row "216 $21.00" [ref=e130]:
+                    - gridcell "216" [ref=e131]
+                    - gridcell "$21.00" [ref=e132]
+                    - gridcell [ref=e133]:
+                      - img [ref=e135]
+                    - gridcell [ref=e137]:
+                      - img [ref=e139]
+                  - row "215 $0.00" [ref=e141]:
+                    - gridcell "215" [ref=e142]
+                    - gridcell "$0.00" [ref=e143]
+                    - gridcell [ref=e144]:
+                      - img [ref=e146]
+                    - gridcell [ref=e148]:
+                      - img [ref=e150]
+                  - row "214 $56.45" [ref=e152]:
+                    - gridcell "214" [ref=e153]
+                    - gridcell "$56.45" [ref=e154]
+                    - gridcell [ref=e155]:
+                      - img [ref=e157]
+                    - gridcell [ref=e159]:
+                      - img [ref=e161]
+                  - row "213 $0.00" [ref=e163]:
+                    - gridcell "213" [ref=e164]
+                    - gridcell "$0.00" [ref=e165]
+                    - gridcell [ref=e166]:
+                      - img [ref=e168]
+                    - gridcell [ref=e170]:
+                      - img [ref=e172]
+                  - row "212 $0.00" [ref=e174]:
+                    - gridcell "212" [ref=e175]
+                    - gridcell "$0.00" [ref=e176]
+                    - gridcell [ref=e177]:
+                      - img [ref=e179]
+                    - gridcell [ref=e181]:
+                      - img [ref=e183]
+                  - row "211 $0.00" [ref=e185]:
+                    - gridcell "211" [ref=e186]
+                    - gridcell "$0.00" [ref=e187]
+                    - gridcell [ref=e188]:
+                      - img [ref=e190]
+                    - gridcell [ref=e192]:
+                      - img [ref=e194]
+                  - row "210 $21.00" [ref=e196]:
+                    - gridcell "210" [ref=e197]
+                    - gridcell "$21.00" [ref=e198]
+                    - gridcell [ref=e199]:
+                      - img [ref=e201]
+                    - gridcell [ref=e203]:
+                      - img [ref=e205]
+                  - row "121 $54.00" [ref=e207]:
+                    - gridcell "121" [ref=e208]
+                    - gridcell "$54.00" [ref=e209]
+                    - gridcell [ref=e210]:
+                      - img [ref=e212]
+                    - gridcell [ref=e214]:
+                      - img [ref=e216]
+        - generic [ref=e225]: TICKET#
+        - generic [ref=e230]:
+          - img [ref=e232]
+          - generic [ref=e234]: Please select a ticket.
+  - alert [ref=e235]: Ticket Adjustment - xPOS Salon
+```
