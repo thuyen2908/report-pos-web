@@ -1,0 +1,236 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - list [ref=e12]:
+          - listitem [ref=e13] [cursor=pointer]:
+            - img [ref=e15]
+            - generic [ref=e19]: Timesheet
+          - listitem [ref=e20] [cursor=pointer]:
+            - img [ref=e22]
+            - generic [ref=e25]: Check In
+          - listitem:
+            - generic:
+              - img
+            - generic: Tickets
+          - listitem [ref=e26] [cursor=pointer]:
+            - img [ref=e28]
+            - generic [ref=e35]: Turn
+          - listitem [ref=e36] [cursor=pointer]:
+            - img [ref=e38]
+            - generic [ref=e41]: Appointment
+          - listitem [ref=e42] [cursor=pointer]:
+            - img [ref=e44]
+            - generic [ref=e46]: Quick Sale
+          - listitem [ref=e47] [cursor=pointer]:
+            - img [ref=e49]
+            - generic [ref=e57]: Balance
+        - generic [ref=e58]:
+          - generic [ref=e60] [cursor=pointer]:
+            - paragraph [ref=e61]: 05:23 AM
+            - generic [ref=e65]:
+              - paragraph [ref=e66]: Jan
+              - paragraph [ref=e67]: "21"
+          - generic [ref=e70] [cursor=pointer]:
+            - list [ref=e71]:
+              - listitem [ref=e72]:
+                - generic [ref=e73]: BLUE SALON
+              - listitem [ref=e74]:
+                - generic [ref=e75]: 1032 YONKERS AVE
+                - paragraph [ref=e77]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e78]: "Pos Blue | Station: 1"
+            - img [ref=e80]
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - list
+      - paragraph [ref=e86]: © 2026 XSoftware
+    - main [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e90]:
+          - button "Hide Tab" [ref=e91] [cursor=pointer]:
+            - img [ref=e92]
+          - generic [ref=e95]:
+            - generic [ref=e97]:
+              - button "Refresh Data" [ref=e98] [cursor=pointer]:
+                - img [ref=e99]
+              - generic [ref=e101]:
+                - button "Customize Columns" [ref=e102] [cursor=pointer]:
+                  - img [ref=e103]
+                - button "01/21/2026" [ref=e108] [cursor=pointer]
+                - generic [ref=e109]:
+                  - generic [ref=e110]: Ticket Type
+                  - generic [ref=e111]:
+                    - combobox [ref=e112] [cursor=pointer]:
+                      - generic [ref=e114]: All Types
+                    - textbox: all
+                    - img
+                    - group:
+                      - generic: Ticket Type
+            - generic [ref=e115]:
+              - generic "Search" [ref=e120]:
+                - generic [ref=e121]:
+                  - img [ref=e122]
+                  - searchbox "Search…" [ref=e124]: "29.25"
+                  - button "Clear" [ref=e125] [cursor=pointer]:
+                    - img [ref=e126]
+              - grid [ref=e128]:
+                - generic [ref=e129]:
+                  - row "Ticket# Customer Payment Type Payment Card Fee Total Sale Sub Total Tip Tax" [ref=e130]:
+                    - columnheader [ref=e131] [cursor=pointer]
+                    - columnheader "Ticket#" [ref=e132] [cursor=pointer]:
+                      - generic [ref=e134]: Ticket#
+                    - columnheader "Customer" [ref=e135] [cursor=pointer]:
+                      - generic [ref=e137]: Customer
+                    - columnheader "Payment Type" [ref=e138] [cursor=pointer]:
+                      - generic [ref=e140]: Payment Type
+                    - columnheader "Payment" [ref=e141] [cursor=pointer]:
+                      - generic [ref=e144]: Payment
+                    - columnheader "Card Fee" [ref=e145] [cursor=pointer]:
+                      - generic [ref=e148]: Card Fee
+                    - columnheader "Total Sale" [ref=e149] [cursor=pointer]:
+                      - generic [ref=e152]: Total Sale
+                    - columnheader "Sub Total" [ref=e153] [cursor=pointer]:
+                      - generic [ref=e156]: Sub Total
+                    - columnheader "Tip" [ref=e157] [cursor=pointer]:
+                      - generic [ref=e160]: Tip
+                    - columnheader "Tax" [ref=e161] [cursor=pointer]:
+                      - generic [ref=e164]: Tax
+                  - rowgroup [ref=e165]:
+                    - row "G 251 Loyalty Cash $29.25 $0.00 $29.25 $29.25 $0.00 $0.00" [selected] [ref=e166] [cursor=pointer]:
+                      - gridcell "G" [ref=e167]:
+                        - generic [ref=e169]: G
+                      - gridcell "251" [ref=e170]
+                      - gridcell "Loyalty" [ref=e171]
+                      - gridcell "Cash" [ref=e172]:
+                        - generic [ref=e173]: Cash
+                      - gridcell "$29.25" [active] [ref=e174]
+                      - gridcell "$0.00" [ref=e175]
+                      - gridcell "$29.25" [ref=e176]
+                      - gridcell "$29.25" [ref=e177]
+                      - gridcell "$0.00" [ref=e178]
+                      - gridcell "$0.00" [ref=e179]
+                    - generic [ref=e184]:
+                      - button "Reopen ticket" [ref=e185] [cursor=pointer]:
+                        - img [ref=e187]
+                        - text: Reopen ticket
+                      - separator [ref=e189]
+                      - button "Print Service Paid" [ref=e190] [cursor=pointer]:
+                        - img [ref=e192]
+                        - text: Print Service Paid
+                      - separator [ref=e194]
+                      - button "Print Itemized Receipt" [ref=e195] [cursor=pointer]:
+                        - img [ref=e197]
+                        - text: Print Itemized Receipt
+                    - row "G 156 Loyalty Cash $29.25 $0.00 $29.25 $29.25 $0.00 $0.00" [ref=e199]:
+                      - gridcell "G" [ref=e200]:
+                        - generic [ref=e202]: G
+                      - gridcell "156" [ref=e203]
+                      - gridcell "Loyalty" [ref=e204]
+                      - gridcell "Cash" [ref=e205]:
+                        - generic [ref=e206]: Cash
+                      - gridcell "$29.25" [ref=e207]
+                      - gridcell "$0.00" [ref=e208]
+                      - gridcell "$29.25" [ref=e209]
+                      - gridcell "$29.25" [ref=e210]
+                      - gridcell "$0.00" [ref=e211]
+                      - gridcell "$0.00" [ref=e212]
+                  - row "$58.50 $0.00 $58.50 $58.50 $0.00 $0.00" [ref=e214]:
+                    - gridcell [ref=e215]
+                    - gridcell [ref=e216]
+                    - gridcell [ref=e217]
+                    - gridcell [ref=e218]
+                    - gridcell "$58.50" [ref=e219]:
+                      - generic [ref=e220]: $58.50
+                    - gridcell "$0.00" [ref=e221]:
+                      - generic [ref=e222]: $0.00
+                    - gridcell "$58.50" [ref=e223]:
+                      - generic [ref=e224]: $58.50
+                    - gridcell "$58.50" [ref=e225]:
+                      - generic [ref=e226]: $58.50
+                    - gridcell "$0.00" [ref=e227]:
+                      - generic [ref=e228]: $0.00
+                    - gridcell "$0.00" [ref=e229]:
+                      - generic [ref=e230]: $0.00
+        - generic [ref=e235]:
+          - generic [ref=e236]:
+            - generic [ref=e237] [cursor=pointer]:
+              - generic [ref=e239]: Receipt
+              - generic [ref=e240]: Work Slip
+              - generic [ref=e241]: CCSlip
+            - button [ref=e243] [cursor=pointer]:
+              - img [ref=e244]
+          - generic [ref=e248]:
+            - generic [ref=e250]:
+              - generic [ref=e251]: BLUE SALON
+              - generic [ref=e252]: 1032 YONKERS AVE
+              - generic [ref=e253]: Yonkers, NY 10704
+              - generic [ref=e254]: (707) 707-1122
+            - table [ref=e255]:
+              - rowgroup [ref=e256]:
+                - row "Date 01/21/2026 05:22 AM" [ref=e257]:
+                  - cell "Date" [ref=e258]
+                  - cell "01/21/2026 05:22 AM" [ref=e259]
+                - row "Customer Loyalty" [ref=e260]:
+                  - cell "Customer" [ref=e261]
+                  - cell "Loyalty" [ref=e262]
+                - row "Point 58 = $0.58" [ref=e263]:
+                  - cell "Point" [ref=e264]
+                  - cell "58 = $0.58" [ref=e265]
+                - row "Ticket# 251" [ref=e266]:
+                  - cell "Ticket#" [ref=e267]
+                  - cell "251" [ref=e268]
+            - generic [ref=e269]:
+              - generic [ref=e270]:
+                - generic [ref=e271]: Qty
+                - generic [ref=e272]: Item Name
+                - generic [ref=e273]: Technician
+                - generic [ref=e274]: Price
+              - generic [ref=e276]:
+                - generic [ref=e277]:
+                  - generic [ref=e278]: "1"
+                  - generic [ref=e279]: Manicure
+                  - generic [ref=e280]: Gabriella
+                  - generic [ref=e281]: $35.50
+                - generic [ref=e282]:
+                  - generic [ref=e283]: Open Discount
+                  - generic [ref=e284]: ($3.00)
+            - table [ref=e285]:
+              - rowgroup [ref=e286]:
+                - row "Open Discount ($3.25)" [ref=e287]:
+                  - cell "Open Discount" [ref=e288]
+                  - cell "($3.25)" [ref=e289]
+                - row "TIP $0.00" [ref=e290]:
+                  - cell "TIP" [ref=e291]
+                  - cell "$0.00" [ref=e292]
+                - row "SUBTOTAL $29.25" [ref=e293]:
+                  - cell "SUBTOTAL" [ref=e294]
+                  - cell "$29.25" [ref=e295]
+                - row "TAX $0.00" [ref=e296]:
+                  - cell "TAX" [ref=e297]
+                  - cell "$0.00" [ref=e298]
+                - row "TOTAL $29.25" [ref=e299]:
+                  - cell "TOTAL" [ref=e300]
+                  - cell "$29.25" [ref=e301]
+            - table [ref=e303]:
+              - rowgroup [ref=e304]:
+                - row "CHANGE $70.75" [ref=e305]:
+                  - cell "CHANGE" [ref=e306]
+                  - cell "$70.75" [ref=e307]
+            - paragraph [ref=e308]: PAYMENT DETAILS
+            - table [ref=e309]:
+              - rowgroup [ref=e310]:
+                - row "Cash - $100.00 $29.25" [ref=e311]:
+                  - cell "Cash - $100.00" [ref=e312]
+                  - cell "$29.25" [ref=e313]
+            - generic [ref=e315]: Come back again soon...
+            - generic [ref=e317]:
+              - generic [ref=e318]: "TIP GUIDE:"
+              - generic [ref=e319]: 15% TIP = $4.39
+              - generic [ref=e320]: 18% TIP = $5.26
+              - generic [ref=e321]: 20% TIP = $5.85
+  - alert [ref=e322]: xPOS Salon - Galaxy Access Inc.
+```
