@@ -1,0 +1,218 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - paragraph [ref=e12]: Ticket View
+            - paragraph [ref=e13]: "Aubrey (Nails) - #266"
+          - generic [ref=e14]:
+            - button "SAVE TICKET" [ref=e16] [cursor=pointer]
+            - button "VOID TICKET" [ref=e18] [cursor=pointer]
+        - generic [ref=e19]:
+          - generic [ref=e21] [cursor=pointer]:
+            - paragraph [ref=e22]: 09:19 PM
+            - generic [ref=e26]:
+              - paragraph [ref=e27]: Jan
+              - paragraph [ref=e28]: "20"
+          - generic [ref=e31] [cursor=pointer]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - generic [ref=e34]: BLUE SALON
+              - listitem [ref=e35]:
+                - generic [ref=e36]: 1032 YONKERS AVE
+                - paragraph [ref=e38]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e39]: "Pos Blue | Station: 1"
+            - img [ref=e41]
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - list
+      - paragraph [ref=e47]: © 2026 XSoftware
+    - main [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - generic [ref=e55]: PAYMENT TICKET
+                - button [ref=e56] [cursor=pointer]:
+                  - img [ref=e57]
+              - generic [ref=e59]:
+                - term [ref=e60]: Card Price
+                - definition [ref=e61]:
+                  - img [ref=e63] [cursor=pointer]
+                  - text: $0.00
+              - generic [ref=e65]:
+                - term [ref=e66]: Cash Price
+                - definition [ref=e67]: ($4.30)
+              - generic [ref=e68]:
+                - term [ref=e69]: AMT DUE
+                - definition [ref=e70]: ($4.30)
+              - generic [ref=e71]:
+                - term [ref=e72]: AMT PAID
+                - definition [ref=e73]: $40.00
+              - generic [ref=e74]:
+                - term [ref=e75]: CHANGE
+                - definition [ref=e76]: $0.00
+            - generic [ref=e77]:
+              - generic [ref=e79]: PAYMENT HISTORY
+              - list [ref=e81]:
+                - listitem [ref=e82]:
+                  - generic [ref=e83]:
+                    - generic [ref=e84]:
+                      - text: Gift
+                      - generic [ref=e85]: (20)
+                    - generic [ref=e86]:
+                      - generic [ref=e87]:
+                        - paragraph [ref=e88]: 01/20/2026
+                        - paragraph [ref=e89]: 09:19 PM
+                      - button "more" [ref=e91] [cursor=pointer]:
+                        - img [ref=e92]
+                  - generic [ref=e94]:
+                    - generic [ref=e95]: $20.00
+                    - list [ref=e96]:
+                      - listitem [ref=e97] [cursor=pointer]:
+                        - img [ref=e98]
+                - listitem [ref=e100]:
+                  - generic [ref=e101]:
+                    - generic [ref=e102]:
+                      - text: Gift
+                      - generic [ref=e103]: (20)
+                    - generic [ref=e104]:
+                      - generic [ref=e105]:
+                        - paragraph [ref=e106]: 01/20/2026
+                        - paragraph [ref=e107]: 09:19 PM
+                      - button "more" [ref=e109] [cursor=pointer]:
+                        - img [ref=e110]
+                  - generic [ref=e112]:
+                    - generic [ref=e113]: $20.00
+                    - list [ref=e114]:
+                      - listitem [ref=e115] [cursor=pointer]:
+                        - img [ref=e116]
+          - generic [ref=e118]:
+            - list [ref=e119]:
+              - listitem [ref=e120] [cursor=pointer]:
+                - generic [ref=e121]: Cash
+              - listitem [ref=e122] [cursor=pointer]:
+                - generic [ref=e123]: Credit
+              - listitem [ref=e124] [cursor=pointer]:
+                - generic [ref=e125]: Gift
+              - listitem [ref=e126] [cursor=pointer]:
+                - generic [ref=e127]: Zelle
+              - listitem [ref=e128] [cursor=pointer]:
+                - generic [ref=e129]: Check
+              - listitem [ref=e130] [cursor=pointer]:
+                - generic [ref=e131]: CashApp
+              - listitem [ref=e132] [cursor=pointer]:
+                - generic [ref=e133]: Venmo
+            - generic [ref=e135]:
+              - generic [ref=e139]:
+                - generic [ref=e140]: Gift Card
+                - generic [ref=e141]:
+                  - generic [ref=e142]: "Value:"
+                  - generic [ref=e143]: $20.00
+                - generic [ref=e144]:
+                  - generic [ref=e145]: "Balance:"
+                  - generic [ref=e146]: $0.00
+              - generic [ref=e147]:
+                - generic [ref=e148] [cursor=pointer]:
+                  - generic [ref=e149]: ID GIFT CARD
+                  - generic [ref=e150]: "20"
+                - generic [ref=e151] [cursor=pointer]:
+                  - generic [ref=e152]: AMOUNT
+                  - generic [ref=e153]: $0.00
+                - generic [ref=e154]:
+                  - button "CHECK BALANCE" [disabled]:
+                    - generic:
+                      - img
+                    - text: CHECK BALANCE
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - generic [ref=e157]:
+                  - button "7" [ref=e158]:
+                    - generic [ref=e159]: "7"
+                  - button "8" [ref=e160]:
+                    - generic [ref=e161]: "8"
+                  - button "9" [ref=e162]:
+                    - generic [ref=e163]: "9"
+                - generic [ref=e164]:
+                  - button "4" [ref=e165]:
+                    - generic [ref=e166]: "4"
+                  - button "5" [ref=e167]:
+                    - generic [ref=e168]: "5"
+                  - button "6" [ref=e169]:
+                    - generic [ref=e170]: "6"
+                - generic [ref=e171]:
+                  - button "1" [ref=e172]:
+                    - generic [ref=e173]: "1"
+                  - button "2" [ref=e174]:
+                    - generic [ref=e175]: "2"
+                  - button "3" [ref=e176]:
+                    - generic [ref=e177]: "3"
+                - generic [ref=e178]:
+                  - button [ref=e179]
+                  - button "0" [ref=e181]:
+                    - generic [ref=e182]: "0"
+                  - button [ref=e183]:
+                    - img [ref=e184]
+              - button "Pay" [active] [ref=e187] [cursor=pointer]:
+                - img [ref=e189]
+                - text: Pay
+        - generic [ref=e195]:
+          - generic:
+            - button "1":
+              - generic:
+                - img
+                - generic: "1"
+            - generic:
+              - generic:
+                - generic: Select customer
+              - button:
+                - img
+          - list [ref=e198]:
+            - listitem [ref=e199] [cursor=pointer]:
+              - generic [ref=e200]:
+                - generic [ref=e201]:
+                  - generic [ref=e202]: "1"
+                  - generic [ref=e203]:
+                    - generic [ref=e204]:
+                      - generic [ref=e205]: Manicure
+                      - generic [ref=e206]:
+                        - text: S x 1
+                        - generic [ref=e207]: D
+                    - generic [ref=e208]:
+                      - generic [ref=e209]: Aubrey (Nails)
+                      - generic [ref=e210]: 09:19 PM - 09:19 PM
+                - generic [ref=e212]: $35.70
+          - list [ref=e214]:
+            - listitem [ref=e215] [cursor=pointer]:
+              - generic [ref=e216]: DISCOUNT
+            - listitem [ref=e217] [cursor=pointer]:
+              - generic [ref=e218]: PRINT RECEIPT
+            - listitem:
+              - generic: PRINT SLIPS
+          - list [ref=e220]:
+            - listitem:
+              - generic: Tip
+              - generic: $0.00
+            - listitem:
+              - generic: Discount
+              - generic: $0.00
+            - listitem:
+              - generic: Tax
+              - generic: $0.00
+            - listitem [ref=e221]:
+              - generic [ref=e222]: Sub Total
+              - generic [ref=e223]: $35.70
+            - listitem [ref=e224]:
+              - generic [ref=e225]: TOTAL
+              - generic [ref=e226]: $35.70
+          - generic [ref=e227]:
+            - button "CANCEL" [ref=e228] [cursor=pointer]
+            - button "CLOSE TICKET" [disabled]
+  - alert [ref=e229]
+```
