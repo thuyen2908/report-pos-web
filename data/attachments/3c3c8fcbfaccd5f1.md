@@ -1,0 +1,686 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - list [ref=e12]:
+          - listitem [ref=e13] [cursor=pointer]:
+            - img [ref=e15]
+            - generic [ref=e19]: Timesheet
+          - listitem [ref=e20] [cursor=pointer]:
+            - img [ref=e22]
+            - generic [ref=e25]: Check In
+          - listitem [ref=e26] [cursor=pointer]:
+            - img [ref=e28]
+            - generic [ref=e30]: Tickets
+          - listitem [ref=e31] [cursor=pointer]:
+            - img [ref=e33]
+            - generic [ref=e40]: Turn
+          - listitem [ref=e41] [cursor=pointer]:
+            - img [ref=e43]
+            - generic [ref=e46]: Appointment
+          - listitem [ref=e47] [cursor=pointer]:
+            - img [ref=e49]
+            - generic [ref=e51]: Quick Sale
+          - listitem [ref=e52] [cursor=pointer]:
+            - img [ref=e54]
+            - generic [ref=e62]: Balance
+        - generic [ref=e63]:
+          - generic [ref=e65] [cursor=pointer]:
+            - paragraph [ref=e66]: 05:10 AM
+            - generic [ref=e70]:
+              - paragraph [ref=e71]: Jan
+              - paragraph [ref=e72]: "27"
+          - generic [ref=e75] [cursor=pointer]:
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - generic [ref=e78]: BLUE SALON
+              - listitem [ref=e79]:
+                - generic [ref=e80]: 1032 YONKERS AVE
+                - paragraph [ref=e82]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e83]: "Pos Blue | Station: 1"
+            - img [ref=e85]
+    - generic [ref=e88]:
+      - generic [ref=e89]:
+        - list
+      - paragraph [ref=e91]: © 2026 XSoftware
+    - main [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e97]:
+              - generic:
+                - img
+              - tablist [ref=e100]:
+                - tab "NAILS" [selected] [ref=e101] [cursor=pointer]:
+                  - generic [ref=e102]: NAILS
+                - tab "HAIR" [ref=e103] [cursor=pointer]:
+                  - generic [ref=e104]: HAIR
+              - generic:
+                - img
+            - tabpanel [ref=e106]:
+              - list [ref=e107]:
+                - listitem [ref=e108] [cursor=pointer]:
+                  - img [ref=e109]
+                - listitem [ref=e112] [cursor=pointer]:
+                  - img [ref=e113]
+              - list [ref=e116]:
+                - listitem [ref=e117] [cursor=pointer]:
+                  - generic [ref=e118]:
+                    - generic [ref=e120]: B
+                    - generic [ref=e121]:
+                      - generic [ref=e123]: "#1"
+                      - generic [ref=e124]: Bella
+                  - generic [ref=e125]:
+                    - generic [ref=e126]:
+                      - img [ref=e127]
+                      - generic [ref=e129]: 12:00 AM
+                    - generic [ref=e130]:
+                      - img [ref=e131]
+                      - generic [ref=e133]: "Turn: 0.0"
+                - listitem [ref=e134] [cursor=pointer]:
+                  - generic [ref=e135]:
+                    - generic [ref=e137]: Z
+                    - generic [ref=e138]:
+                      - generic [ref=e140]: "#2"
+                      - generic [ref=e141]: Zoey
+                  - generic [ref=e142]:
+                    - generic [ref=e143]:
+                      - img [ref=e144]
+                      - generic [ref=e146]: 12:00 AM
+                    - generic [ref=e147]:
+                      - img [ref=e148]
+                      - generic [ref=e150]: "Turn: 0.0"
+                - listitem [ref=e151] [cursor=pointer]:
+                  - generic [ref=e152]:
+                    - generic [ref=e154]: H
+                    - generic [ref=e155]:
+                      - generic [ref=e157]: "#3"
+                      - generic [ref=e158]: Hung
+                  - generic [ref=e159]:
+                    - generic [ref=e160]:
+                      - img [ref=e161]
+                      - generic [ref=e163]: 12:02 AM
+                    - generic [ref=e164]:
+                      - img [ref=e165]
+                      - generic [ref=e167]: "Turn: 0.0"
+                - listitem [ref=e168] [cursor=pointer]:
+                  - generic [ref=e169]:
+                    - generic [ref=e171]: I
+                    - generic [ref=e172]:
+                      - generic [ref=e174]: "#4"
+                      - generic [ref=e175]: Isabella
+                  - generic [ref=e176]:
+                    - generic [ref=e177]:
+                      - img [ref=e178]
+                      - generic [ref=e180]: 02:50 AM
+                    - generic [ref=e181]:
+                      - img [ref=e182]
+                      - generic [ref=e184]: "Turn: 0.0"
+                - listitem [ref=e185] [cursor=pointer]:
+                  - generic [ref=e186]:
+                    - generic [ref=e188]: A
+                    - generic [ref=e189]:
+                      - generic [ref=e191]: "#5"
+                      - generic [ref=e192]: Aubrey
+                  - generic [ref=e193]:
+                    - generic [ref=e194]:
+                      - img [ref=e195]
+                      - generic [ref=e197]: 05:06 AM
+                    - generic [ref=e198]:
+                      - img [ref=e199]
+                      - generic [ref=e201]: "Turn: 0.0"
+                - listitem [ref=e202] [cursor=pointer]:
+                  - generic [ref=e203]:
+                    - generic [ref=e205]: L
+                    - generic [ref=e206]:
+                      - generic [ref=e208]: "#6"
+                      - generic [ref=e209]: Lauren
+                  - generic [ref=e210]:
+                    - generic [ref=e211]:
+                      - img [ref=e212]
+                      - generic [ref=e214]: 05:06 AM
+                    - generic [ref=e215]:
+                      - img [ref=e216]
+                      - generic [ref=e218]: "Turn: 0.0"
+                - listitem [ref=e219] [cursor=pointer]:
+                  - generic [ref=e220]:
+                    - generic [ref=e222]: P
+                    - generic [ref=e223]:
+                      - generic [ref=e225]: "#7"
+                      - generic [ref=e226]: Paige
+                  - generic [ref=e227]:
+                    - generic [ref=e228]:
+                      - img [ref=e229]
+                      - generic [ref=e231]: 05:07 AM
+                    - generic [ref=e232]:
+                      - img [ref=e233]
+                      - generic [ref=e235]: "Turn: 0.0"
+                - listitem [ref=e236] [cursor=pointer]:
+                  - generic [ref=e237]:
+                    - generic [ref=e239]: "N"
+                    - generic [ref=e240]:
+                      - generic [ref=e242]: "#8"
+                      - generic [ref=e243]: Natalie
+                  - generic [ref=e244]:
+                    - generic [ref=e245]:
+                      - img [ref=e246]
+                      - generic [ref=e248]: 05:09 AM
+                    - generic [ref=e249]:
+                      - img [ref=e250]
+                      - generic [ref=e252]: "Turn: 0.0"
+                - listitem [ref=e253] [cursor=pointer]:
+                  - generic [ref=e254]:
+                    - generic [ref=e256]: D
+                    - generic [ref=e257]:
+                      - generic [ref=e259]: "#9"
+                      - generic [ref=e260]: Dylan
+                  - generic [ref=e261]:
+                    - generic [ref=e262]:
+                      - img [ref=e263]
+                      - generic [ref=e265]: 05:10 AM
+                    - generic [ref=e266]:
+                      - img [ref=e267]
+                      - generic [ref=e269]: "Turn: 0.0"
+                - listitem [ref=e270] [cursor=pointer]:
+                  - generic [ref=e271]:
+                    - generic [ref=e273]: A
+                    - generic [ref=e274]:
+                      - generic [ref=e276]: "#10"
+                      - generic [ref=e277]: Avery
+                  - generic [ref=e278]:
+                    - generic [ref=e279]:
+                      - img [ref=e280]
+                      - generic [ref=e282]: 07:00 AM
+                    - generic [ref=e283]:
+                      - img [ref=e284]
+                      - generic [ref=e286]: "Turn: 0.0"
+                - listitem [ref=e287] [cursor=pointer]:
+                  - generic [ref=e288]:
+                    - generic [ref=e290]: H
+                    - generic [ref=e291]:
+                      - generic [ref=e293]: "#11"
+                      - generic [ref=e294]: Harry
+                  - generic [ref=e295]:
+                    - generic [ref=e296]:
+                      - img [ref=e297]
+                      - generic [ref=e299]: 07:00 AM
+                    - generic [ref=e300]:
+                      - img [ref=e301]
+                      - generic [ref=e303]: "Turn: 0.0"
+                - listitem [ref=e304] [cursor=pointer]:
+                  - generic [ref=e305]:
+                    - img "item service Emma" [ref=e308]
+                    - generic [ref=e309]:
+                      - generic [ref=e311]: "#12"
+                      - generic [ref=e312]: Emma
+                  - generic [ref=e313]:
+                    - generic [ref=e314]:
+                      - img [ref=e315]
+                      - generic [ref=e317]: 07:00 AM
+                    - generic [ref=e318]:
+                      - img [ref=e319]
+                      - generic [ref=e321]: "Turn: 0.0"
+                - listitem [ref=e322] [cursor=pointer]:
+                  - generic [ref=e323]:
+                    - generic [ref=e325]: H
+                    - generic [ref=e326]:
+                      - generic [ref=e328]: "#13"
+                      - generic [ref=e329]: Hanna
+                  - generic [ref=e330]:
+                    - generic [ref=e331]:
+                      - img [ref=e332]
+                      - generic [ref=e334]: 07:00 AM
+                    - generic [ref=e335]:
+                      - img [ref=e336]
+                      - generic [ref=e338]: "Turn: 0.0"
+                - listitem [ref=e339] [cursor=pointer]:
+                  - generic [ref=e340]:
+                    - generic [ref=e342]: L
+                    - generic [ref=e343]:
+                      - generic [ref=e345]: "#14"
+                      - generic [ref=e346]: Leah
+                  - generic [ref=e347]:
+                    - generic [ref=e348]:
+                      - img [ref=e349]
+                      - generic [ref=e351]: 07:00 AM
+                    - generic [ref=e352]:
+                      - img [ref=e353]
+                      - generic [ref=e355]: "Turn: 0.0"
+                - listitem [ref=e356] [cursor=pointer]:
+                  - generic [ref=e357]:
+                    - generic [ref=e359]: V
+                    - generic [ref=e360]:
+                      - generic [ref=e362]: "#15"
+                      - generic [ref=e363]: Victoria
+                  - generic [ref=e364]:
+                    - generic [ref=e365]:
+                      - img [ref=e366]
+                      - generic [ref=e368]: 07:00 AM
+                    - generic [ref=e369]:
+                      - img [ref=e370]
+                      - generic [ref=e372]: "Turn: 0.0"
+                - listitem [ref=e373] [cursor=pointer]:
+                  - generic [ref=e374]:
+                    - generic [ref=e376]: S
+                    - generic [ref=e377]:
+                      - generic [ref=e379]: "#16"
+                      - generic [ref=e380]: Sophia
+                  - generic [ref=e381]:
+                    - generic [ref=e382]:
+                      - img [ref=e383]
+                      - generic [ref=e385]: 07:00 AM
+                    - generic [ref=e386]:
+                      - img [ref=e387]
+                      - generic [ref=e389]: "Turn: 0.0"
+                - listitem [ref=e390] [cursor=pointer]:
+                  - generic [ref=e391]:
+                    - generic [ref=e393]: T
+                    - generic [ref=e394]:
+                      - generic [ref=e396]: "#17"
+                      - generic [ref=e397]: Tom
+                  - generic [ref=e398]:
+                    - generic [ref=e399]:
+                      - img [ref=e400]
+                      - generic [ref=e402]: 07:00 AM
+                    - generic [ref=e403]:
+                      - img [ref=e404]
+                      - generic [ref=e406]: "Turn: 0.0"
+                - listitem [ref=e407] [cursor=pointer]:
+                  - generic [ref=e408]:
+                    - generic [ref=e410]: G
+                    - generic [ref=e411]:
+                      - generic [ref=e413]: "#18"
+                      - generic [ref=e414]: Gabriella
+                  - generic [ref=e415]:
+                    - generic [ref=e416]:
+                      - img [ref=e417]
+                      - generic [ref=e419]: 07:00 AM
+                    - generic [ref=e420]:
+                      - img [ref=e421]
+                      - generic [ref=e423]: "Turn: 0.0"
+                - listitem [ref=e424] [cursor=pointer]:
+                  - generic [ref=e425]:
+                    - generic [ref=e427]: C
+                    - generic [ref=e428]:
+                      - generic [ref=e430]: "#19"
+                      - generic [ref=e431]: Claire
+                  - generic [ref=e432]:
+                    - generic [ref=e433]:
+                      - img [ref=e434]
+                      - generic [ref=e436]: 07:00 AM
+                    - generic [ref=e437]:
+                      - img [ref=e438]
+                      - generic [ref=e440]: "Turn: 0.0"
+                - listitem [ref=e441] [cursor=pointer]:
+                  - generic [ref=e442]:
+                    - generic [ref=e444]: S
+                    - generic [ref=e445]:
+                      - generic [ref=e447]: "#20"
+                      - generic [ref=e448]: Sarah
+                  - generic [ref=e449]:
+                    - generic [ref=e450]:
+                      - img [ref=e451]
+                      - generic [ref=e453]: 07:00 AM
+                    - generic [ref=e454]:
+                      - img [ref=e455]
+                      - generic [ref=e457]: "Turn: 0.0"
+                - listitem [ref=e458] [cursor=pointer]:
+                  - generic [ref=e459]:
+                    - generic [ref=e461]: J
+                    - generic [ref=e462]:
+                      - generic [ref=e464]: "#21"
+                      - generic [ref=e465]: Jack
+                  - generic [ref=e466]:
+                    - generic [ref=e467]:
+                      - img [ref=e468]
+                      - generic [ref=e470]: 07:00 AM
+                    - generic [ref=e471]:
+                      - img [ref=e472]
+                      - generic [ref=e474]: "Turn: 0.0"
+                - listitem [ref=e475] [cursor=pointer]:
+                  - generic [ref=e476]:
+                    - generic [ref=e478]: A
+                    - generic [ref=e479]:
+                      - generic [ref=e481]: "#22"
+                      - generic [ref=e482]: Amelia
+                  - generic [ref=e483]:
+                    - generic [ref=e484]:
+                      - img [ref=e485]
+                      - generic [ref=e487]: 07:00 AM
+                    - generic [ref=e488]:
+                      - img [ref=e489]
+                      - generic [ref=e491]: "Turn: 0.0"
+                - listitem [ref=e492] [cursor=pointer]:
+                  - generic [ref=e493]:
+                    - generic [ref=e495]: R
+                    - generic [ref=e496]:
+                      - generic [ref=e498]: "#23"
+                      - generic [ref=e499]: Ruby
+                  - generic [ref=e500]:
+                    - generic [ref=e501]:
+                      - img [ref=e502]
+                      - generic [ref=e504]: 07:00 AM
+                    - generic [ref=e505]:
+                      - img [ref=e506]
+                      - generic [ref=e508]: "Turn: 0.0"
+                - listitem [ref=e509] [cursor=pointer]:
+                  - generic [ref=e510]:
+                    - generic [ref=e512]: L
+                    - generic [ref=e513]:
+                      - generic [ref=e515]: "#24"
+                      - generic [ref=e516]: Laura
+                  - generic [ref=e517]:
+                    - generic [ref=e518]:
+                      - img [ref=e519]
+                      - generic [ref=e521]: 07:00 AM
+                    - generic [ref=e522]:
+                      - img [ref=e523]
+                      - generic [ref=e525]: "Turn: 0.0"
+                - listitem [ref=e526] [cursor=pointer]:
+                  - generic [ref=e527]:
+                    - generic [ref=e529]: H
+                    - generic [ref=e530]:
+                      - generic [ref=e532]: "#25"
+                      - generic [ref=e533]: Hailey
+                  - generic [ref=e534]:
+                    - generic [ref=e535]:
+                      - img [ref=e536]
+                      - generic [ref=e538]: 07:00 AM
+                    - generic [ref=e539]:
+                      - img [ref=e540]
+                      - generic [ref=e542]: "Turn: 0.0"
+                - listitem [ref=e543] [cursor=pointer]:
+                  - generic [ref=e544]:
+                    - generic [ref=e546]: K
+                    - generic [ref=e547]:
+                      - generic [ref=e549]: "#26"
+                      - generic [ref=e550]: Kelley
+                  - generic [ref=e551]:
+                    - generic [ref=e552]:
+                      - img [ref=e553]
+                      - generic [ref=e555]: 07:00 AM
+                    - generic [ref=e556]:
+                      - img [ref=e557]
+                      - generic [ref=e559]: "Turn: 0.0"
+                - listitem [ref=e560] [cursor=pointer]:
+                  - generic [ref=e561]:
+                    - generic [ref=e563]: K
+                    - generic [ref=e564]:
+                      - generic [ref=e566]: "#27"
+                      - generic [ref=e567]: Kim
+                  - generic [ref=e568]:
+                    - generic [ref=e569]:
+                      - img [ref=e570]
+                      - generic [ref=e572]: 07:00 AM
+                    - generic [ref=e573]:
+                      - img [ref=e574]
+                      - generic [ref=e576]: "Turn: 0.0"
+                - listitem [ref=e577] [cursor=pointer]:
+                  - generic [ref=e578]:
+                    - generic [ref=e580]: E
+                    - generic [ref=e581]:
+                      - generic [ref=e583]: "#28"
+                      - generic [ref=e584]: Emily
+                  - generic [ref=e585]:
+                    - generic [ref=e586]:
+                      - img [ref=e587]
+                      - generic [ref=e589]: 07:00 AM
+                    - generic [ref=e590]:
+                      - img [ref=e591]
+                      - generic [ref=e593]: "Turn: 0.0"
+                - listitem [ref=e594] [cursor=pointer]:
+                  - generic [ref=e595]:
+                    - generic [ref=e597]: S
+                    - generic [ref=e598]:
+                      - generic [ref=e600]: "#29"
+                      - generic [ref=e601]: Sandy
+                  - generic [ref=e602]:
+                    - generic [ref=e603]:
+                      - img [ref=e604]
+                      - generic [ref=e606]: 07:00 AM
+                    - generic [ref=e607]:
+                      - img [ref=e608]
+                      - generic [ref=e610]: "Turn: 0.0"
+                - listitem [ref=e611] [cursor=pointer]:
+                  - generic [ref=e612]:
+                    - generic [ref=e614]: L
+                    - generic [ref=e615]:
+                      - generic [ref=e617]: "#30"
+                      - generic [ref=e618]: Lisa
+                  - generic [ref=e619]:
+                    - generic [ref=e620]:
+                      - img [ref=e621]
+                      - generic [ref=e623]: 07:00 AM
+                    - generic [ref=e624]:
+                      - img [ref=e625]
+                      - generic [ref=e627]: "Turn: 0.0"
+                - listitem [ref=e628] [cursor=pointer]:
+                  - generic [ref=e629]:
+                    - generic [ref=e631]: E
+                    - generic [ref=e632]:
+                      - generic [ref=e634]: "#31"
+                      - generic [ref=e635]: Ethan
+                  - generic [ref=e636]:
+                    - generic [ref=e637]:
+                      - img [ref=e638]
+                      - generic [ref=e640]: 07:00 AM
+                    - generic [ref=e641]:
+                      - img [ref=e642]
+                      - generic [ref=e644]: "Turn: 0.0"
+                - listitem [ref=e645] [cursor=pointer]:
+                  - generic [ref=e646]:
+                    - generic [ref=e648]: S
+                    - generic [ref=e649]:
+                      - generic [ref=e651]: "#32"
+                      - generic [ref=e652]: Sam
+                  - generic [ref=e653]:
+                    - generic [ref=e654]:
+                      - img [ref=e655]
+                      - generic [ref=e657]: 07:00 AM
+                    - generic [ref=e658]:
+                      - img [ref=e659]
+                      - generic [ref=e661]: "Turn: 0.0"
+                - listitem [ref=e662] [cursor=pointer]:
+                  - generic [ref=e663]:
+                    - generic [ref=e665]: T
+                    - generic [ref=e666]:
+                      - generic [ref=e668]: "#33"
+                      - generic [ref=e669]: Tina
+                  - generic [ref=e670]:
+                    - generic [ref=e671]:
+                      - img [ref=e672]
+                      - generic [ref=e674]: 07:00 AM
+                    - generic [ref=e675]:
+                      - img [ref=e676]
+                      - generic [ref=e678]: "Turn: 0.0"
+                - listitem [ref=e679] [cursor=pointer]:
+                  - generic [ref=e680]:
+                    - generic [ref=e682]: M
+                    - generic [ref=e683]:
+                      - generic [ref=e685]: "#34"
+                      - generic [ref=e686]: Maya
+                  - generic [ref=e687]:
+                    - generic [ref=e688]:
+                      - img [ref=e689]
+                      - generic [ref=e691]: 07:00 AM
+                    - generic [ref=e692]:
+                      - img [ref=e693]
+                      - generic [ref=e695]: "Turn: 0.0"
+                - listitem [ref=e696] [cursor=pointer]:
+                  - generic [ref=e697]:
+                    - generic [ref=e699]: S
+                    - generic [ref=e700]:
+                      - generic [ref=e702]: "#35"
+                      - generic [ref=e703]: Savannah
+                  - generic [ref=e704]:
+                    - generic [ref=e705]:
+                      - img [ref=e706]
+                      - generic [ref=e708]: 07:00 AM
+                    - generic [ref=e709]:
+                      - img [ref=e710]
+                      - generic [ref=e712]: "Turn: 0.0"
+                - listitem [ref=e713] [cursor=pointer]:
+                  - generic [ref=e714]:
+                    - generic [ref=e716]: B
+                    - generic [ref=e717]:
+                      - generic [ref=e719]: "#36"
+                      - generic [ref=e720]: Brian
+                  - generic [ref=e721]:
+                    - generic [ref=e722]:
+                      - img [ref=e723]
+                      - generic [ref=e725]: 07:00 AM
+                    - generic [ref=e726]:
+                      - img [ref=e727]
+                      - generic [ref=e729]: "Turn: 0.0"
+                - listitem [ref=e730] [cursor=pointer]:
+                  - generic [ref=e731]:
+                    - generic [ref=e733]: J
+                    - generic [ref=e734]:
+                      - generic [ref=e736]: "#37"
+                      - generic [ref=e737]: Jasmine
+                  - generic [ref=e738]:
+                    - generic [ref=e739]:
+                      - img [ref=e740]
+                      - generic [ref=e742]: 05:07 AM
+                    - generic [ref=e743]:
+                      - img [ref=e744]
+                      - generic [ref=e746]: "Turn: 0.0"
+                - listitem [ref=e747] [cursor=pointer]:
+                  - generic [ref=e748]:
+                    - generic [ref=e750]: E
+                    - generic [ref=e751]:
+                      - generic [ref=e753]: "#38"
+                      - generic [ref=e754]: Evelyn
+                  - generic [ref=e755]:
+                    - generic [ref=e756]:
+                      - img [ref=e757]
+                      - generic [ref=e759]: 05:09 AM
+                    - generic [ref=e760]:
+                      - img [ref=e761]
+                      - generic [ref=e763]: "Turn: 2.0"
+                - listitem [ref=e764] [cursor=pointer]:
+                  - generic [ref=e765]:
+                    - generic [ref=e767]: C
+                    - generic [ref=e768]:
+                      - generic [ref=e770]: "#39"
+                      - generic [ref=e771]: Christ
+                  - generic [ref=e772]:
+                    - generic [ref=e773]:
+                      - img [ref=e774]
+                      - generic [ref=e776]: 07:00 AM
+                    - generic [ref=e777]:
+                      - img [ref=e778]
+                      - generic [ref=e780]: "Turn: 3.0"
+                - listitem [ref=e781] [cursor=pointer]:
+                  - generic [ref=e782]:
+                    - generic [ref=e784]: A
+                    - generic [ref=e785]:
+                      - generic [ref=e787]: "#40"
+                      - generic [ref=e788]: Anna
+                  - generic [ref=e789]:
+                    - generic [ref=e790]:
+                      - img [ref=e791]
+                      - generic [ref=e793]: 12:00 AM
+                    - generic [ref=e794]:
+                      - img [ref=e795]
+                      - generic [ref=e797]: "Turn: 4.0"
+                - listitem [ref=e798] [cursor=pointer]:
+                  - generic [ref=e799]:
+                    - generic [ref=e801]: t
+                    - generic [ref=e802]:
+                      - generic [ref=e804]: "#41"
+                      - generic [ref=e805]: thanh
+                  - generic [ref=e806]:
+                    - generic [ref=e807]:
+                      - img [ref=e808]
+                      - generic [ref=e810]: 01:11 AM
+                    - generic [ref=e811]:
+                      - img [ref=e812]
+                      - generic [ref=e814]: "Turn: 9.0"
+          - button "search" [ref=e816] [cursor=pointer]:
+            - img [ref=e817]
+        - generic [ref=e820]:
+          - generic [ref=e821]:
+            - list [ref=e822]:
+              - listitem [ref=e823]:
+                - button "Ready" [ref=e824] [cursor=pointer]
+              - listitem [ref=e825]:
+                - button "In Service"
+              - listitem [ref=e826]:
+                - button "Paid" [ref=e827] [cursor=pointer]
+              - listitem [ref=e828]:
+                - button "All" [disabled]
+            - button [ref=e829] [cursor=pointer]:
+              - img [ref=e831]
+          - img [ref=e836] [cursor=pointer]
+          - list [ref=e839]:
+            - listitem [ref=e840] [cursor=pointer]:
+              - img [ref=e841]
+            - listitem [ref=e844] [cursor=pointer]:
+              - img [ref=e845]
+          - list [ref=e849]:
+            - listitem [ref=e850] [cursor=pointer]:
+              - generic [ref=e851]:
+                - generic [ref=e852]: A
+                - generic [ref=e853]:
+                  - generic [ref=e855]: Waiting
+                  - generic [ref=e856]:
+                    - generic [ref=e857]: "#143"
+                    - list [ref=e858]:
+                      - listitem [ref=e859]:
+                        - generic [ref=e860]: Addison
+              - generic [ref=e861]:
+                - generic [ref=e862]:
+                  - generic [ref=e863]:
+                    - generic [ref=e865]: 05:03 AM - Now
+                    - generic [ref=e866]:
+                      - img [ref=e867]
+                      - generic [ref=e870]: 3'
+                  - generic [ref=e873]: Manicure - $6.00
+                - generic [ref=e874]: $6.00
+            - listitem [ref=e875] [cursor=pointer]:
+              - generic [ref=e876]:
+                - generic [ref=e877]: "N"
+                - generic [ref=e878]:
+                  - generic [ref=e880]: Waiting
+                  - generic [ref=e881]:
+                    - generic [ref=e882]: "#155"
+                    - list [ref=e883]:
+                      - listitem [ref=e884]:
+                        - generic [ref=e885]: Natalie
+              - generic [ref=e886]:
+                - generic [ref=e887]:
+                  - generic [ref=e888]:
+                    - generic [ref=e890]: 05:09 AM - Now
+                    - generic [ref=e891]:
+                      - img [ref=e892]
+                      - generic [ref=e895]: 0'
+                  - generic [ref=e898]: Waiting for Service
+                - generic [ref=e899]: $0.00
+            - listitem [ref=e900] [cursor=pointer]:
+              - generic [ref=e901]:
+                - generic [ref=e902]: t
+                - generic [ref=e903]:
+                  - generic [ref=e904]:
+                    - img [ref=e905]
+                    - generic [ref=e909]: Paid
+                  - generic [ref=e910]:
+                    - generic [ref=e911]: "#160"
+                    - list [ref=e912]:
+                      - listitem [ref=e913]:
+                        - generic [ref=e914]: thanh
+              - generic [ref=e915]:
+                - generic [ref=e916]:
+                  - generic [ref=e917]:
+                    - generic [ref=e919]: 07:03 PM - Now
+                    - generic [ref=e920]:
+                      - img [ref=e921]
+                      - generic [ref=e924]: 0'
+                  - generic [ref=e927]: Ready to Close
+                - generic [ref=e928]: $48.00
+  - alert [ref=e929]
+```
