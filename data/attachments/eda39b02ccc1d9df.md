@@ -1,0 +1,206 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - paragraph [ref=e12]: Ticket View
+            - paragraph [ref=e13]: "Emily (Nails) - #105"
+          - generic [ref=e14]:
+            - button [ref=e16] [cursor=pointer]: SAVE TICKET
+            - button [ref=e18] [cursor=pointer]: VOID TICKET
+        - generic [ref=e19]:
+          - generic [ref=e21] [cursor=pointer]:
+            - paragraph [ref=e22]: 09:08 PM
+            - generic [ref=e26]:
+              - paragraph [ref=e27]: Feb
+              - paragraph [ref=e28]: "08"
+          - generic [ref=e31] [cursor=pointer]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - generic [ref=e34]: BLUE SALON
+              - listitem [ref=e35]:
+                - generic [ref=e36]: 1032 YONKERS AVE
+                - paragraph [ref=e38]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e39]: "Pos Blue | Station: 1"
+            - img [ref=e41]
+    - paragraph [ref=e47]: © 2026 XSoftware
+    - main [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - button [ref=e52] [cursor=pointer]:
+            - img [ref=e53]
+          - generic [ref=e55]:
+            - tablist [ref=e60]:
+              - tab [selected] [ref=e61] [cursor=pointer]:
+                - generic [ref=e62]: MANI & PEDI
+              - tab [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]: FULL SET & FILL IN
+              - tab [ref=e65] [cursor=pointer]:
+                - generic [ref=e66]: ADDITIONAL SERVICE
+              - tab [ref=e67] [cursor=pointer]:
+                - generic [ref=e68]: GIFT CARD
+            - tabpanel [ref=e70]:
+              - list [ref=e72]:
+                - listitem [ref=e73] [cursor=pointer]:
+                  - generic [ref=e74]:
+                    - generic [ref=e76]: M
+                    - generic [ref=e77]:
+                      - generic [ref=e78]: Manicure
+                      - generic [ref=e80]: $6.00
+                      - img [ref=e82]
+                - listitem [ref=e84] [cursor=pointer]:
+                  - generic [ref=e85]:
+                    - generic [ref=e87]: P
+                    - generic [ref=e88]:
+                      - generic [ref=e89]: Pedicure
+                      - generic [ref=e91]: $8.00
+                      - img [ref=e93]
+                - listitem [ref=e95] [cursor=pointer]:
+                  - generic [ref=e96]:
+                    - generic [ref=e98]: C
+                    - generic [ref=e99]:
+                      - generic [ref=e100]: Cut cuticle
+                      - generic [ref=e102]: $10.00
+                      - img [ref=e104]
+                - listitem [ref=e106] [cursor=pointer]:
+                  - generic [ref=e107]:
+                    - generic [ref=e109]: G
+                    - generic [ref=e110]:
+                      - generic [ref=e111]: Gel removal
+                      - generic [ref=e113]: $40.00
+                      - img [ref=e115]
+                - listitem [ref=e117] [cursor=pointer]:
+                  - generic [ref=e118]:
+                    - generic [ref=e120]: A
+                    - generic [ref=e121]:
+                      - generic [ref=e122]: Acrylic removal
+                      - generic [ref=e124]: $30.00
+                      - img [ref=e126]
+                - listitem [ref=e128] [cursor=pointer]:
+                  - generic [ref=e129]:
+                    - generic [ref=e131]: G
+                    - generic [ref=e132]:
+                      - generic [ref=e133]: Gel X
+                      - generic [ref=e135]: $27.00
+                      - img [ref=e137]
+                - listitem [ref=e139] [cursor=pointer]:
+                  - generic [ref=e140]:
+                    - generic [ref=e142]: R
+                    - generic [ref=e143]:
+                      - generic [ref=e144]: Request price
+                      - generic [ref=e146]: $0.00
+                      - img [ref=e148]
+                - listitem [ref=e150] [cursor=pointer]:
+                  - generic [ref=e151]:
+                    - generic [ref=e153]: C
+                    - generic [ref=e154]:
+                      - generic [ref=e155]: Combo 1
+                      - generic [ref=e157]: $45.00
+                      - img [ref=e159]
+                - listitem [ref=e161] [cursor=pointer]:
+                  - generic [ref=e162]:
+                    - generic [ref=e164]: C
+                    - generic [ref=e165]:
+                      - generic [ref=e166]: Combo 2
+                      - generic [ref=e168]: $60.00
+                      - img [ref=e170]
+                - listitem [ref=e172] [cursor=pointer]:
+                  - generic [ref=e173]:
+                    - generic [ref=e175]: S
+                    - generic [ref=e176]:
+                      - generic [ref=e177]: Supper combo
+                      - generic [ref=e179]: $0.00
+                      - img [ref=e181]
+        - generic [ref=e184]:
+          - generic [ref=e185]:
+            - button [ref=e186] [cursor=pointer]:
+              - generic [ref=e187]:
+                - img [ref=e188]
+                - generic [ref=e190]: "2"
+            - generic [ref=e191]:
+              - generic [ref=e193] [cursor=pointer]:
+                - generic [ref=e194]: Alice
+                - generic [ref=e195]: 1000351 = $10,003.51
+              - button [ref=e196] [cursor=pointer]:
+                - img [ref=e197]
+          - list [ref=e201]:
+            - listitem [ref=e202] [cursor=pointer]:
+              - generic [ref=e203]:
+                - generic [ref=e204]:
+                  - generic [ref=e205]: "1"
+                  - generic [ref=e206]:
+                    - generic [ref=e207]:
+                      - generic [ref=e208]: Manicure
+                      - generic [ref=e209]:
+                        - text: S x 1
+                        - generic [ref=e210]: S
+                    - generic [ref=e211]:
+                      - generic [ref=e212]: Emily (Nails)
+                      - generic [ref=e213]: 09:08 PM - Now
+                - generic [ref=e215]: $6.00
+                - img [ref=e217]
+            - listitem [ref=e219] [cursor=pointer]:
+              - generic [ref=e220]:
+                - generic [ref=e221]:
+                  - generic [ref=e222]: "2"
+                  - generic [ref=e223]:
+                    - generic [ref=e224]:
+                      - generic [ref=e225]: Pedicure
+                      - generic [ref=e226]:
+                        - text: S x 1
+                        - generic [ref=e227]: S
+                    - generic [ref=e228]:
+                      - generic [ref=e229]: Claire (Nails)
+                      - generic [ref=e230]: 09:08 PM - Now
+                - generic [ref=e232]: $8.00
+                - img [ref=e234]
+          - list [ref=e237]:
+            - listitem [ref=e238] [cursor=pointer]:
+              - generic [ref=e239]: TECHNICIAN
+            - listitem [ref=e240] [cursor=pointer]:
+              - generic [ref=e241]: DISCOUNT ITEM
+            - listitem [ref=e242] [cursor=pointer]:
+              - generic [ref=e243]: COMBINE TICKET
+            - listitem [ref=e244] [cursor=pointer]:
+              - generic [ref=e245]: VOID ITEM
+          - list [ref=e247]:
+            - listitem [ref=e248] [cursor=pointer]:
+              - generic [ref=e249]: Tip
+              - generic [ref=e250]: $0.00
+            - listitem [ref=e251] [cursor=pointer]:
+              - generic [ref=e252]: Discount
+              - generic [ref=e253]: $0.00
+            - listitem [ref=e254] [cursor=pointer]:
+              - generic [ref=e255]: Tax
+              - button [ref=e257]:
+                - img [ref=e258]
+              - generic [ref=e260]: $0.00
+            - listitem [ref=e261]:
+              - generic [ref=e262]: Sub Total
+              - generic [ref=e263]: $14.00
+            - listitem [ref=e264]:
+              - generic [ref=e265]: TOTAL
+              - generic [ref=e266]: $14.00
+          - generic [ref=e267]:
+            - button [ref=e268] [cursor=pointer]: CANCEL
+            - button [ref=e269] [cursor=pointer]: PAY
+  - alert [ref=e270]: Waiting List - xPOS Salon
+  - dialog "Reward close" [ref=e273]:
+    - heading "Reward close" [level=2] [ref=e274]:
+      - text: Reward
+      - button "close" [ref=e276] [cursor=pointer]:
+        - img [ref=e277]
+    - separator [ref=e279]
+    - generic [ref=e280]:
+      - paragraph [ref=e283]:
+        - text: Customer is eligible for a reward.
+        - text: Do you want to redeem now?
+      - generic [ref=e285]:
+        - button "CANCEL" [ref=e286] [cursor=pointer]
+        - button "OK" [ref=e287] [cursor=pointer]
+```
