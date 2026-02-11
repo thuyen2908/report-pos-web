@@ -1,0 +1,834 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - button [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - banner [ref=e10]:
+      - generic [ref=e11]:
+        - img [ref=e14] [cursor=pointer]
+        - list [ref=e17]:
+          - listitem [ref=e18] [cursor=pointer]:
+            - img [ref=e20]
+            - generic [ref=e24]: Timesheet
+          - listitem [ref=e25] [cursor=pointer]:
+            - img [ref=e27]
+            - generic [ref=e30]: Check In
+          - listitem [ref=e31] [cursor=pointer]:
+            - img [ref=e33]
+            - generic [ref=e35]: Tickets
+          - listitem [ref=e36] [cursor=pointer]:
+            - img [ref=e38]
+            - generic [ref=e45]: Turn
+          - listitem:
+            - generic:
+              - img
+            - generic: Appointment
+          - listitem [ref=e46] [cursor=pointer]:
+            - img [ref=e48]
+            - generic [ref=e50]: Quick Sale
+          - listitem [ref=e51] [cursor=pointer]:
+            - img [ref=e53]
+            - generic [ref=e61]: Balance
+        - generic [ref=e62]:
+          - generic [ref=e64] [cursor=pointer]:
+            - paragraph [ref=e65]: 05:05 AM
+            - generic [ref=e69]:
+              - paragraph [ref=e70]: Feb
+              - paragraph [ref=e71]: "11"
+          - generic [ref=e74] [cursor=pointer]:
+            - list [ref=e75]:
+              - listitem [ref=e76]:
+                - generic [ref=e77]: BLUE SALON
+              - listitem [ref=e78]:
+                - generic [ref=e79]: 1032 YONKERS AVE
+                - paragraph [ref=e81]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e82]: "Pos Blue | Station: 1"
+            - img [ref=e84]
+    - paragraph [ref=e90]: © 2026 XSoftware
+    - main [ref=e91]:
+      - generic [ref=e92]:
+        - generic [ref=e94]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: Technician
+            - generic [ref=e99]:
+              - combobox [ref=e100]: All Technicians
+              - button [ref=e102] [cursor=pointer]:
+                - img [ref=e103]
+              - group:
+                - generic: Technician
+          - generic [ref=e105]:
+            - button [ref=e106] [cursor=pointer]:
+              - img [ref=e107]
+            - button [disabled]:
+              - img
+              - generic: View Ticket
+            - button [disabled]:
+              - img
+              - generic: Print
+            - button [disabled]:
+              - img
+              - generic: Quick Edit
+            - button [disabled]:
+              - img
+              - generic: Create Ticket
+            - button [disabled]:
+              - img
+              - generic: Edit
+            - button [disabled]:
+              - img
+              - generic: Status
+            - button [disabled]:
+              - img
+              - generic: Copy
+            - button [disabled]:
+              - img
+              - generic: Delete
+            - button [ref=e110] [cursor=pointer]:
+              - img [ref=e111]
+              - generic [ref=e113]: Block
+            - button [ref=e114] [cursor=pointer]:
+              - img [ref=e115]
+              - generic [ref=e117]: Search
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]: "05"
+              - generic [ref=e126]: ":"
+              - generic [ref=e127]: "05"
+              - generic [ref=e128]: ":"
+              - generic [ref=e129]: "31"
+            - generic [ref=e130]: AM
+          - application [ref=e131]:
+            - toolbar [ref=e133]:
+              - generic [ref=e134]:
+                - generic [ref=e135]:
+                  - navigation [ref=e136] [cursor=pointer]:
+                    - button [ref=e137]:
+                      - generic [ref=e138]: 
+                  - navigation [ref=e139] [cursor=pointer]:
+                    - button [ref=e140]:
+                      - generic [ref=e141]: 
+                  - navigation [ref=e142] [cursor=pointer]:
+                    - button [ref=e143]:
+                      - generic [ref=e144]: February 11, 2026
+                      - generic [ref=e145]: 
+                  - button [ref=e147] [cursor=pointer]:
+                    - text: 
+                    - generic [ref=e148]: Today
+                - generic [ref=e149]:
+                  - button [ref=e151] [cursor=pointer]:
+                    - text: 
+                    - generic [ref=e152]: Day
+                  - button [ref=e154] [cursor=pointer]:
+                    - text: 
+                    - generic [ref=e155]: Week
+                  - button [ref=e157] [cursor=pointer]:
+                    - text: 
+                    - generic [ref=e158]: Month
+            - generic [ref=e160]:
+              - table [ref=e162]:
+                - rowgroup [ref=e163]:
+                  - row [ref=e164]:
+                    - cell [ref=e165]
+                  - text: 
+              - table [ref=e168]:
+                - rowgroup [ref=e174]:
+                  - row [ref=e175]:
+                    - cell [ref=e176]:
+                      - generic [ref=e178]:
+                        - img [ref=e180]
+                        - generic [ref=e182]: Any Technician
+                    - cell [ref=e183]:
+                      - generic [ref=e185]:
+                        - img [ref=e187]
+                        - generic [ref=e189]: Bella
+                    - cell [ref=e190]:
+                      - generic [ref=e192]:
+                        - img [ref=e194]
+                        - generic [ref=e196]: Addison
+                    - cell [ref=e197]:
+                      - generic [ref=e199]:
+                        - img [ref=e201]
+                        - generic [ref=e203]: Anna
+                  - row [ref=e204]:
+                    - cell [ref=e205]
+                    - cell [ref=e206]
+                    - cell [ref=e207]
+                    - cell [ref=e208]
+              - table [ref=e210]:
+                - rowgroup [ref=e211]:
+                  - row [ref=e212]:
+                    - cell [ref=e213]:
+                      - generic [ref=e214]: 12:00 AM
+                  - row [ref=e215]:
+                    - cell [ref=e216]:
+                      - generic [ref=e217]: "20"
+                  - row [ref=e218]:
+                    - cell [ref=e219]:
+                      - generic [ref=e220]: "40"
+                  - row [ref=e221]:
+                    - cell [ref=e222]:
+                      - generic [ref=e223]: 01:00 AM
+                  - row [ref=e224]:
+                    - cell [ref=e225]:
+                      - generic [ref=e226]: "20"
+                  - row [ref=e227]:
+                    - cell [ref=e228]:
+                      - generic [ref=e229]: "40"
+                  - row [ref=e230]:
+                    - cell [ref=e231]:
+                      - generic [ref=e232]: 02:00 AM
+                  - row [ref=e233]:
+                    - cell [ref=e234]:
+                      - generic [ref=e235]: "20"
+                  - row [ref=e236]:
+                    - cell [ref=e237]:
+                      - generic [ref=e238]: "40"
+                  - row [ref=e239]:
+                    - cell [ref=e240]:
+                      - generic [ref=e241]: 03:00 AM
+                  - row [ref=e242]:
+                    - cell [ref=e243]:
+                      - generic [ref=e244]: "20"
+                  - row [ref=e245]:
+                    - cell [ref=e246]:
+                      - generic [ref=e247]: "40"
+                  - row [ref=e248]:
+                    - cell [ref=e249]:
+                      - generic [ref=e250]: 04:00 AM
+                  - row [ref=e251]:
+                    - cell [ref=e252]:
+                      - generic [ref=e253]: "20"
+                  - row [ref=e254]:
+                    - cell [ref=e255]:
+                      - generic [ref=e256]: "40"
+                  - row [ref=e257]:
+                    - cell [ref=e258]:
+                      - generic [ref=e259]: 05:00 AM
+                  - row [ref=e260]:
+                    - cell [ref=e261]:
+                      - generic [ref=e262]: "20"
+                  - row [ref=e263]:
+                    - cell [ref=e264]:
+                      - generic [ref=e265]: "40"
+                  - row [ref=e266]:
+                    - cell [ref=e267]:
+                      - generic [ref=e268]: 06:00 AM
+                  - row [ref=e269]:
+                    - cell [ref=e270]:
+                      - generic [ref=e271]: "20"
+                  - row [ref=e272]:
+                    - cell [ref=e273]:
+                      - generic [ref=e274]: "40"
+                  - row [ref=e275]:
+                    - cell [ref=e276]:
+                      - generic [ref=e277]: 07:00 AM
+                  - row [ref=e278]:
+                    - cell [ref=e279]:
+                      - generic [ref=e280]: "20"
+                  - row [ref=e281]:
+                    - cell [ref=e282]:
+                      - generic [ref=e283]: "40"
+                  - row [ref=e284]:
+                    - cell [ref=e285]:
+                      - generic [ref=e286]: 08:00 AM
+                  - row [ref=e287]:
+                    - cell [ref=e288]:
+                      - generic [ref=e289]: "20"
+                  - row [ref=e290]:
+                    - cell [ref=e291]:
+                      - generic [ref=e292]: "40"
+                  - row [ref=e293]:
+                    - cell [ref=e294]:
+                      - generic [ref=e295]: 09:00 AM
+                  - row [ref=e296]:
+                    - cell [ref=e297]:
+                      - generic [ref=e298]: "20"
+                  - row [ref=e299]:
+                    - cell [ref=e300]:
+                      - generic [ref=e301]: "40"
+                  - row [ref=e302]:
+                    - cell [ref=e303]:
+                      - generic [ref=e304]: 10:00 AM
+                  - row [ref=e305]:
+                    - cell [ref=e306]:
+                      - generic [ref=e307]: "20"
+                  - row [ref=e308]:
+                    - cell [ref=e309]:
+                      - generic [ref=e310]: "40"
+                  - row [ref=e311]:
+                    - cell [ref=e312]:
+                      - generic [ref=e313]: 11:00 AM
+                  - row [ref=e314]:
+                    - cell [ref=e315]:
+                      - generic [ref=e316]: "20"
+                  - row [ref=e317]:
+                    - cell [ref=e318]:
+                      - generic [ref=e319]: "40"
+                  - row [ref=e320]:
+                    - cell [ref=e321]:
+                      - generic [ref=e322]: 12:00 PM
+                  - row [ref=e323]:
+                    - cell [ref=e324]:
+                      - generic [ref=e325]: "20"
+                  - row [ref=e326]:
+                    - cell [ref=e327]:
+                      - generic [ref=e328]: "40"
+                  - row [ref=e329]:
+                    - cell [ref=e330]:
+                      - generic [ref=e331]: 01:00 PM
+                  - row [ref=e332]:
+                    - cell [ref=e333]:
+                      - generic [ref=e334]: "20"
+                  - row [ref=e335]:
+                    - cell [ref=e336]:
+                      - generic [ref=e337]: "40"
+                  - row [ref=e338]:
+                    - cell [ref=e339]:
+                      - generic [ref=e340]: 02:00 PM
+                  - row [ref=e341]:
+                    - cell [ref=e342]:
+                      - generic [ref=e343]: "20"
+                  - row [ref=e344]:
+                    - cell [ref=e345]:
+                      - generic [ref=e346]: "40"
+                  - row [ref=e347]:
+                    - cell [ref=e348]:
+                      - generic [ref=e349]: 03:00 PM
+                  - row [ref=e350]:
+                    - cell [ref=e351]:
+                      - generic [ref=e352]: "20"
+                  - row [ref=e353]:
+                    - cell [ref=e354]:
+                      - generic [ref=e355]: "40"
+                  - row [ref=e356]:
+                    - cell [ref=e357]:
+                      - generic [ref=e358]: 04:00 PM
+                  - row [ref=e359]:
+                    - cell [ref=e360]:
+                      - generic [ref=e361]: "20"
+                  - row [ref=e362]:
+                    - cell [ref=e363]:
+                      - generic [ref=e364]: "40"
+                  - row [ref=e365]:
+                    - cell [ref=e366]:
+                      - generic [ref=e367]: 05:00 PM
+                  - row [ref=e368]:
+                    - cell [ref=e369]:
+                      - generic [ref=e370]: "20"
+                  - row [ref=e371]:
+                    - cell [ref=e372]:
+                      - generic [ref=e373]: "40"
+                  - row [ref=e374]:
+                    - cell [ref=e375]:
+                      - generic [ref=e376]: 06:00 PM
+                  - row [ref=e377]:
+                    - cell [ref=e378]:
+                      - generic [ref=e379]: "20"
+                  - row [ref=e380]:
+                    - cell [ref=e381]:
+                      - generic [ref=e382]: "40"
+                  - row [ref=e383]:
+                    - cell [ref=e384]:
+                      - generic [ref=e385]: 07:00 PM
+                  - row [ref=e386]:
+                    - cell [ref=e387]:
+                      - generic [ref=e388]: "20"
+                  - row [ref=e389]:
+                    - cell [ref=e390]:
+                      - generic [ref=e391]: "40"
+                  - row [ref=e392]:
+                    - cell [ref=e393]:
+                      - generic [ref=e394]: 08:00 PM
+                  - row [ref=e395]:
+                    - cell [ref=e396]:
+                      - generic [ref=e397]: "20"
+                  - row [ref=e398]:
+                    - cell [ref=e399]:
+                      - generic [ref=e400]: "40"
+                  - row [ref=e401]:
+                    - cell [ref=e402]:
+                      - generic [ref=e403]: 09:00 PM
+                  - row [ref=e404]:
+                    - cell [ref=e405]:
+                      - generic [ref=e406]: "20"
+                  - row [ref=e407]:
+                    - cell [ref=e408]:
+                      - generic [ref=e409]: "40"
+                  - row [ref=e410]:
+                    - cell [ref=e411]:
+                      - generic [ref=e412]: 10:00 PM
+                  - row [ref=e413]:
+                    - cell [ref=e414]:
+                      - generic [ref=e415]: "20"
+                  - row [ref=e416]:
+                    - cell [ref=e417]:
+                      - generic [ref=e418]: "40"
+                  - row [ref=e419]:
+                    - cell [ref=e420]:
+                      - generic [ref=e421]: 11:00 PM
+                  - row [ref=e422]:
+                    - cell [ref=e423]:
+                      - generic [ref=e424]: "20"
+                  - row [ref=e425]:
+                    - cell [ref=e426]:
+                      - generic [ref=e427]: "40"
+              - grid [ref=e429]:
+                - button [ref=e435] [cursor=pointer]:
+                  - generic [ref=e437]:
+                    - generic [ref=e438]:
+                      - generic [ref=e440]: 05:02 AM - 05:12 AM
+                      - generic [ref=e441]:
+                        - img [ref=e442]
+                        - text: Duration
+                    - generic [ref=e444]:
+                      - img [ref=e445]
+                      - generic [ref=e450]: FULL SET & FILL IN
+                - rowgroup [ref=e455]:
+                  - row [ref=e456]:
+                    - gridcell [ref=e457]
+                    - gridcell [ref=e458]
+                    - gridcell [ref=e459]
+                    - gridcell [ref=e460]
+                  - row [ref=e461]:
+                    - gridcell [ref=e462]
+                    - gridcell [ref=e463]
+                    - gridcell [ref=e464]
+                    - gridcell [ref=e465]
+                  - row [ref=e466]:
+                    - gridcell [ref=e467]
+                    - gridcell [ref=e468]
+                    - gridcell [ref=e469]
+                    - gridcell [ref=e470]
+                  - row [ref=e471]:
+                    - gridcell [ref=e472]
+                    - gridcell [ref=e473]
+                    - gridcell [ref=e474]
+                    - gridcell [ref=e475]
+                  - row [ref=e476]:
+                    - gridcell [ref=e477]
+                    - gridcell [ref=e478]
+                    - gridcell [ref=e479]
+                    - gridcell [ref=e480]
+                  - row [ref=e481]:
+                    - gridcell [ref=e482]
+                    - gridcell [ref=e483]
+                    - gridcell [ref=e484]
+                    - gridcell [ref=e485]
+                  - row [ref=e486]:
+                    - gridcell [ref=e487]
+                    - gridcell [ref=e488]
+                    - gridcell [ref=e489]
+                    - gridcell [ref=e490]
+                  - row [ref=e491]:
+                    - gridcell [ref=e492]
+                    - gridcell [ref=e493]
+                    - gridcell [ref=e494]
+                    - gridcell [ref=e495]
+                  - row [ref=e496]:
+                    - gridcell [ref=e497]
+                    - gridcell [ref=e498]
+                    - gridcell [ref=e499]
+                    - gridcell [ref=e500]
+                  - row [ref=e501]:
+                    - gridcell [ref=e502]
+                    - gridcell [ref=e503]
+                    - gridcell [ref=e504]
+                    - gridcell [ref=e505]
+                  - row [ref=e506]:
+                    - gridcell [ref=e507]
+                    - gridcell [ref=e508]
+                    - gridcell [ref=e509]
+                    - gridcell [ref=e510]
+                  - row [ref=e511]:
+                    - gridcell [ref=e512]
+                    - gridcell [ref=e513]
+                    - gridcell [ref=e514]
+                    - gridcell [ref=e515]
+                  - row [ref=e516]:
+                    - gridcell [ref=e517]
+                    - gridcell [ref=e518]
+                    - gridcell [ref=e519]
+                    - gridcell [ref=e520]
+                  - row [ref=e521]:
+                    - gridcell [ref=e522]
+                    - gridcell [ref=e523]
+                    - gridcell [ref=e524]
+                    - gridcell [ref=e525]
+                  - row [ref=e526]:
+                    - gridcell [ref=e527]
+                    - gridcell [ref=e528]
+                    - gridcell [ref=e529]
+                    - gridcell [ref=e530]
+                  - row [ref=e531]:
+                    - gridcell [ref=e532]
+                    - gridcell [ref=e533]
+                    - gridcell [ref=e534]
+                    - gridcell [ref=e535]
+                  - row [ref=e536]:
+                    - gridcell [ref=e537]
+                    - gridcell [ref=e538]
+                    - gridcell [ref=e539]
+                    - gridcell [ref=e540]
+                  - row [ref=e541]:
+                    - gridcell [ref=e542]
+                    - gridcell [ref=e543]
+                    - gridcell [ref=e544]
+                    - gridcell [ref=e545]
+                  - row [ref=e546]:
+                    - gridcell [ref=e547]
+                    - gridcell [ref=e548]
+                    - gridcell [ref=e549]
+                    - gridcell [ref=e550]
+                  - row [ref=e551]:
+                    - gridcell [ref=e552]
+                    - gridcell [ref=e553]
+                    - gridcell [ref=e554]
+                    - gridcell [ref=e555]
+                  - row [ref=e556]:
+                    - gridcell [ref=e557]
+                    - gridcell [ref=e558]
+                    - gridcell [ref=e559]
+                    - gridcell [ref=e560]
+                  - row [ref=e561]:
+                    - gridcell [ref=e562]
+                    - gridcell [ref=e563]
+                    - gridcell [ref=e564]
+                    - gridcell [ref=e565]
+                  - row [ref=e566]:
+                    - gridcell [ref=e567]
+                    - gridcell [ref=e568]
+                    - gridcell [ref=e569]
+                    - gridcell [ref=e570]
+                  - row [ref=e571]:
+                    - gridcell [ref=e572]
+                    - gridcell [ref=e573]
+                    - gridcell [ref=e574]
+                    - gridcell [ref=e575]
+                  - row [ref=e576]:
+                    - gridcell [ref=e577]
+                    - gridcell [ref=e578]
+                    - gridcell [ref=e579]
+                    - gridcell [ref=e580]
+                  - row [ref=e581]:
+                    - gridcell [ref=e582]
+                    - gridcell [ref=e583]
+                    - gridcell [ref=e584]
+                    - gridcell [ref=e585]
+                  - row [ref=e586]:
+                    - gridcell [ref=e587]
+                    - gridcell [ref=e588]
+                    - gridcell [ref=e589]
+                    - gridcell [ref=e590]
+                  - row [ref=e591]:
+                    - gridcell [ref=e592]
+                    - gridcell [ref=e593]
+                    - gridcell [ref=e594]
+                    - gridcell [ref=e595]
+                  - row [ref=e596]:
+                    - gridcell [ref=e597]
+                    - gridcell [ref=e598]
+                    - gridcell [ref=e599]
+                    - gridcell [ref=e600]
+                  - row [ref=e601]:
+                    - gridcell [ref=e602]
+                    - gridcell [ref=e603]
+                    - gridcell [ref=e604]
+                    - gridcell [ref=e605]
+                  - row [ref=e606]:
+                    - gridcell [ref=e607]
+                    - gridcell [ref=e608]
+                    - gridcell [ref=e609]
+                    - gridcell [ref=e610]
+                  - row [ref=e611]:
+                    - gridcell [ref=e612]
+                    - gridcell [ref=e613]
+                    - gridcell [ref=e614]
+                    - gridcell [ref=e615]
+                  - row [ref=e616]:
+                    - gridcell [ref=e617]
+                    - gridcell [ref=e618]
+                    - gridcell [ref=e619]
+                    - gridcell [ref=e620]
+                  - row [ref=e621]:
+                    - gridcell [ref=e622]
+                    - gridcell [ref=e623]
+                    - gridcell [ref=e624]
+                    - gridcell [ref=e625]
+                  - row [ref=e626]:
+                    - gridcell [ref=e627]
+                    - gridcell [ref=e628]
+                    - gridcell [ref=e629]
+                    - gridcell [ref=e630]
+                  - row [ref=e631]:
+                    - gridcell [ref=e632]
+                    - gridcell [ref=e633]
+                    - gridcell [ref=e634]
+                    - gridcell [ref=e635]
+                  - row [ref=e636]:
+                    - gridcell [ref=e637]
+                    - gridcell [ref=e638]
+                    - gridcell [ref=e639]
+                    - gridcell [ref=e640]
+                  - row [ref=e641]:
+                    - gridcell [ref=e642]
+                    - gridcell [ref=e643]
+                    - gridcell [ref=e644]
+                    - gridcell [ref=e645]
+                  - row [ref=e646]:
+                    - gridcell [ref=e647]
+                    - gridcell [ref=e648]
+                    - gridcell [ref=e649]
+                    - gridcell [ref=e650]
+                  - row [ref=e651]:
+                    - gridcell [ref=e652]
+                    - gridcell [ref=e653]
+                    - gridcell [ref=e654]
+                    - gridcell [ref=e655]
+                  - row [ref=e656]:
+                    - gridcell [ref=e657]
+                    - gridcell [ref=e658]
+                    - gridcell [ref=e659]
+                    - gridcell [ref=e660]
+                  - row [ref=e661]:
+                    - gridcell [ref=e662]
+                    - gridcell [ref=e663]
+                    - gridcell [ref=e664]
+                    - gridcell [ref=e665]
+                  - row [ref=e666]:
+                    - gridcell [ref=e667]
+                    - gridcell [ref=e668]
+                    - gridcell [ref=e669]
+                    - gridcell [ref=e670]
+                  - row [ref=e671]:
+                    - gridcell [ref=e672]
+                    - gridcell [ref=e673]
+                    - gridcell [ref=e674]
+                    - gridcell [ref=e675]
+                  - row [ref=e676]:
+                    - gridcell [ref=e677]
+                    - gridcell [ref=e678]
+                    - gridcell [ref=e679]
+                    - gridcell [ref=e680]
+                  - row [ref=e681]:
+                    - gridcell [ref=e682]
+                    - gridcell [ref=e683]
+                    - gridcell [ref=e684]
+                    - gridcell [ref=e685]
+                  - row [ref=e686]:
+                    - gridcell [ref=e687]
+                    - gridcell [ref=e688]
+                    - gridcell [ref=e689]
+                    - gridcell [ref=e690]
+                  - row [ref=e691]:
+                    - gridcell [ref=e692]
+                    - gridcell [ref=e693]
+                    - gridcell [ref=e694]
+                    - gridcell [ref=e695]
+                  - row [ref=e696]:
+                    - gridcell [ref=e697]
+                    - gridcell [ref=e698]
+                    - gridcell [ref=e699]
+                    - gridcell [ref=e700]
+                  - row [ref=e701]:
+                    - gridcell [ref=e702]
+                    - gridcell [ref=e703]
+                    - gridcell [ref=e704]
+                    - gridcell [ref=e705]
+                  - row [ref=e706]:
+                    - gridcell [ref=e707]
+                    - gridcell [ref=e708]
+                    - gridcell [ref=e709]
+                    - gridcell [ref=e710]
+                  - row [ref=e711]:
+                    - gridcell [ref=e712]
+                    - gridcell [ref=e713]
+                    - gridcell [ref=e714]
+                    - gridcell [ref=e715]
+                  - row [ref=e716]:
+                    - gridcell [ref=e717]
+                    - gridcell [ref=e718]
+                    - gridcell [ref=e719]
+                    - gridcell [ref=e720]
+                  - row [ref=e721]:
+                    - gridcell [ref=e722]
+                    - gridcell [ref=e723]
+                    - gridcell [ref=e724]
+                    - gridcell [ref=e725]
+                  - row [ref=e726]:
+                    - gridcell [ref=e727]
+                    - gridcell [ref=e728]
+                    - gridcell [ref=e729]
+                    - gridcell [ref=e730]
+                  - row [ref=e731]:
+                    - gridcell [ref=e732]
+                    - gridcell [ref=e733]
+                    - gridcell [ref=e734]
+                    - gridcell [ref=e735]
+                  - row [ref=e736]:
+                    - gridcell [ref=e737]
+                    - gridcell [ref=e738]
+                    - gridcell [ref=e739]
+                    - gridcell [ref=e740]
+                  - row [ref=e741]:
+                    - gridcell [ref=e742]
+                    - gridcell [ref=e743]
+                    - gridcell [ref=e744]
+                    - gridcell [ref=e745]
+                  - row [ref=e746]:
+                    - gridcell [ref=e747]
+                    - gridcell [ref=e748]
+                    - gridcell [ref=e749]
+                    - gridcell [ref=e750]
+                  - row [ref=e751]:
+                    - gridcell [ref=e752]
+                    - gridcell [ref=e753]
+                    - gridcell [ref=e754]
+                    - gridcell [ref=e755]
+                  - row [ref=e756]:
+                    - gridcell [ref=e757]
+                    - gridcell [ref=e758]
+                    - gridcell [ref=e759]
+                    - gridcell [ref=e760]
+                  - row [ref=e761]:
+                    - gridcell [ref=e762]
+                    - gridcell [ref=e763]
+                    - gridcell [ref=e764]
+                    - gridcell [ref=e765]
+                  - row [ref=e766]:
+                    - gridcell [ref=e767]
+                    - gridcell [ref=e768]
+                    - gridcell [ref=e769]
+                    - gridcell [ref=e770]
+                  - row [ref=e771]:
+                    - gridcell [ref=e772]
+                    - gridcell [ref=e773]
+                    - gridcell [ref=e774]
+                    - gridcell [ref=e775]
+                  - row [ref=e776]:
+                    - gridcell [ref=e777]
+                    - gridcell [ref=e778]
+                    - gridcell [ref=e779]
+                    - gridcell [ref=e780]
+                  - row [ref=e781]:
+                    - gridcell [ref=e782]
+                    - gridcell [ref=e783]
+                    - gridcell [ref=e784]
+                    - gridcell [ref=e785]
+                  - row [ref=e786]:
+                    - gridcell [ref=e787]
+                    - gridcell [ref=e788]
+                    - gridcell [ref=e789]
+                    - gridcell [ref=e790]
+                  - row [ref=e791]:
+                    - gridcell [ref=e792]
+                    - gridcell [ref=e793]
+                    - gridcell [ref=e794]
+                    - gridcell [ref=e795]
+                  - row [ref=e796]:
+                    - gridcell [ref=e797]
+                    - gridcell [ref=e798]
+                    - gridcell [ref=e799]
+                    - gridcell [ref=e800]
+                  - row [ref=e801]:
+                    - gridcell [ref=e802]
+                    - gridcell [ref=e803]
+                    - gridcell [ref=e804]
+                    - gridcell [ref=e805]
+                  - row [ref=e806]:
+                    - gridcell [ref=e807]
+                    - gridcell [ref=e808]
+                    - gridcell [ref=e809]
+                    - gridcell [ref=e810]
+                  - row [ref=e811]:
+                    - gridcell [ref=e812]
+                    - gridcell [ref=e813]
+                    - gridcell [ref=e814]
+                    - gridcell [ref=e815]
+            - text: 
+  - alert [ref=e816]: xPOS Salon - Galaxy Access Inc.
+  - text:                         
+  - dialog "Create Blocked Time close" [ref=e819]:
+    - heading "Create Blocked Time close" [level=2] [ref=e820]:
+      - text: Create Blocked Time
+      - button "close" [ref=e822] [cursor=pointer]:
+        - img [ref=e823]
+    - separator [ref=e825]
+    - generic [ref=e826]:
+      - generic [ref=e830]:
+        - generic [ref=e831]:
+          - generic [ref=e833]:
+            - generic [ref=e834]:
+              - text: Technician
+              - generic [ref=e835]: "*"
+            - generic [ref=e836]:
+              - combobox "Technician" [active] [ref=e837]: Anna
+              - generic [ref=e838]:
+                - button "Clear" [ref=e839] [cursor=pointer]:
+                  - img [ref=e840]
+                - button "Open" [ref=e842] [cursor=pointer]:
+                  - img [ref=e843]
+              - group:
+                - generic: Technician *
+          - group [ref=e846]:
+            - generic [ref=e847] [cursor=pointer]:
+              - checkbox "All Day" [ref=e850]
+              - generic [ref=e853]: All Day
+        - generic [ref=e854]:
+          - generic [ref=e855]:
+            - generic [ref=e856]:
+              - text: Start Date
+              - generic [ref=e857]: "*"
+            - generic [ref=e858]:
+              - textbox "Start Date" [ref=e859]:
+                - /placeholder: MM/DD/YYYY
+                - text: 02/11/2026
+              - img [ref=e861]
+              - group:
+                - generic: Start Date *
+          - generic [ref=e863]:
+            - generic [ref=e864]:
+              - text: Start Time
+              - generic [ref=e865]: "*"
+            - generic [ref=e866]:
+              - textbox "Start Time" [ref=e867]:
+                - /placeholder: hh:mm aa
+                - text: 12:00 AM
+              - button "Choose time, selected time is 12:00 AM" [ref=e869] [cursor=pointer]:
+                - img [ref=e870]
+              - group:
+                - generic: Start Time *
+        - generic [ref=e873]:
+          - generic [ref=e874]:
+            - generic [ref=e875]:
+              - text: End Date
+              - generic [ref=e876]: "*"
+            - generic [ref=e877]:
+              - textbox "End Date" [ref=e878]:
+                - /placeholder: MM/DD/YYYY
+                - text: 02/11/2026
+              - img [ref=e880]
+              - group:
+                - generic: End Date *
+          - generic [ref=e882]:
+            - generic [ref=e883]:
+              - text: End Time
+              - generic [ref=e884]: "*"
+            - generic [ref=e885]:
+              - textbox "End Time" [ref=e886]:
+                - /placeholder: hh:mm aa
+                - text: 11:59 PM
+              - button "Choose time, selected time is 11:59 PM" [ref=e888] [cursor=pointer]:
+                - img [ref=e889]
+              - group:
+                - generic: End Time *
+        - generic [ref=e893]:
+          - generic: Reason block
+          - generic [ref=e894]:
+            - textbox "Reason block" [ref=e895]
+            - group:
+              - generic: Reason block
+      - button "Save" [ref=e897] [cursor=pointer]
+```
