@@ -1,0 +1,91 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - paragraph [ref=e12]: Payroll
+          - paragraph
+        - generic [ref=e13]:
+          - generic [ref=e15] [cursor=pointer]:
+            - paragraph [ref=e16]: 05:09 AM
+            - generic [ref=e20]:
+              - paragraph [ref=e21]: Feb
+              - paragraph [ref=e22]: "20"
+          - generic [ref=e25] [cursor=pointer]:
+            - list [ref=e26]:
+              - listitem [ref=e27]:
+                - generic [ref=e28]: BLUE SALON
+              - listitem [ref=e29]:
+                - generic [ref=e30]: 1032 YONKERS AVE
+                - paragraph [ref=e32]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e33]: "Pos Blue | Station: 1"
+            - img [ref=e35]
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - list
+      - paragraph [ref=e41]: © 2026 XSoftware
+    - main [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - button "02/20/2026" [ref=e47] [cursor=pointer]
+            - button "02/20/2026" [ref=e48] [cursor=pointer]
+            - generic [ref=e49]:
+              - button [ref=e50] [cursor=pointer]:
+                - img [ref=e51]
+              - button [ref=e53] [cursor=pointer]:
+                - img [ref=e55]
+          - generic [ref=e57]:
+            - generic [ref=e58]: Type
+            - generic [ref=e59]:
+              - combobox [ref=e60] [cursor=pointer]:
+                - generic [ref=e62]: Owner View
+              - textbox: owner
+              - img
+              - group:
+                - generic: Type
+          - generic [ref=e67]:
+            - generic "Search" [ref=e69]:
+              - generic [ref=e70]:
+                - img [ref=e71]
+                - searchbox "Search…" [active] [ref=e73]: Anna
+                - button "Clear" [ref=e74] [cursor=pointer]:
+                  - img [ref=e75]
+            - grid [ref=e77]:
+              - generic [ref=e78]:
+                - row "Name" [ref=e79]:
+                  - columnheader [ref=e80]
+                  - columnheader "Name" [ref=e81] [cursor=pointer]:
+                    - generic [ref=e83]: Name
+                - generic [ref=e85]: No rows
+                - rowgroup
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - tablist [ref=e92]:
+                - tab "SINGLE PAYROLL" [selected] [ref=e93] [cursor=pointer]
+                - tab "SUMMARY PAYROLL" [ref=e94] [cursor=pointer]
+                - tab "PAYROLL DETAILS" [ref=e95] [cursor=pointer]
+                - tab "TIMESHEET" [ref=e96] [cursor=pointer]
+                - tab "PAYSUB" [ref=e97] [cursor=pointer]
+                - tab "DOCUMENTS" [ref=e98] [cursor=pointer]
+              - img [ref=e100] [cursor=pointer]
+            - generic [ref=e102]:
+              - button "Recalculation" [disabled]:
+                - generic:
+                  - img
+                - text: Recalculation
+              - button "Save" [disabled]:
+                - generic:
+                  - img
+                - text: Save
+              - button "Print" [ref=e103] [cursor=pointer]:
+                - img [ref=e105]
+                - text: Print
+          - tabpanel "SINGLE PAYROLL" [ref=e109]
+  - alert [ref=e117]: xPOS Salon - Galaxy Access Inc.
+```
