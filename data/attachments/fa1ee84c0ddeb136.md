@@ -1,0 +1,136 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - paragraph [ref=e12]: Ticket View
+            - paragraph [ref=e13]: "Willow (Nails) - #208"
+          - generic [ref=e14]:
+            - button "SAVE TICKET" [ref=e16] [cursor=pointer]
+            - button "VOID TICKET" [ref=e18] [cursor=pointer]
+        - generic [ref=e19]:
+          - generic [ref=e21] [cursor=pointer]:
+            - paragraph [ref=e22]: 05:27 AM
+            - generic [ref=e26]:
+              - paragraph [ref=e27]: Mar
+              - paragraph [ref=e28]: "02"
+          - generic [ref=e31] [cursor=pointer]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - generic [ref=e34]: BLUE SALON
+              - listitem [ref=e35]:
+                - generic [ref=e36]: 1032 YONKERS AVE
+                - paragraph [ref=e38]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e39]: "Pos Blue | Station: 1"
+            - img [ref=e41]
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - list
+      - paragraph [ref=e47]: © 2026 XSoftware
+    - main [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - generic [ref=e55]: PAYMENT TICKET
+                - button [ref=e56] [cursor=pointer]:
+                  - img [ref=e57]
+              - generic [ref=e59]:
+                - term [ref=e60]: Card Price
+                - definition [ref=e61]:
+                  - img [ref=e63] [cursor=pointer]
+                  - text: $0.00
+              - generic [ref=e65]:
+                - term [ref=e66]: Cash Price
+                - definition [ref=e67]: $0.00
+              - generic [ref=e68]:
+                - term [ref=e69]: AMT DUE
+                - definition [ref=e70]: $0.00
+              - generic [ref=e71]:
+                - term [ref=e72]: AMT PAID
+                - definition [ref=e73]: $17.50
+              - generic [ref=e74]:
+                - term [ref=e75]: CHANGE
+                - definition [ref=e76]: $0.00
+            - generic [ref=e77]:
+              - generic [ref=e79]: PAYMENT HISTORY
+              - list [ref=e81]:
+                - listitem [ref=e82]:
+                  - generic [ref=e83]:
+                    - generic [ref=e84]:
+                      - text: Gift
+                      - generic [ref=e85]: (0903)
+                    - generic [ref=e86]:
+                      - generic [ref=e87]:
+                        - paragraph [ref=e88]: 03/02/2026
+                        - paragraph [ref=e89]: 05:25 AM
+                      - button "more" [ref=e91] [cursor=pointer]:
+                        - img [ref=e92]
+                  - generic [ref=e94]:
+                    - generic [ref=e95]: $17.50
+                    - list [ref=e96]:
+                      - listitem [ref=e97] [cursor=pointer]:
+                        - img [ref=e98]
+          - generic [ref=e101]:
+            - img [ref=e103]
+            - generic [ref=e106]: Successful Payment!
+        - generic [ref=e108]:
+          - generic:
+            - button "1":
+              - generic:
+                - img
+                - generic: "1"
+            - generic:
+              - generic:
+                - generic: Select customer
+              - button:
+                - img
+          - list [ref=e111]:
+            - listitem [ref=e112] [cursor=pointer]:
+              - generic [ref=e113]:
+                - generic [ref=e114]:
+                  - generic [ref=e115]: "1"
+                  - generic [ref=e116]:
+                    - generic [ref=e117]:
+                      - generic [ref=e118]: Manicure
+                      - generic [ref=e119]:
+                        - text: S x 1
+                        - generic [ref=e120]: D
+                    - generic [ref=e121]:
+                      - generic [ref=e122]: Willow (Nails)
+                      - generic [ref=e123]: 05:25 AM - 05:25 AM
+                - generic [ref=e125]: $17.50
+          - list [ref=e127]:
+            - listitem [ref=e128] [cursor=pointer]:
+              - generic [ref=e129]: DISCOUNT
+            - listitem [ref=e130] [cursor=pointer]:
+              - generic [ref=e131]: PRINT RECEIPT
+            - listitem:
+              - generic: PRINT SLIPS
+          - list [ref=e133]:
+            - listitem:
+              - generic: Tip
+              - generic: $0.00
+            - listitem:
+              - generic: Discount
+              - generic: $0.00
+            - listitem:
+              - generic: Tax
+              - generic: $0.00
+            - listitem [ref=e134]:
+              - generic [ref=e135]: Sub Total
+              - generic [ref=e136]: $17.50
+            - listitem [ref=e137]:
+              - generic [ref=e138]: TOTAL
+              - generic [ref=e139]: $17.50
+          - generic [ref=e140]:
+            - button "CANCEL" [ref=e141] [cursor=pointer]
+            - button "CLOSE TICKET" [ref=e142] [cursor=pointer]
+  - alert [ref=e143]: Closed Tickets - xPOS Salon
+```
