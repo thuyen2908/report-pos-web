@@ -1,0 +1,387 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - paragraph [ref=e12]: Create Employee
+          - paragraph
+        - generic [ref=e13]:
+          - generic [ref=e15] [cursor=pointer]:
+            - paragraph [ref=e16]: 10:19 PM
+            - generic [ref=e20]:
+              - paragraph [ref=e21]: Mar
+              - paragraph [ref=e22]: "09"
+          - generic [ref=e25] [cursor=pointer]:
+            - list [ref=e26]:
+              - listitem [ref=e27]:
+                - generic [ref=e28]: BLUE SALON
+              - listitem [ref=e29]:
+                - generic [ref=e30]: 1032 YONKERS AVE
+                - paragraph [ref=e32]: Yonkers, NY, 10704 | (707) 707-1122
+                - generic [ref=e33]: "Pos Blue | Station: 1"
+            - img [ref=e35]
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - list
+      - paragraph [ref=e41]: © 2026 XSoftware
+    - main [ref=e42]:
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - tablist [ref=e53]:
+              - tab "Basic Info" [selected] [ref=e54] [cursor=pointer]
+              - tab "Compensation Info" [ref=e55] [cursor=pointer]
+              - tab "Service/Product" [ref=e56] [cursor=pointer]
+              - tab "Advanced" [ref=e57] [cursor=pointer]
+              - tab "Queue Group" [ref=e58] [cursor=pointer]
+              - tab "Mobile Access" [ref=e59] [cursor=pointer]
+            - img [ref=e61] [cursor=pointer]
+          - generic [ref=e63]:
+            - button "Save" [ref=e64] [cursor=pointer]:
+              - img [ref=e66]
+              - text: Save
+            - button "Back" [ref=e68] [cursor=pointer]:
+              - img [ref=e70]
+              - text: Back
+        - tabpanel "Basic Info" [ref=e74]:
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e81]:
+                - generic [ref=e83]:
+                  - generic [ref=e86] [cursor=pointer]: TEXT
+                  - generic [ref=e89] [cursor=pointer]: Upload
+                - generic [ref=e90]:
+                  - generic [ref=e91]:
+                    - generic [ref=e92]: Fore Color
+                    - generic [ref=e93]:
+                      - combobox "Fore Color White" [ref=e94] [cursor=pointer]:
+                        - img [ref=e96]
+                        - generic [ref=e99]: White
+                      - textbox: "#fff"
+                      - img
+                      - group:
+                        - generic: Fore Color
+                  - generic "Custom Color" [ref=e100] [cursor=pointer]:
+                    - img [ref=e101]
+              - generic [ref=e104]:
+                - generic [ref=e106]:
+                  - generic [ref=e107]:
+                    - generic [ref=e108]:
+                      - generic [ref=e109]:
+                        - text: First Name
+                        - generic [ref=e110]: "*"
+                      - generic [ref=e111]:
+                        - textbox "First Name" [ref=e112]: AutoTestFirstName
+                        - group:
+                          - generic: First Name *
+                    - generic [ref=e113]:
+                      - generic: Last Name
+                      - generic [ref=e114]:
+                        - textbox "Last Name" [ref=e115]
+                        - group:
+                          - generic: Last Name
+                    - generic [ref=e116]:
+                      - generic [ref=e117]:
+                        - text: Nick Name
+                        - generic [ref=e118]: "*"
+                      - generic [ref=e119]:
+                        - textbox "Nick Name" [ref=e120]: AutoTestNickName
+                        - group:
+                          - generic: Nick Name *
+                    - group [ref=e122]:
+                      - generic [ref=e123] [cursor=pointer]:
+                        - checkbox "Active" [checked] [ref=e126]
+                        - generic [ref=e129]: Active
+                  - generic [ref=e130]:
+                    - generic [ref=e131]:
+                      - generic: Cell Phone
+                      - generic [ref=e132]:
+                        - textbox "Cell Phone" [ref=e133]
+                        - group:
+                          - generic: Cell Phone
+                    - generic [ref=e134]:
+                      - generic [ref=e135]:
+                        - text: Job Title
+                        - generic [ref=e136]: "*"
+                      - generic [ref=e137]:
+                        - combobox "Job Title Nail Tech" [ref=e138] [cursor=pointer]:
+                          - generic [ref=e140]: Nail Tech
+                        - textbox: corp5.store1467.56864257-a94a-4537-9122-ccc77cc6897f
+                        - img
+                        - group:
+                          - generic: Job Title *
+                    - generic [ref=e141]:
+                      - generic [ref=e142]:
+                        - text: Role
+                        - generic [ref=e143]: "*"
+                      - generic [ref=e144]:
+                        - combobox "Role Employee" [ref=e145] [cursor=pointer]: Employee
+                        - textbox: corp5.store1467.45b3cf12-b064-48d2-a408-fe4846b7c361
+                        - img
+                        - group:
+                          - generic: Role *
+                    - generic [ref=e146]:
+                      - generic [ref=e147]: Hire Date
+                      - generic [ref=e148]:
+                        - textbox "Hire Date" [ref=e149]:
+                          - /placeholder: MM/DD/YYYY
+                          - text: 03/09/2026
+                        - img [ref=e151]
+                        - group:
+                          - generic: Hire Date
+                  - generic [ref=e153]:
+                    - generic [ref=e154]:
+                      - generic: Email
+                      - generic [ref=e155]:
+                        - textbox "Email" [ref=e156]
+                        - group:
+                          - generic: Email
+                    - generic [ref=e157]:
+                      - generic [ref=e158]:
+                        - text: Appt Book Order
+                        - generic [ref=e159]: "*"
+                      - generic [ref=e160]:
+                        - spinbutton "numerictextbox" [ref=e162]: "0"
+                        - group:
+                          - generic: Appt Book Order *
+                    - generic [ref=e163]:
+                      - generic [ref=e164]:
+                        - text: POS Password
+                        - generic [ref=e165]: "*"
+                      - generic [ref=e166]:
+                        - textbox "POS Password" [ref=e167]: "7106"
+                        - group:
+                          - generic: POS Password *
+                    - button "Get New Password" [ref=e170] [cursor=pointer]
+                - generic [ref=e172]:
+                  - generic [ref=e173]:
+                    - generic [ref=e174]:
+                      - generic: Address
+                      - generic [ref=e175]:
+                        - textbox "Address" [ref=e176]
+                        - group:
+                          - generic: Address
+                    - generic [ref=e177]:
+                      - generic: City
+                      - generic [ref=e178]:
+                        - textbox "City" [ref=e179]
+                        - group:
+                          - generic: City
+                    - generic [ref=e180]:
+                      - generic: State
+                      - generic [ref=e181]:
+                        - combobox "State" [ref=e182] [cursor=pointer]
+                        - textbox
+                        - img
+                        - group:
+                          - generic: State
+                    - generic [ref=e183]:
+                      - generic: Zip
+                      - generic [ref=e184]:
+                        - textbox "Zip" [ref=e185]
+                        - group:
+                          - generic: Zip
+                  - generic [ref=e186]:
+                    - generic [ref=e187]:
+                      - generic: Unit Number
+                      - generic [ref=e188]:
+                        - textbox "Unit Number" [ref=e189]
+                        - group:
+                          - generic: Unit Number
+                    - generic [ref=e190]:
+                      - generic: SSN
+                      - generic [ref=e191]:
+                        - textbox "SSN" [ref=e192]
+                        - group:
+                          - generic: SSN
+            - generic [ref=e197]:
+              - heading "Schedule" [level=5] [ref=e199]
+              - separator [ref=e200]
+              - generic [ref=e201]:
+                - button "Same as Monday" [ref=e202] [cursor=pointer]
+                - button "Same as Business Hours" [ref=e203] [cursor=pointer]
+              - group [ref=e206]:
+                - generic [ref=e207] [cursor=pointer]:
+                  - checkbox "Unscheduled, yet clocked in today" [ref=e210]
+                  - generic [ref=e213]: Unscheduled, yet clocked in today
+              - generic [ref=e214]:
+                - group [ref=e216]:
+                  - generic [ref=e217] [cursor=pointer]:
+                    - checkbox "Monday" [checked] [ref=e220]
+                    - generic [ref=e223]: Monday
+                - generic [ref=e224]:
+                  - generic [ref=e225]: Start Time
+                  - generic [ref=e226]:
+                    - textbox "Start Time" [ref=e227]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e229] [cursor=pointer]:
+                      - img [ref=e230]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e233]:
+                  - generic [ref=e234]: End Time
+                  - generic [ref=e235]:
+                    - textbox "End Time" [ref=e236]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e238] [cursor=pointer]:
+                      - img [ref=e239]
+                    - group:
+                      - generic: End Time
+              - generic [ref=e242]:
+                - group [ref=e244]:
+                  - generic [ref=e245] [cursor=pointer]:
+                    - checkbox "Tuesday" [checked] [ref=e248]
+                    - generic [ref=e251]: Tuesday
+                - generic [ref=e252]:
+                  - generic [ref=e253]: Start Time
+                  - generic [ref=e254]:
+                    - textbox "Start Time" [ref=e255]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e257] [cursor=pointer]:
+                      - img [ref=e258]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e261]:
+                  - generic [ref=e262]: End Time
+                  - generic [ref=e263]:
+                    - textbox "End Time" [ref=e264]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e266] [cursor=pointer]:
+                      - img [ref=e267]
+                    - group:
+                      - generic: End Time
+              - generic [ref=e270]:
+                - group [ref=e272]:
+                  - generic [ref=e273] [cursor=pointer]:
+                    - checkbox "Wednesday" [checked] [ref=e276]
+                    - generic [ref=e279]: Wednesday
+                - generic [ref=e280]:
+                  - generic [ref=e281]: Start Time
+                  - generic [ref=e282]:
+                    - textbox "Start Time" [ref=e283]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e285] [cursor=pointer]:
+                      - img [ref=e286]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e289]:
+                  - generic [ref=e290]: End Time
+                  - generic [ref=e291]:
+                    - textbox "End Time" [ref=e292]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e294] [cursor=pointer]:
+                      - img [ref=e295]
+                    - group:
+                      - generic: End Time
+              - generic [ref=e298]:
+                - group [ref=e300]:
+                  - generic [ref=e301] [cursor=pointer]:
+                    - checkbox "Thursday" [checked] [ref=e304]
+                    - generic [ref=e307]: Thursday
+                - generic [ref=e308]:
+                  - generic [ref=e309]: Start Time
+                  - generic [ref=e310]:
+                    - textbox "Start Time" [ref=e311]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e313] [cursor=pointer]:
+                      - img [ref=e314]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e317]:
+                  - generic [ref=e318]: End Time
+                  - generic [ref=e319]:
+                    - textbox "End Time" [ref=e320]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e322] [cursor=pointer]:
+                      - img [ref=e323]
+                    - group:
+                      - generic: End Time
+              - generic [ref=e326]:
+                - group [ref=e328]:
+                  - generic [ref=e329] [cursor=pointer]:
+                    - checkbox "Friday" [checked] [ref=e332]
+                    - generic [ref=e335]: Friday
+                - generic [ref=e336]:
+                  - generic [ref=e337]: Start Time
+                  - generic [ref=e338]:
+                    - textbox "Start Time" [ref=e339]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e341] [cursor=pointer]:
+                      - img [ref=e342]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e345]:
+                  - generic [ref=e346]: End Time
+                  - generic [ref=e347]:
+                    - textbox "End Time" [ref=e348]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e350] [cursor=pointer]:
+                      - img [ref=e351]
+                    - group:
+                      - generic: End Time
+              - generic [ref=e354]:
+                - group [ref=e356]:
+                  - generic [ref=e357] [cursor=pointer]:
+                    - checkbox "Saturday" [checked] [ref=e360]
+                    - generic [ref=e363]: Saturday
+                - generic [ref=e364]:
+                  - generic [ref=e365]: Start Time
+                  - generic [ref=e366]:
+                    - textbox "Start Time" [ref=e367]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e369] [cursor=pointer]:
+                      - img [ref=e370]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e373]:
+                  - generic [ref=e374]: End Time
+                  - generic [ref=e375]:
+                    - textbox "End Time" [ref=e376]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e378] [cursor=pointer]:
+                      - img [ref=e379]
+                    - group:
+                      - generic: End Time
+              - generic [ref=e382]:
+                - group [ref=e384]:
+                  - generic [ref=e385] [cursor=pointer]:
+                    - checkbox "Sunday" [checked] [ref=e388]
+                    - generic [ref=e391]: Sunday
+                - generic [ref=e392]:
+                  - generic [ref=e393]: Start Time
+                  - generic [ref=e394]:
+                    - textbox "Start Time" [ref=e395]:
+                      - /placeholder: hh:mm aa
+                      - text: 12:00 AM
+                    - button "Choose time, selected time is 12:00 AM" [ref=e397] [cursor=pointer]:
+                      - img [ref=e398]
+                    - group:
+                      - generic: Start Time
+                - generic [ref=e401]:
+                  - generic [ref=e402]: End Time
+                  - generic [ref=e403]:
+                    - textbox "End Time" [ref=e404]:
+                      - /placeholder: hh:mm aa
+                      - text: 11:59 PM
+                    - button "Choose time, selected time is 11:59 PM" [ref=e406] [cursor=pointer]:
+                      - img [ref=e407]
+                    - group:
+                      - generic: End Time
+  - alert [ref=e410]: Employees - xPOS Salon
+```
